@@ -51,13 +51,13 @@ def example_oil_reservoir():
     )
     
     # Production data (metric units)
-    prod_data = ProductionData(
-        time=[0, 365, 730, 1095, 1460, 1825, 2190],  # days
-        Np=[0, 79500, 190800, 318000, 461100, 604200, 747300],  # m3 std
-        Gp=[0, 7079e3, 16990e3, 28317e3, 41034e3, 53793e3, 66552e3],  # m3 std
-        Wp=[0, 1590, 3975, 6678, 9700, 13038, 16695],  # m3 std
-        pressure=[210, 196, 182, 168, 154, 140, 126]  # kgf/cm2
-    )
+    # prod_data = ProductionData(
+    #     time=[0, 365, 730, 1095, 1460, 1825, 2190],  # days
+    #     Np=[0, 79500, 190800, 318000, 461100, 604200, 747300],  # m3 std
+    #     Gp=[0, 7079e3, 16990e3, 28317e3, 41034e3, 53793e3, 66552e3],  # m3 std
+    #     Wp=[0, 1590, 3975, 6678, 9700, 13038, 16695],  # m3 std
+    #     pressure=[210, 196, 182, 168, 154, 140, 126]  # kgf/cm2
+    # )
     
     # Calculate STOIIP from all data points
     print("Calculating STOIIP from production history...")
