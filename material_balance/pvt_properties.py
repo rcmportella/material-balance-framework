@@ -8,6 +8,7 @@ required for material balance calculations.
 import numpy as np
 from typing import Optional, Tuple
 from dataclasses import dataclass
+from .units import UnitSystem, UnitConverter
 
 
 @dataclass
@@ -17,11 +18,21 @@ class PVTProperties:
     
     All properties should be provided as arrays or lists corresponding to
     different pressure measurements.
-    Units: pressure in kgf/cm2, volumes in m3
+    
+    Input units depend on unit_system parameter:
+    - METRIC: pressure (kgf/cm²), Bo/Bw (m³/m³ std), Bg (m³/m³ std), 
+              Rs (m³/m³ std), compressibility (1/(kgf/cm²))
+    - FIELD: pressure (psia), Bo/Bw (rb/STB), Bg (rb/SCF), 
+             Rs (SCF/STB), compressibility (1/psi)
+    
+    Internally, all data is stored in metric units.
     """
     
-    # Pressure array (kgf/cm2)
+    # Pressure array
     pressure: np.ndarray
+    
+    # Unit system for input data (default: METRIC)
+    unit_system: UnitSystem = UnitSystem.METRIC
     
     # Oil properties
     Bo: Optional[np.ndarray] = None  # Oil formation volume factor (m3/m3 std)
@@ -41,13 +52,37 @@ class PVTProperties:
     cf: Optional[np.ndarray] = None  # Formation compressibility (1/(kgf/cm2))
     
     def __post_init__(self):
-        """Convert lists to numpy arrays"""
-        self.pressure = np.array(self.pressure)
+        """Convert lists to numpy arrays and convert to metric units if needed"""
+        converter = UnitConverter()
         
+        # Convert pressure
+        self.pressure = np.array(self.pressure)
+        self.pressure = converter.pressure_to_metric(self.pressure, self.unit_system)
+        
+        # Convert each property to numpy array and metric units
         for attr in ['Bo', 'Rs', 'co', 'Bg', 'z', 'cg', 'Bw', 'cw', 'cf']:
             value = getattr(self, attr)
             if value is not None:
-                setattr(self, attr, np.array(value))
+                value = np.array(value)
+                
+                # Apply unit conversion based on property type
+                if self.unit_system == UnitSystem.FIELD:
+                    if attr == 'Bo':
+                        value = converter.bo_to_metric(value, self.unit_system)
+                    elif attr == 'Bg':
+                        value = converter.bg_to_metric(value, self.unit_system)
+                    elif attr == 'Bw':
+                        value = converter.bw_to_metric(value, self.unit_system)
+                    elif attr == 'Rs':
+                        value = converter.rs_to_metric(value, self.unit_system)
+                    elif attr in ['co', 'cg', 'cw', 'cf']:
+                        value = converter.compressibility_to_metric(value, self.unit_system)
+                    # 'z' is dimensionless, no conversion needed
+                
+                setattr(self, attr, value)
+        
+        # After conversion, all internal data is in metric units
+        self.unit_system = UnitSystem.METRIC
     
     def interpolate_property(self, property_name: str, target_pressure: float) -> float:
         """

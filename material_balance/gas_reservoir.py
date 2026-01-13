@@ -9,22 +9,38 @@ import numpy as np
 from typing import Optional, Tuple, List
 from dataclasses import dataclass
 from .pvt_properties import PVTProperties
+from .units import UnitSystem, UnitConverter
 
 
 @dataclass
 class GasProductionData:
     """Container for gas production data at different time points"""
     time: np.ndarray          # Time (days or other consistent unit)
-    Gp: np.ndarray           # Cumulative gas production (m3 std)
-    Wp: np.ndarray           # Cumulative water production (m3 std)
-    pressure: np.ndarray     # Average reservoir pressure (kgf/cm2)
+    Gp: np.ndarray           # Cumulative gas production
+    Wp: np.ndarray           # Cumulative water production
+    pressure: np.ndarray     # Average reservoir pressure
+    unit_system: UnitSystem = UnitSystem.METRIC  # Unit system for input data
     
     def __post_init__(self):
-        """Convert lists to numpy arrays"""
+        """Convert lists to numpy arrays and convert to metric units if needed"""
+        converter = UnitConverter()
+        
         self.time = np.array(self.time)
+        
+        # Convert gas volume
         self.Gp = np.array(self.Gp)
+        self.Gp = converter.gas_volume_to_metric(self.Gp, self.unit_system)
+        
+        # Convert water volume
         self.Wp = np.array(self.Wp)
+        self.Wp = converter.oil_volume_to_metric(self.Wp, self.unit_system)
+        
+        # Convert pressure
         self.pressure = np.array(self.pressure)
+        self.pressure = converter.pressure_to_metric(self.pressure, self.unit_system)
+        
+        # After conversion, all internal data is in metric units
+        self.unit_system = UnitSystem.METRIC
 
 
 class GasReservoir:
@@ -57,23 +73,29 @@ class GasReservoir:
                  pvt_properties: PVTProperties,
                  initial_pressure: float,
                  reservoir_temperature: float,
-                 aquifer_influx: bool = False):
+                 aquifer_influx: bool = False,
+                 unit_system: UnitSystem = UnitSystem.METRIC):
         """
         Initialize Gas Reservoir Material Balance Calculator.
         
         Args:
             pvt_properties: PVT properties object with gas properties
-            initial_pressure: Initial reservoir pressure (kgf/cm2)
-            reservoir_temperature: Reservoir temperature (°C or K)
+            initial_pressure: Initial reservoir pressure
+            reservoir_temperature: Reservoir temperature
             aquifer_influx: Whether to consider aquifer influx
+            unit_system: Unit system for input/output (METRIC or FIELD)
         """
         self.pvt = pvt_properties
-        self.Pi = initial_pressure
-        self.T = reservoir_temperature
+        self.unit_system = unit_system
+        self.converter = UnitConverter()
+        
+        # Convert inputs to internal metric units
+        self.Pi = self.converter.pressure_to_metric(initial_pressure, unit_system)
+        self.T = self.converter.temperature_to_kelvin(reservoir_temperature, unit_system)
         self.aquifer_influx = aquifer_influx
         
-        # Get initial properties
-        self.initial_props = pvt_properties.get_properties_at_pressure(initial_pressure)
+        # Get initial properties (already in metric from PVT)
+        self.initial_props = pvt_properties.get_properties_at_pressure(self.Pi)
         self.Bgi = self.initial_props.get('Bg')
         self.Zi = self.initial_props.get('z')
         

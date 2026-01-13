@@ -9,24 +9,41 @@ import numpy as np
 from typing import Optional, Tuple, List
 from dataclasses import dataclass
 from .pvt_properties import PVTProperties
+from .units import UnitSystem, UnitConverter
 
 
 @dataclass
 class ProductionData:
     """Container for production data at different time points"""
     time: np.ndarray  # Time (days or other consistent unit)
-    Np: np.ndarray    # Cumulative oil production (m3 std)
-    Gp: np.ndarray    # Cumulative gas production (m3 std)
-    Wp: np.ndarray    # Cumulative water production (m3 std)
-    pressure: np.ndarray  # Average reservoir pressure (kgf/cm2)
+    Np: np.ndarray    # Cumulative oil production
+    Gp: np.ndarray    # Cumulative gas production
+    Wp: np.ndarray    # Cumulative water production
+    pressure: np.ndarray  # Average reservoir pressure
+    unit_system: UnitSystem = UnitSystem.METRIC  # Unit system for input data
     
     def __post_init__(self):
-        """Convert lists to numpy arrays"""
+        """Convert lists to numpy arrays and convert to metric units if needed"""
+        converter = UnitConverter()
+        
         self.time = np.array(self.time)
+        
+        # Convert volumes
         self.Np = np.array(self.Np)
+        self.Np = converter.oil_volume_to_metric(self.Np, self.unit_system)
+        
         self.Gp = np.array(self.Gp)
+        self.Gp = converter.gas_volume_to_metric(self.Gp, self.unit_system)
+        
         self.Wp = np.array(self.Wp)
+        self.Wp = converter.oil_volume_to_metric(self.Wp, self.unit_system)
+        
+        # Convert pressure
         self.pressure = np.array(self.pressure)
+        self.pressure = converter.pressure_to_metric(self.pressure, self.unit_system)
+        
+        # After conversion, all internal data is in metric units
+        self.unit_system = UnitSystem.METRIC
 
 
 class OilReservoir:
@@ -54,28 +71,50 @@ class OilReservoir:
                  initial_pressure: float,
                  reservoir_temperature: float,
                  m: float = 0.0,
-                 aquifer_influx: bool = False):
+                 aquifer_influx: bool = False,
+                 unit_system: UnitSystem = UnitSystem.METRIC):
         """
         Initialize Oil Reservoir Material Balance Calculator.
         
         Args:
             pvt_properties: PVT properties object
-            initial_pressure: Initial reservoir pressure (kgf/cm2)
-            reservoir_temperature: Reservoir temperature (°C)
+            initial_pressure: Initial reservoir pressure
+            reservoir_temperature: Reservoir temperature
             m: Gas cap size ratio (G/N*Boi), default 0 for undersaturated
             aquifer_influx: Whether to consider aquifer influx
+            unit_system: Unit system for input/output (METRIC or FIELD)
         """
         self.pvt = pvt_properties
-        self.Pi = initial_pressure
-        self.T = reservoir_temperature
+        self.unit_system = unit_system
+        self.converter = UnitConverter()
+        
+        # Convert inputs to internal metric units
+        self.Pi = self.converter.pressure_to_metric(initial_pressure, unit_system)
+        self.T = self.converter.temperature_to_kelvin(reservoir_temperature, unit_system)
         self.m = m
         self.aquifer_influx = aquifer_influx
         
-        # Get initial properties
-        self.initial_props = pvt_properties.get_properties_at_pressure(initial_pressure)
+        # Get initial properties (already in metric from PVT)
+        self.initial_props = pvt_properties.get_properties_at_pressure(self.Pi)
         self.Boi = self.initial_props['Bo']
         self.Rsi = self.initial_props['Rs']
         self.Bgi = self.initial_props.get('Bg', None)
+        
+        # Storage for expansion terms for all calculation points
+        self.Eo_values = []
+        self.Eg_values = []
+        self.Efw_values = []
+        self.Et_values = []
+        self.F_values = []
+        self.pressure_values = []
+        
+        # Last calculated values (for backward compatibility)
+        self.Eo = None
+        self.Eg = None
+        self.Efw = None
+        self.Et = None
+        self.F = None
+        self.last_pressure = None
         
     def calculate_expansion_terms(self, pressure: float) -> Tuple[float, float, float]:
         """
@@ -138,6 +177,12 @@ class OilReservoir:
         Rs = props['Rs']
         Bg = props.get('Bg', 0)
         Bw = props.get('Bw', 1.0)
+        print(20*"=","DEBUG INFO",20*"=")
+        print(f"PVT pressure array: {self.pvt.pressure}")
+        print(f"Calculating STOIIP at pressure: {pressure} kgf/cm²")
+        print(f"  Bo: {Bo}, Rs: {Rs}, Bg: {Bg}, Bw: {Bw}")
+        print(f"  Np: {Np}, Gp: {Gp}, Wp: {Wp}, We: {We}")
+        print(20*"=","END DEBUG INFO",20*"=")
         
         # Calculate expansion terms
         Eo, Eg, Efw = self.calculate_expansion_terms(pressure)
@@ -147,6 +192,14 @@ class OilReservoir:
         
         # Total expansion
         Et = Eo + self.m * Eg + Efw
+        
+        # Store last calculated values (for single-point calculations)
+        self.Eo = Eo
+        self.Eg = Eg
+        self.Efw = Efw
+        self.Et = Et
+        self.F = F
+        self.last_pressure = pressure
         
         if Et <= 0:
             raise ValueError(f"Total expansion is non-positive ({Et}). Check pressure data and PVT properties.")
@@ -177,6 +230,14 @@ class OilReservoir:
         n_points = len(production_data.time)
         N_values = np.zeros(n_points)
         
+        # Clear previous arrays
+        self.Eo_values = []
+        self.Eg_values = []
+        self.Efw_values = []
+        self.Et_values = []
+        self.F_values = []
+        self.pressure_values = []
+        
         if We_values is None:
             We_values = np.zeros(n_points)
         
@@ -189,9 +250,23 @@ class OilReservoir:
                     pressure=production_data.pressure[i],
                     We=We_values[i]
                 )
+                # Store expansion terms for this point
+                self.Eo_values.append(self.Eo)
+                self.Eg_values.append(self.Eg)
+                self.Efw_values.append(self.Efw)
+                self.Et_values.append(self.Et)
+                self.F_values.append(self.F)
+                self.pressure_values.append(production_data.pressure[i])
             except Exception as e:
                 print(f"Warning: Could not calculate STOIIP at point {i}: {e}")
                 N_values[i] = np.nan
+                # Store NaN for failed calculations
+                self.Eo_values.append(np.nan)
+                self.Eg_values.append(np.nan)
+                self.Efw_values.append(np.nan)
+                self.Et_values.append(np.nan)
+                self.F_values.append(np.nan)
+                self.pressure_values.append(production_data.pressure[i])
         
         # Calculate statistics (excluding NaN values)
         valid_N = N_values[~np.isnan(N_values)]
