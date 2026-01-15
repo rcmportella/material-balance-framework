@@ -100,7 +100,14 @@ class PVTProperties:
         if prop_values is None:
             raise ValueError(f"Property {property_name} is not defined")
         
-        return np.interp(target_pressure, self.pressure, prop_values)
+        # Check if pressure array is in decreasing order
+        # np.interp requires x-coordinates to be in increasing order
+        if len(self.pressure) > 1 and self.pressure[0] > self.pressure[-1]:
+            # Reverse both arrays for interpolation
+            return np.interp(target_pressure, self.pressure[::-1], prop_values[::-1])
+        else:
+            # Pressure is already in increasing order
+            return np.interp(target_pressure, self.pressure, prop_values)
     
     def get_properties_at_pressure(self, target_pressure: float) -> dict:
         """

@@ -1,0 +1,25 @@
+{
+  "_comment": "Dake example - Gas cap oil reservoir configuration",
+  "_description": "This configuration file contains reservoir parameters for the Dake example",
+  "unit_system": "FIELD",
+  "reservoir_type": "oil",
+  "initial_pressure": 3330,
+  "reservoir_temperature": 180,
+  "initial_water_saturation": 0.2,
+  "porosity": 0.18,
+  "m": 0.54,
+  "aquifer_influx": false,
+  "aquifer_constant": 0,
+  "_units_reference": {
+    "pressure": "psia",
+    "temperature": "°F",
+    "oil_volume": "STB",
+    "gas_volume": "SCF",
+    "water_volume": "STB",
+    "Bo": "rb/STB",
+    "Rs": "SCF/STB",
+    "Bg": "rb/SCF",
+    "Bw": "rb/STB",
+    "compressibility": "1/psi"
+  }
+}

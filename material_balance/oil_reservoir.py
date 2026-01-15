@@ -177,12 +177,6 @@ class OilReservoir:
         Rs = props['Rs']
         Bg = props.get('Bg', 0)
         Bw = props.get('Bw', 1.0)
-        print(20*"=","DEBUG INFO",20*"=")
-        print(f"PVT pressure array: {self.pvt.pressure}")
-        print(f"Calculating STOIIP at pressure: {pressure} kgf/cm²")
-        print(f"  Bo: {Bo}, Rs: {Rs}, Bg: {Bg}, Bw: {Bw}")
-        print(f"  Np: {Np}, Gp: {Gp}, Wp: {Wp}, We: {We}")
-        print(20*"=","END DEBUG INFO",20*"=")
         
         # Calculate expansion terms
         Eo, Eg, Efw = self.calculate_expansion_terms(pressure)

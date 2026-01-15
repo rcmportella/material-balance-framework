@@ -14,5 +14,7 @@ from .oil_reservoir import OilReservoir
 from .gas_reservoir import GasReservoir
 from .pvt_properties import PVTProperties
 from .units import UnitSystem, UnitConverter
+from .input_reader import InputReader, create_template_files
 
-__all__ = ['OilReservoir', 'GasReservoir', 'PVTProperties', 'UnitSystem', 'UnitConverter']
+__all__ = ['OilReservoir', 'GasReservoir', 'PVTProperties', 'UnitSystem', 'UnitConverter', 
+           'InputReader', 'create_template_files']

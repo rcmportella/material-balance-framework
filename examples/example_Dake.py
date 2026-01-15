@@ -56,7 +56,7 @@ def example_oil_reservoir_field_units():
         pvt_properties=pvt,
         initial_pressure=3330,      # psia
         reservoir_temperature=180,  # °F
-        m=0.5,                      # Small gas cap
+        m=0.54,                      # Small gas cap
         unit_system=UnitSystem.FIELD  # Specify FIELD units
     )
     
@@ -80,31 +80,32 @@ def example_oil_reservoir_field_units():
     # Calculate STOIIP
     print("Calculating STOIIP from production history...")
     N_values, statistics = oil_res.calculate_STOIIP_from_production_data(prod_data)
-    
+
     # Access expansion terms for ALL points
-    print("\nExpansion Terms for All Pressure Points:")
-    for i in range(len(oil_res.pressure_values)):
-        print(f"\nPoint {i+1}:")
-        print(f"  Pressure: {oil_res.pressure_values[i]:.2f} kgf/cm²")
-        print(f"  Eo: {oil_res.Eo_values[i]:.6f}")
-        print(f"  Eg: {oil_res.Eg_values[i]:.6f}")
-        print(f"  Efw: {oil_res.Efw_values[i]:.6f}")
-        print(f"  Et: {oil_res.Et_values[i]:.6f}")
-        print(f"  F: {oil_res.F_values[i]:.2f}")
+    #print("\nExpansion Terms for All Pressure Points:")
+    #for i in range(len(oil_res.pressure_values)):
+    #    print(f"\nPoint {i+1}:")
+    #    print(f"  Pressure: {oil_res.pressure_values[i]:.2f} kgf/cm²")
+    #    print(f"  Eo: {oil_res.Eo_values[i]:.6f}")
+    #    print(f"  Eg: {oil_res.Eg_values[i]:.6f}")
+    #    print(f"  Efw: {oil_res.Efw_values[i]:.6f}")
+    #    print(f"  Et: {oil_res.Et_values[i]:.6f}")
+    #    print(f"  F: {oil_res.F_values[i]:.2f}")
 
     # Save everything to CSV (includes all expansion terms)
-    """""
     save_production_analysis_to_csv(
         production_data=prod_data,
         N_values=N_values,
         filename='production_analysis.csv',
         reservoir_obj=oil_res,  # Pass reservoir to include expansion terms
         print_to_console=True
-    )    # Optional: Save detailed production analysis
-    """
+    )
+    
+    # Optional: Save detailed production analysis
     save_results_to_csv(statistics, filename='stoiip_results_field_units.csv', print_to_console=True)  # Save summary results
     save_results_to_csv(statistics, 'results.csv', oil_res) # Optional: Save detailed results with reservoir info
     save_production_analysis_to_csv(production_data=prod_data, N_values=N_values, filename='production_analysis.csv', print_to_console=True)    # Results are in metric units (m³ std)
+
 
     print("\n" + "="*70)
     print("RESULTS (Internal metric units)")
@@ -129,7 +130,6 @@ def example_oil_reservoir_field_units():
     return oil_res, statistics
 
 
-
 if __name__ == "__main__":
     # Run examples
     example_oil_reservoir_field_units()
@@ -137,3 +137,4 @@ if __name__ == "__main__":
     print("\n" + "="*70)
     print("Dake example completed successfully!")
     print("="*70)
+
