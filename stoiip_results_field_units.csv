@@ -1,8 +1,8 @@
 Parameter,Value,Unit
-Mean STOIIP/GIIP,16867376.36,m³ std
-Median STOIIP/GIIP,16779615.79,m³ std
-Std Dev,170753.18,m³ std
-Min,16713212.36,m³ std
-Max,17200692.73,m³ std
-Coefficient of Variation,0.0101,
+Mean STOIIP/GIIP,20542602.08,m³ std
+Median STOIIP/GIIP,20485993.87,m³ std
+Std Dev,205539.05,m³ std
+Min,20326913.53,m³ std
+Max,20942401.06,m³ std
+Coefficient of Variation,0.0100,
 Count,6,points

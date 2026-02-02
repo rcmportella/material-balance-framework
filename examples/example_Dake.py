@@ -9,6 +9,7 @@ performs calculations, and returns results in metric units.
 """
 
 import numpy as np
+import matplotlib.pyplot as plt
 import sys
 import os
 
@@ -56,7 +57,7 @@ def example_oil_reservoir_field_units():
         pvt_properties=pvt,
         initial_pressure=3330,      # psia
         reservoir_temperature=180,  # °F
-        m=0.54,                      # Small gas cap
+        m=0.40,                      # Small gas cap
         unit_system=UnitSystem.FIELD  # Specify FIELD units
     )
     
@@ -76,6 +77,23 @@ def example_oil_reservoir_field_units():
     )
     
     print("Production data provided in field units and converted automatically.\n")
+    
+    print("\n1. Testing different m values (0.1 to 0.9)...")
+    print("-" * 70)
+    
+    # Method 1: Create visual plots for m values from 0.1 to 0.9
+    m_test_values = np.arange(0.1, 1.0, 0.1)
+    fig1, axes1, r_squared_dict = oil_res.plot_gas_cap_determination(
+        production_data=prod_data,
+        m_values=m_test_values
+    )
+    
+    print("\nR² values for different m:")
+    for m, r2 in r_squared_dict.items():
+        print(f"  m = {m:.1f}: R² = {r2:.6f}")
+    
+    plt.savefig('gas_cap_determination_plots.png', dpi=300, bbox_inches='tight')
+    print("\n✓ Saved gas_cap_determination_plots.png")
     
     # Calculate STOIIP
     print("Calculating STOIIP from production history...")
@@ -137,4 +155,7 @@ if __name__ == "__main__":
     print("\n" + "="*70)
     print("Dake example completed successfully!")
     print("="*70)
+    
+    # Display all generated plots
+    plt.show()
 

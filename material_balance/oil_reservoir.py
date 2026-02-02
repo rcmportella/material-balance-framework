@@ -345,3 +345,217 @@ class OilReservoir:
         ax.grid(True, alpha=0.3)
         
         return fig, ax
+    
+    def plot_gas_cap_determination(self, 
+                                   production_data: ProductionData,
+                                   m_values: Optional[np.ndarray] = None,
+                                   We_values: Optional[np.ndarray] = None) -> Tuple:
+        """
+        Create plots to determine gas cap size (m) by plotting F vs (Eo + m*Eg).
+        
+        This method creates subplots for different values of m. The correct value 
+        of m should produce the straightest line through the data points.
+        
+        Args:
+            production_data: ProductionData object with time series
+            m_values: Array of m values to test (default: 0.1 to 0.9 in steps of 0.1)
+            We_values: Water influx values for each time point (optional)
+            
+        Returns:
+            Tuple of (fig, axes, r_squared_dict)
+            fig: Figure object
+            axes: Array of axes objects
+            r_squared_dict: Dictionary with R² values for each m
+        """
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError:
+            raise ImportError("matplotlib is required for plotting. Install with: pip install matplotlib")
+        
+        if m_values is None:
+            m_values = np.arange(0.1, 1.0, 0.1)
+        
+        n_points = len(production_data.time)
+        
+        if We_values is None:
+            We_values = np.zeros(n_points)
+        
+        # Calculate F values (independent of m)
+        F_values = np.zeros(n_points)
+        for i in range(n_points):
+            props = self.pvt.get_properties_at_pressure(production_data.pressure[i])
+            Bo = props['Bo']
+            Rs = props['Rs']
+            Bg = props.get('Bg', 0)
+            Bw = props.get('Bw', 1.0)
+            
+            F_values[i] = (production_data.Np[i] * Bo + 
+                          (production_data.Gp[i] - production_data.Np[i] * Rs) * Bg + 
+                          production_data.Wp[i] * Bw - We_values[i])
+        
+        # Calculate Eo and Eg for each pressure point
+        Eo_values = np.zeros(n_points)
+        Eg_values = np.zeros(n_points)
+        
+        for i in range(n_points):
+            Eo, Eg, _ = self.calculate_expansion_terms(production_data.pressure[i])
+            Eo_values[i] = Eo
+            Eg_values[i] = Eg
+        
+        # Create subplots
+        n_plots = len(m_values)
+        n_cols = 3
+        n_rows = int(np.ceil(n_plots / n_cols))
+        
+        fig, axes = plt.subplots(n_rows, n_cols, figsize=(15, 5 * n_rows))
+        axes = axes.flatten() if n_plots > 1 else [axes]
+        
+        r_squared_dict = {}
+        
+        for idx, m in enumerate(m_values):
+            ax = axes[idx]
+            
+            # Calculate E_total = Eo + m*Eg
+            E_total = Eo_values + m * Eg_values
+            
+            # Plot data points
+            ax.scatter(E_total, F_values, s=50, alpha=0.6, color='blue')
+            
+            # Fit line
+            if len(E_total) > 1:
+                coeffs = np.polyfit(E_total, F_values, 1)
+                N_from_slope = coeffs[0]
+                
+                # Calculate R²
+                F_fit = coeffs[0] * E_total + coeffs[1]
+                ss_res = np.sum((F_values - F_fit) ** 2)
+                ss_tot = np.sum((F_values - np.mean(F_values)) ** 2)
+                r_squared = 1 - (ss_res / ss_tot) if ss_tot != 0 else 0
+                r_squared_dict[m] = r_squared
+                
+                # Plot fitted line
+                E_line = np.linspace(min(E_total) * 0.9, max(E_total) * 1.1, 100)
+                F_line = coeffs[0] * E_line + coeffs[1]
+                ax.plot(E_line, F_line, 'r--', linewidth=2, 
+                       label=f'N = {N_from_slope:,.0f} STB\nR² = {r_squared:.4f}')
+            
+            ax.set_xlabel(f'Eo + {m:.1f}*Eg (m3/m3 std)', fontsize=10)
+            ax.set_ylabel('F (m3)', fontsize=10)
+            ax.set_title(f'm = {m:.1f}', fontsize=12, fontweight='bold')
+            ax.legend(fontsize=8)
+            ax.grid(True, alpha=0.3)
+        
+        # Hide unused subplots
+        for idx in range(n_plots, len(axes)):
+            axes[idx].axis('off')
+        
+        fig.suptitle('Gas Cap Size Determination: F vs (Eo + m*Eg)', 
+                    fontsize=16, fontweight='bold', y=0.995)
+        plt.tight_layout()
+        
+        return fig, axes, r_squared_dict
+    
+    def determine_optimal_m(self, 
+                          production_data: ProductionData,
+                          m_values: Optional[np.ndarray] = None,
+                          We_values: Optional[np.ndarray] = None,
+                          show_plot: bool = True) -> Tuple[float, dict]:
+        """
+        Determine the optimal gas cap size (m) by finding the m value that 
+        produces the best linear fit (highest R²) in the F vs (Eo + m*Eg) plot.
+        
+        Args:
+            production_data: ProductionData object with time series
+            m_values: Array of m values to test (default: 0.1 to 0.9 in steps of 0.01)
+            We_values: Water influx values for each time point (optional)
+            show_plot: Whether to display a plot of R² vs m (default: True)
+            
+        Returns:
+            Tuple of (optimal_m, results_dict)
+            optimal_m: The m value with the highest R²
+            results_dict: Dictionary with all m values and their R² values
+        """
+        try:
+            import matplotlib.pyplot as plt
+        except ImportError:
+            if show_plot:
+                raise ImportError("matplotlib is required for plotting. Install with: pip install matplotlib")
+        
+        if m_values is None:
+            m_values = np.arange(0.1, 1.0, 0.01)
+        
+        n_points = len(production_data.time)
+        
+        if We_values is None:
+            We_values = np.zeros(n_points)
+        
+        # Calculate F values (independent of m)
+        F_values = np.zeros(n_points)
+        for i in range(n_points):
+            props = self.pvt.get_properties_at_pressure(production_data.pressure[i])
+            Bo = props['Bo']
+            Rs = props['Rs']
+            Bg = props.get('Bg', 0)
+            Bw = props.get('Bw', 1.0)
+            
+            F_values[i] = (production_data.Np[i] * Bo + 
+                          (production_data.Gp[i] - production_data.Np[i] * Rs) * Bg + 
+                          production_data.Wp[i] * Bw - We_values[i])
+        
+        # Calculate Eo and Eg for each pressure point
+        Eo_values = np.zeros(n_points)
+        Eg_values = np.zeros(n_points)
+        
+        for i in range(n_points):
+            Eo, Eg, _ = self.calculate_expansion_terms(production_data.pressure[i])
+            Eo_values[i] = Eo
+            Eg_values[i] = Eg
+        
+        # Calculate R² for each m value
+        r_squared_values = []
+        
+        for m in m_values:
+            E_total = Eo_values + m * Eg_values
+            
+            if len(E_total) > 1:
+                coeffs = np.polyfit(E_total, F_values, 1)
+                F_fit = coeffs[0] * E_total + coeffs[1]
+                ss_res = np.sum((F_values - F_fit) ** 2)
+                ss_tot = np.sum((F_values - np.mean(F_values)) ** 2)
+                r_squared = 1 - (ss_res / ss_tot) if ss_tot != 0 else 0
+                r_squared_values.append(r_squared)
+            else:
+                r_squared_values.append(0)
+        
+        r_squared_values = np.array(r_squared_values)
+        
+        # Find optimal m
+        optimal_idx = np.argmax(r_squared_values)
+        optimal_m = m_values[optimal_idx]
+        optimal_r_squared = r_squared_values[optimal_idx]
+        
+        results_dict = {
+            'm_values': m_values,
+            'r_squared_values': r_squared_values,
+            'optimal_m': optimal_m,
+            'optimal_r_squared': optimal_r_squared
+        }
+        
+        # Create plot if requested
+        if show_plot:
+            fig, ax = plt.subplots(figsize=(10, 6))
+            ax.plot(m_values, r_squared_values, 'b-', linewidth=2)
+            ax.scatter(optimal_m, optimal_r_squared, s=200, c='red', 
+                      marker='*', zorder=5, label=f'Optimal m = {optimal_m:.3f}')
+            ax.axvline(optimal_m, color='red', linestyle='--', alpha=0.5)
+            ax.set_xlabel('Gas Cap Size Parameter, m', fontsize=12)
+            ax.set_ylabel('Coefficient of Determination, R²', fontsize=12)
+            ax.set_title('Optimal Gas Cap Size Determination', fontsize=14, fontweight='bold')
+            ax.legend(fontsize=10)
+            ax.grid(True, alpha=0.3)
+            plt.tight_layout()
+        
+        print(f"\nOptimal gas cap size parameter: m = {optimal_m:.3f}")
+        print(f"Coefficient of determination: R² = {optimal_r_squared:.6f}")
+        
+        return optimal_m, results_dict

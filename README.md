@@ -7,6 +7,7 @@ A comprehensive Python framework for calculating initial volumes in-place (STOII
 ### Oil Reservoirs
 - **General Material Balance Equation** implementation
 - Support for gas cap drive (m-factor)
+- **Gas cap size determination** - Automated methods to determine unknown gas cap size
 - Water influx modeling capability
 - Multiple PVT property handling (Bo, Rs, Bg, Bw)
 - Material balance plotting (F vs Et)
@@ -28,6 +29,14 @@ A comprehensive Python framework for calculating initial volumes in-place (STOII
   - Hall-Yarborough correlation (Z-factor)
   - Formation volume factor calculations
 - Support for measured PVT data
+
+### Darcy Radial Flow
+- **Oil flow rate calculations** using Darcy's Law
+- Pressure drawdown analysis
+- Support for both field and metric units
+- Skin factor effects (damage/stimulation)
+- Productivity index calculations
+- Sensitivity analysis tools
 
 ### Utilities
 - Production data validation
@@ -202,6 +211,53 @@ print(f"Z = {z:.4f}")
 print(f"Bg = {Bg:.6f} rb/SCF")
 ```
 
+### Example 4: Darcy Radial Flow
+
+```python
+from material_balance import DarcyRadialFlow, DarcyFlowParameters, UnitSystem
+
+# Calculate flow rate from known pressures (Metric)
+params = DarcyFlowParameters(
+    k=100,          # Permeability: 100 mD
+    h=10,           # Thickness: 10 m
+    Pe=200,         # Reservoir pressure: 200 kgf/cm²
+    Pwf=150,        # Wellbore pressure: 150 kgf/cm²
+    mu=2.0,         # Viscosity: 2 cp
+    Bo=1.25,        # Formation volume factor: 1.25
+    re=300,         # Drainage radius: 300 m
+    rw=0.1,         # Well radius: 0.1 m
+    S=0,            # No skin
+    unit_system=UnitSystem.METRIC
+)
+
+calculator = DarcyRadialFlow(unit_system=UnitSystem.METRIC)
+results = calculator.calculate(params)
+calculator.print_results(results)
+
+print(f"Flow rate: {results['q']:.2f} m³/day")
+print(f"Productivity Index: {results['productivity_index']:.4f} m³/day/(kgf/cm²)")
+
+# Calculate bottomhole pressure from desired rate (Field)
+params_field = DarcyFlowParameters(
+    k=50,           # Permeability: 50 mD
+    h=30,           # Thickness: 30 ft
+    Pe=3000,        # Reservoir pressure: 3000 psia
+    q=500,          # Desired rate: 500 STB/day
+    mu=1.5,         # Viscosity: 1.5 cp
+    Bo=1.2,         # Formation volume factor: 1.2
+    re=745,         # Drainage radius: 745 ft
+    rw=0.3,         # Well radius: 0.3 ft
+    S=0,            # No skin
+    unit_system=UnitSystem.FIELD
+)
+
+calculator_field = DarcyRadialFlow(unit_system=UnitSystem.FIELD)
+results_field = calculator_field.calculate(params_field)
+
+print(f"Required Pwf: {results_field['Pwf']:.1f} psia")
+print(f"Drawdown: {results_field['dP']:.1f} psi")
+```
+
 ## Material Balance Equations
 
 ### Oil Reservoir
@@ -267,6 +323,30 @@ This will run all three examples and display:
 - Material balance plots (if matplotlib is installed)
 
 ## Advanced Features
+
+### Gas Cap Size Determination
+
+For oil reservoirs with unknown gas cap size, the framework provides automated methods to determine the optimal gas cap parameter (m) by analyzing the linearity of F vs (Eo + m×Eg) plots:
+
+```python
+# Method 1: Visual analysis with multiple m values
+m_values = np.arange(0.1, 1.0, 0.1)
+fig, axes, r_squared = reservoir.plot_gas_cap_determination(
+    production_data=production_data,
+    m_values=m_values
+)
+
+# Method 2: Automatically find optimal m
+optimal_m, results = reservoir.determine_optimal_m(
+    production_data=production_data,
+    show_plot=True
+)
+
+print(f"Optimal gas cap size: m = {optimal_m:.3f}")
+print(f"R² = {results['optimal_r_squared']:.6f}")
+```
+
+See [Gas Cap Determination Guide](GAS_CAP_DETERMINATION_GUIDE.md) for detailed documentation.
 
 ### Water Influx Modeling
 

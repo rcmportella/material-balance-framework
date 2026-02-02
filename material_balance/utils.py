@@ -272,6 +272,7 @@ def save_results_to_csv(results: Dict[str, Any], filename: str,
         data.append(['Min', f"{results['min']:.2f}", 'm³ std'])
         data.append(['Max', f"{results['max']:.2f}", 'm³ std'])
         data.append(['Coefficient of Variation', f"{results['coefficient_of_variation']:.4f}", ''])
+        #data.append(['m', f"{results['m']:.2f}", 'adimensional'])
         data.append(['Count', f"{results['count']}", 'points'])
     
     # Add expansion terms for ALL points if reservoir object is provided
