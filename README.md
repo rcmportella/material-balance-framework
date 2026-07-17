@@ -492,6 +492,20 @@ Petroleum Engineering Team
 
 1.0.0 - December 2025
 
+## Today's Update (2026-07-17)
+
+This repository was updated with a major improvement to the Excel-based well history and decline-fit workflow in [examples/example_excel_well_plot.py](examples/example_excel_well_plot.py):
+
+- Added workbook selection at startup and interactive well switching in the GUI.
+- Unified plotting in a single figure with dual y-axes and support for multiple fit overlays per well.
+- Added interval-based decline fitting with `Auto` selection (Exponential, Harmonic, Hyperbolic) and forced model selection.
+- Added the `Asymptotic Exponential` model (for Qw) with scaling metadata support (`scale_min`, `scale_max`, `normalized`).
+- Implemented fit export/import to Excel (`decline_fits` sheet), including fit mode and interval metadata.
+- Improved import compatibility with both label styles (`Qg/Qo/Qw`) and internal names (`Qgm/Qom/Qwm`), plus whitespace normalization.
+- Fixed loaded-fit plotting issues by preserving aligned `fit_dates` and `fit_values` from reconstructed fits during import.
+
+Sample fit and data workbooks were also included/updated in this commit to preserve reproducibility of the GUI flow.
+
 ---
 
 For questions or support, please refer to the example scripts or consult petroleum engineering textbooks on material balance methods.
