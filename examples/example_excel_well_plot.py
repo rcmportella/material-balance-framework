@@ -150,6 +150,38 @@ def get_sorted_well_series(well_data: dict[str, list]) -> list[tuple]:
     )
 
 
+def aggregate_wells_data(wells: dict[str, dict[str, list]]) -> dict[str, list]:
+    """Aggregate production data across all wells by date and variable."""
+    aggregated: dict[str, list] = {"date": [], **{var: [] for var, _ in VARIABLES}}
+    sums: dict[str, dict[datetime, float]] = {
+        var: defaultdict(float) for var, _ in VARIABLES
+    }
+
+    for well_data in wells.values():
+        for row in get_sorted_well_series(well_data):
+            date_value = row[0]
+            for index, (variable_name, _) in enumerate(VARIABLES, start=1):
+                value = row[index]
+                if value is None:
+                    continue
+                sums[variable_name][date_value] += float(value)
+
+    sorted_dates = sorted(sums[VARIABLES[0][0]].keys())
+    for date_value in sorted_dates:
+        aggregated["date"].append(date_value)
+        for variable_name, _ in VARIABLES:
+            aggregated[variable_name].append(sums[variable_name].get(date_value, 0.0))
+
+    return aggregated
+
+
+def get_display_well_data(well_name: str, wells: dict[str, dict[str, list]]) -> tuple[str, dict[str, list]]:
+    """Return the selected well data, or aggregated data for the special All Wells view."""
+    if well_name == "All Wells":
+        return "All Wells", aggregate_wells_data(wells)
+    return well_name, wells[well_name]
+
+
 def fit_exponential(t_years: np.ndarray, q_values: np.ndarray) -> dict[str, Any] | None:
     """Fit exponential decline model: q = qi * exp(-Di*t)."""
     if len(t_years) < 2:
@@ -450,17 +482,18 @@ def plot_well_history(
     }
 
     for variable_name, values in gas_series.items():
-        axis_left.plot(
+        line = axis_left.plot(
             sorted_dates,
             values,
             marker="o",
             linewidth=1.6,
             color=gas_colors[variable_name],
             label=variable_name,
-        )
+        )[0]
+        line.set_picker(5)
 
     for variable_name, values in other_series.items():
-        axis_right.plot(
+        line = axis_right.plot(
             sorted_dates,
             values,
             marker="o",
@@ -468,7 +501,8 @@ def plot_well_history(
             linestyle="--",
             color=other_colors[variable_name],
             label=variable_name,
-        )
+        )[0]
+        line.set_picker(5)
 
     axis_left.set_ylabel("Qg / Qgi")
     axis_right.set_ylabel("Other rates")
@@ -500,13 +534,14 @@ def plot_well_history(
             di_text = "n/a" if di_value is None else f"{di_value:.4f}"
             b_text = "n/a" if b_value is None else f"{b_value:.3f}"
 
-            target_axis.plot(
+            line = target_axis.plot(
                 fit_overlay["fit_dates"],
                 fit_overlay["fit_values"],
                 color=fit_color,
                 linewidth=2.4,
                 label=f"Fit {fit_index} {model_name} (Di={di_text}, b={b_text})",
-            )
+            )[0]
+            line.set_picker(5)
 
             if fit_overlay.get("interval_start") and fit_overlay.get("interval_end"):
                 axis_left.axvspan(
@@ -526,6 +561,7 @@ def plot_well_history(
 def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
     """Open a GUI that allows switching the selected well at any time."""
     try:
+        from matplotlib import dates as mdates
         from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
         from matplotlib.figure import Figure
     except ImportError as exc:  # pragma: no cover - import guard for runtime use
@@ -547,8 +583,8 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
     ttk.Label(controls, text=f"Workbook: {workbook_path.name}").pack(side="left", padx=(0, 16))
     ttk.Label(controls, text="Well:").pack(side="left")
 
-    well_names = sorted(wells)
-    selected_well = tk.StringVar(value=well_names[0])
+    well_names = [*sorted(wells), "All Wells"]
+    selected_well = tk.StringVar(value=well_names[0] if well_names else "All Wells")
     well_combo = ttk.Combobox(
         controls,
         textvariable=selected_well,
@@ -593,6 +629,21 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
     fit_status = tk.StringVar(value="Select one variable (Qg, Qo or Qw), interval, then click Fit Decline")
     ttk.Label(controls, textvariable=fit_status).pack(side="right")
 
+    info_frame = ttk.Frame(root, padding=(10, 0, 10, 6))
+    info_frame.pack(fill="x")
+
+    date_info = tk.StringVar(value="Data: --")
+    qo_info = tk.StringVar(value="Qo: --")
+    qg_info = tk.StringVar(value="Qg: --")
+    qw_info = tk.StringVar(value="Qw: --")
+    qcl_info = tk.StringVar(value="Qcl: --")
+
+    ttk.Label(info_frame, textvariable=date_info, font=("Segoe UI", 10, "bold")).pack(side="left", padx=(0, 12))
+    ttk.Label(info_frame, textvariable=qo_info, font=("Segoe UI", 10)).pack(side="left", padx=(0, 12))
+    ttk.Label(info_frame, textvariable=qg_info, font=("Segoe UI", 10)).pack(side="left", padx=(0, 12))
+    ttk.Label(info_frame, textvariable=qw_info, font=("Segoe UI", 10)).pack(side="left", padx=(0, 12))
+    ttk.Label(info_frame, textvariable=qcl_info, font=("Segoe UI", 10)).pack(side="left")
+
     fig = Figure(figsize=(14, 7), dpi=100)
     axis_left = fig.add_subplot(111)
     axis_right = axis_left.twinx()
@@ -600,6 +651,50 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
     canvas = FigureCanvasTkAgg(fig, master=root)
     canvas.draw()
     canvas.get_tk_widget().pack(fill="both", expand=True)
+
+    def update_point_info(event: Any) -> None:
+        if event.inaxes not in {axis_left, axis_right}:
+            date_info.set("Data: --")
+            qo_info.set("Qo: --")
+            qg_info.set("Qg: --")
+            qw_info.set("Qw: --")
+            qcl_info.set("Qcl: --")
+            return
+        if event.xdata is None:
+            return
+
+        well_name = selected_well.get()
+        _, selected_well_data = get_display_well_data(well_name, wells)
+        sorted_rows = get_sorted_well_series(selected_well_data)
+        if not sorted_rows:
+            return
+
+        numeric_dates = np.array([mdates.date2num(row[0]) for row in sorted_rows])
+        nearest_idx = int(np.argmin(np.abs(numeric_dates - float(event.xdata))))
+        target_row = sorted_rows[nearest_idx]
+        target_date = target_row[0]
+
+        def format_value(value: object) -> str:
+            if value is None:
+                return "--"
+            if isinstance(value, (int, float, np.floating, np.integer)):
+                return f"{float(value):.3f}"
+            return str(value)
+
+        date_info.set(f"Data: {target_date.strftime('%b/%Y')}")
+        qo_info.set(f"Qo: {format_value(target_row[3])}")
+        qg_info.set(f"Qg: {format_value(target_row[1])}")
+        qw_info.set(f"Qw: {format_value(target_row[2])}")
+        qcl_info.set(f"Qcl: {format_value(target_row[4])}")
+
+    fig.canvas.mpl_connect("motion_notify_event", update_point_info)
+    canvas.get_tk_widget().bind("<Leave>", lambda _event: (
+        date_info.set("Data: --"),
+        qo_info.set("Qo: --"),
+        qg_info.set("Qg: --"),
+        qw_info.set("Qw: --"),
+        qcl_info.set("Qcl: --"),
+    ))
 
     toolbar = NavigationToolbar2Tk(canvas, root)
     toolbar.update()
@@ -747,7 +842,7 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
             if not well_name or not variable_label or not model_name:
                 skipped_count += 1
                 continue
-            if well_name not in wells:
+            if well_name not in wells and well_name != "All Wells":
                 skipped_count += 1
                 continue
 
@@ -865,7 +960,8 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
         start_date: datetime,
         end_date: datetime,
     ) -> tuple[list[datetime], list[float]]:
-        sorted_rows = get_sorted_well_series(wells[well_name])
+        _, selected_well_data = get_display_well_data(well_name, wells)
+        sorted_rows = get_sorted_well_series(selected_well_data)
         variable_index = {name: index for index, (name, _) in enumerate(VARIABLES, start=1)}[target_variable]
 
         dates: list[datetime] = []
@@ -887,10 +983,11 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
     def refresh_interval_options(*_args) -> None:
         well_name = selected_well.get()
-        if well_name not in wells:
+        if well_name not in wells and well_name != "All Wells":
             return
 
-        sorted_dates = [row[0] for row in get_sorted_well_series(wells[well_name])]
+        _, selected_well_data = get_display_well_data(well_name, wells)
+        sorted_dates = [row[0] for row in get_sorted_well_series(selected_well_data)]
         unique_dates = sorted(set(sorted_dates))
         date_labels = [date_to_str(item) for item in unique_dates]
         start_combo["values"] = date_labels
@@ -902,15 +999,22 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
     def update_plot(*_args) -> None:
         well_name = selected_well.get()
-        if well_name not in wells:
+        if well_name not in wells and well_name != "All Wells":
             return
+        _, selected_well_data = get_display_well_data(well_name, wells)
         overlays = well_fit_overlays.get(well_name, [])
-        plot_well_history(axis_left, axis_right, well_name, wells[well_name], fit_overlays=overlays)
+        plot_well_history(
+            axis_left,
+            axis_right,
+            well_name,
+            selected_well_data,
+            fit_overlays=overlays,
+        )
         canvas.draw_idle()
 
     def perform_fit() -> None:
         well_name = selected_well.get()
-        if well_name not in wells:
+        if well_name not in wells and well_name != "All Wells":
             return
 
         try:
@@ -983,7 +1087,7 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
     def clear_fits_well() -> None:
         well_name = selected_well.get()
-        if well_name not in wells:
+        if well_name not in wells and well_name != "All Wells":
             return
 
         removed_count = len(well_fit_overlays.get(well_name, []))
