@@ -494,7 +494,7 @@ Petroleum Engineering Team
 
 ## Today's Update (2026-07-17)
 
-This repository was updated with a major improvement to the Excel-based well history and decline-fit workflow in [examples/example_excel_well_plot.py](examples/example_excel_well_plot.py):
+This repository was updated with a major improvement to the Excel-based well history and decline-fit workflow in [examples/plota_producao_pocos.py](examples/plota_producao_pocos.py):
 
 - Added workbook selection at startup and interactive well switching in the GUI.
 - Unified plotting in a single figure with dual y-axes and support for multiple fit overlays per well.
