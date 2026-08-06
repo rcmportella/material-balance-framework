@@ -509,3 +509,48 @@ Sample fit and data workbooks were also included/updated in this commit to prese
 ---
 
 For questions or support, please refer to the example scripts or consult petroleum engineering textbooks on material balance methods.
+
+## New App: Well Production Extrapolation (2026-08-06)
+
+The repository now includes a dedicated GUI app for Excel-based decline extrapolation:
+
+- Script: [examples/extrapola_producao_pocos.py](examples/extrapola_producao_pocos.py)
+- Input workbook example: `SMC_Reservas.xlsx`
+- Main purpose: extrapolate well flow rates and cumulative production using exponential decline, with monthly time stepping.
+
+### What It Does
+
+- Reads well metadata and decline parameters from Excel (`Poço`, `Fluido`, `Zona`, `Início Produção`, `Qi`, `Di`).
+- Plots `Vazão` or `Volume acumulado` in a Tkinter interface.
+- Supports individual well selection or all wells by fluid (`Gás` / `Óleo`).
+- Uses monthly advancement to the first day of each month during extrapolation.
+- Stops extrapolation when production reaches threshold:
+    - Gas: `2.0` (workbook units)
+    - Oil: `1.0` (workbook units)
+
+### Export to Excel
+
+The app exports calculated results to a `.xlsx` file with the following sheets:
+
+- `vazao_pocos`: per-well flow rate time series (includes `Zona`)
+- `acumulada_pocos`: per-well cumulative series (single continuous cumulative curve per well/fluid)
+- `vazao_conc_fluido`: concatenated flow rate by fluid for all wells
+- `acum_conc_fluido`: concatenated cumulative by fluid for all wells
+
+Export date format is `dd/mm/yyyy`.
+
+### Physical Consistency Check
+
+During data load/extrapolation, the app detects overlapping production intervals for the same well in different zones and emits warnings, since simultaneous production from multiple zones for the same well is physically inconsistent in this workflow.
+
+### Run
+
+```bash
+python examples/extrapola_producao_pocos.py
+```
+
+Optional headless mode:
+
+```bash
+python examples/extrapola_producao_pocos.py --headless [workbook_path]
+```
