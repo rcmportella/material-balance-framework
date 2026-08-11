@@ -258,6 +258,88 @@ print(f"Required Pwf: {results_field['Pwf']:.1f} psia")
 print(f"Drawdown: {results_field['dP']:.1f} psi")
 ```
 
+## Well Extrapolation App (Excel + GUI)
+
+The script `examples/extrapola_producao_pocos.py` provides decline-curve extrapolation
+from Excel workbooks and interactive plotting/export.
+
+### Input columns supported
+
+The parser accepts at least the following columns (with flexible header aliases):
+
+- Poço
+- Categoria
+- Classe
+- Fluido
+- Operação
+- Zona
+- Início Produção
+- Qg (M m3/dia)
+- Qo (m3/dia)
+- Qw (m3/dia)
+- Di (including unit-suffixed headers such as `Di (1/ano)`)
+- b
+
+Notes:
+
+- For gas rows, `qi = Qg`.
+- For oil rows, `qi = Qo`.
+- The workbook is explicitly closed immediately after reading to avoid file locks.
+
+### Decline model
+
+- Hyperbolic decline: `q = qi / (1 + b * Di * t)^(1/b)`
+- Exponential fallback when `b = 0`: `q = qi * exp(-Di * t)`
+
+The extrapolation end date is hard-coded to `31/12/2052`.
+
+### Shut-in threshold behavior
+
+- Gas threshold: `2.0`
+- Oil threshold: `1.0`
+
+If `qi` is at or below threshold, the interval starts shut-in (`q = 0`).
+During extrapolation, if `q <= threshold`, production is shut-in from that point.
+
+### Duplicate rows for the same well
+
+When the same well appears in multiple rows, the app resolves an effective well series
+with the following rules:
+
+1. Priority order (best first):
+    - P1 + PDP
+    - P1 + PDNP
+    - P1 + PUD
+    - P2 (any class)
+    - P3 (any class)
+2. On overlapping dates, use the highest rate.
+3. If rates tie, use the priority above.
+4. Each interval is truncated at the next start date for that well (including fluid switches).
+
+This ensures that when a well changes interval/fluid, the previous interval does not
+reactivate later.
+
+### Exports
+
+The output workbook includes:
+
+- `vazao_pocos`
+- `acumulada_pocos`
+- `vazao_conc_fluido`
+- `acum_conc_fluido`
+- `acum_conc_categoria`
+
+`acum_conc_categoria` is exported in wide format:
+
+- Data
+- Fluido
+- Acumulada P1
+- Acumulada P2
+- Acumulada P3
+
+The sum `P1 + P2 + P3` is numerically consistent with the fluid total cumulative
+(subject only to floating-point tolerance).
+
 ## Material Balance Equations
 
 ### Oil Reservoir

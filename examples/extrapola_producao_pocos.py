@@ -9,11 +9,16 @@ The workbook is expected to contain at least the following columns:
 - Operação
 - Zona
 - Início Produção
-- Qi
+- Qg (M m3/dia)
+- Qo (m3/dia)
+- Qw (m3/dia)
 - Di
+- b
 
-The script reads the workbook, applies the exponential decline model
-Q(t) = Qi * exp(-Di * t), where t is expressed in years, and plots:
+The script reads the workbook and applies decline extrapolation where
+q(t) follows the hyperbolic model q = qi / (1 + b * Di * t)^(1/b), with
+automatic fallback to the exponential model q(t) = qi * exp(-Di * t) when b = 0.
+Time t is expressed in years. It then plots:
 - flow rate versus time,
 - cumulative produced volume until the production threshold is reached,
 - or a combined curve for all wells of a selected fluid.
@@ -70,9 +75,15 @@ COLUMN_ALIASES = {
     "Operação": ("operacao", "operacão"),
     "Zona": ("zona",),
     "Início Produção": ("inicioproducao", "inicioproducao", "inicio_producao", "inicio", "startdate"),
-    "Qi": ("qi",),
-    "Di": ("di",),
+    "Qg": ("qg", "qgmm3dia", "qgmm3d", "qgm3dia", "qgm3d"),
+    "Qo": ("qo", "qom3dia", "qom3d"),
+    "Qw": ("qw", "qwm3dia", "qwm3d"),
+    "Di": ("di", "di1ano", "diano", "declini", "declinio"),
+    "b": ("b",),
 }
+
+
+EXTRAPOLATION_END_DATE: datetime = datetime(2052, 12, 31)
 
 
 def normalize_header(value: object) -> str:
@@ -93,6 +104,10 @@ def normalize_header(value: object) -> str:
         "õ": "o",
         "ú": "u",
         "ç": "c",
+        "¹": "1",
+        "²": "2",
+        "³": "3",
+        "⁰": "0",
     })
     text = text.translate(replacements)
     return "".join(ch for ch in text if ch.isalnum())
@@ -196,12 +211,33 @@ def classify_fluid(value: object) -> str:
     return "other"
 
 
+def category_class_priority(categoria: str, classe: str) -> int:
+    """Return the priority rank for extrapolation selection (lower is better)."""
+    categoria_norm = normalize_header(categoria)
+    classe_norm = normalize_header(classe)
+
+    if categoria_norm == "p1" and classe_norm == "pdp":
+        return 0
+    if categoria_norm == "p1" and classe_norm == "pdnp":
+        return 1
+    if categoria_norm == "p1" and classe_norm == "pud":
+        return 2
+    if categoria_norm == "p2":
+        return 3
+    if categoria_norm == "p3":
+        return 4
+    return 5
+
+
 def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, dict[str, Any]]:
     """Read the well metadata workbook and group the data by well name."""
     workbook = load_workbook(filepath, data_only=True, read_only=True)
-    worksheet = workbook[sheet_name] if sheet_name else workbook[workbook.sheetnames[0]]
+    try:
+        worksheet = workbook[sheet_name] if sheet_name else workbook[workbook.sheetnames[0]]
+        rows = list(worksheet.iter_rows(values_only=True))
+    finally:
+        workbook.close()
 
-    rows = list(worksheet.iter_rows(values_only=True))
     if not rows:
         raise ValueError("The workbook is empty.")
 
@@ -217,7 +253,7 @@ def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, di
             column_map[canonical] = idx
             break
 
-    required_columns = {"Poço", "Início Produção", "Qi", "Di", "Fluido"}
+    required_columns = {"Poço", "Início Produção", "Qg", "Qo", "Di", "b", "Fluido"}
     missing = [name for name in required_columns if name not in column_map]
     if missing:
         raise ValueError(f"Missing required columns: {', '.join(missing)}")
@@ -233,14 +269,19 @@ def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, di
 
         try:
             start_date = parse_date(row[column_map["Início Produção"]])
-            qi = float(row[column_map["Qi"]])
+            qg = float(row[column_map["Qg"]])
+            qo = float(row[column_map["Qo"]])
+            qw = float(row[column_map["Qw"]]) if "Qw" in column_map and row[column_map["Qw"]] is not None else 0.0
             di = float(row[column_map["Di"]])
+            b = float(row[column_map["b"]])
         except (TypeError, ValueError):
             continue
 
         fluid = classify_fluid(row[column_map["Fluido"]] if column_map["Fluido"] < len(row) else "")
         if fluid not in {"gas", "oil"}:
             continue
+
+        qi = qg if fluid == "gas" else qo
 
         unique_key = well_name
         duplicate_index = 2
@@ -256,23 +297,51 @@ def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, di
             "operacao": str(row[column_map.get("Operação", 0)] or "") if "Operação" in column_map else "",
             "zona": str(row[column_map.get("Zona", 0)] or "") if "Zona" in column_map else "",
             "start_date": start_date,
+            "qg": qg,
+            "qo": qo,
+            "qw": qw,
             "qi": qi,
             "di": di,
+            "b": b,
         }
 
     if not wells:
         raise ValueError("No gas or oil wells were found in the workbook.")
 
-    return wells
+    return resolve_duplicate_well_rows(wells)
+
+
+def decline_rate(qi: float, di: float, b: float, t_years: np.ndarray | float) -> np.ndarray:
+    """Return decline rate using hyperbolic model and exponential fallback when b is zero."""
+    t_array = np.asarray(t_years, dtype=float)
+
+    if np.isclose(b, 0.0):
+        return qi * np.exp(-di * t_array)
+
+    denominator = 1.0 + b * di * t_array
+    result = np.zeros_like(t_array, dtype=float)
+    valid = denominator > 0.0
+    if np.any(valid):
+        result[valid] = qi / np.power(denominator[valid], 1.0 / b)
+    return result
 
 
 def build_decline_series(well: dict[str, Any], threshold: float) -> dict[str, np.ndarray]:
     """Build the decline curve and cumulative volume for a well."""
+    if all(key in well for key in ("resolved_dates", "resolved_q", "resolved_cum")):
+        return {
+            "dates": np.array(well["resolved_dates"], dtype=object),
+            "t_years": np.array(well.get("resolved_t_years", []), dtype=float),
+            "q": np.array(well["resolved_q"], dtype=float),
+            "cum": np.array(well["resolved_cum"], dtype=float),
+        }
+
     qi = float(well["qi"])
     di = float(well["di"])
+    b = float(well.get("b", 0.0))
     start_date = well["start_date"]
 
-    if qi <= 0:
+    if qi <= 0 or qi <= threshold:
         return {
             "dates": np.array([start_date], dtype=object),
             "t_years": np.array([0.0]),
@@ -280,8 +349,11 @@ def build_decline_series(well: dict[str, Any], threshold: float) -> dict[str, np
             "cum": np.array([0.0]),
         }
 
-    max_years = 50.0
-    max_date = start_date + timedelta(days=max_years * 365.25)
+    if EXTRAPOLATION_END_DATE is not None:
+        max_date = EXTRAPOLATION_END_DATE
+    else:
+        max_years = 50.0
+        max_date = start_date + timedelta(days=max_years * 365.25)
 
     date_points: list[datetime] = [start_date]
     t_points: list[float] = [0.0]
@@ -293,8 +365,8 @@ def build_decline_series(well: dict[str, Any], threshold: float) -> dict[str, np
             continue
 
         t_years = (current_date - start_date).days / 365.25
-        q_value = qi * np.exp(-di * t_years)
-        if q_value < threshold:
+        q_value = float(decline_rate(qi, di, b, t_years))
+        if q_value <= threshold:
             break
 
         previous_date = date_points[-1]
@@ -320,9 +392,239 @@ def build_decline_series(well: dict[str, Any], threshold: float) -> dict[str, np
     }
 
 
+def resolve_duplicate_well_rows(wells: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Resolve duplicate well rows (same visible name and fluid) into a single effective series."""
+    grouped: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    grouped_by_name: dict[str, list[dict[str, Any]]] = {}
+    for well in wells.values():
+        well_name = str(well["name"])
+        fluid = str(well["fluido"])
+        grouped.setdefault((well_name, fluid), []).append(well)
+        grouped_by_name.setdefault(well_name, []).append(well)
+
+    resolved: dict[str, dict[str, Any]] = {}
+    for (well_name, fluid), rows in grouped.items():
+        # A row represents a production interval that must be truncated when a
+        # newer row for the same well starts, even if fluid changes.
+        name_rows = grouped_by_name.get(well_name, rows)
+        sorted_starts = sorted({row["start_date"] for row in name_rows})
+        next_start_by_row: list[datetime | None] = []
+        for row in rows:
+            next_start = next(
+                (start for start in sorted_starts if start > row["start_date"]),
+                None,
+            )
+            next_start_by_row.append(next_start)
+
+        threshold = get_threshold(fluid)
+        ranks = [category_class_priority(str(row.get("categoria", "")), str(row.get("classe", ""))) for row in rows]
+        series_list = [build_decline_series(row, threshold) for row in rows]
+        effective_end_dates: list[datetime] = []
+        for series, next_start in zip(series_list, next_start_by_row):
+            series_end = series["dates"][-1]
+            if next_start is None:
+                effective_end_dates.append(series_end)
+            else:
+                effective_end_dates.append(min(series_end, next_start))
+
+        min_start = min(row["start_date"] for row in rows)
+        max_end = max(effective_end_dates)
+        common_dates = month_starts_between(min_start, max_end)
+        if not common_dates:
+            common_dates = [min_start]
+        elif common_dates[0] != min_start:
+            common_dates = [min_start] + common_dates
+        if not common_dates:
+            continue
+
+        selected_q: list[float] = []
+        selected_categoria: list[str] = []
+        selected_classe: list[str] = []
+        selected_zona: list[str] = []
+
+        for date_value in common_dates:
+            best_q = 0.0
+            best_idx: int | None = None
+
+            for idx, row in enumerate(rows):
+                start_date = row["start_date"]
+                if date_value < start_date:
+                    continue
+
+                next_start = next_start_by_row[idx]
+                if next_start is not None and date_value >= next_start:
+                    # This interval is closed when the next change starts.
+                    continue
+
+                t_years = (date_value - start_date).days / 365.25
+                q_value = float(decline_rate(float(row["qi"]), float(row["di"]), float(row.get("b", 0.0)), t_years))
+                if q_value <= threshold:
+                    q_value = 0.0
+
+                if q_value > best_q + 1e-12:
+                    best_q = q_value
+                    best_idx = idx
+                elif abs(q_value - best_q) <= 1e-12 and q_value > 0.0 and best_idx is not None:
+                    if ranks[idx] < ranks[best_idx]:
+                        best_idx = idx
+
+            selected_q.append(float(best_q))
+            if best_idx is None:
+                selected_categoria.append("")
+                selected_classe.append("")
+                selected_zona.append("")
+            else:
+                selected_categoria.append(str(rows[best_idx].get("categoria", "")))
+                selected_classe.append(str(rows[best_idx].get("classe", "")))
+                selected_zona.append(str(rows[best_idx].get("zona", "")))
+
+        cumulative_points: list[float] = [0.0]
+        for i in range(1, len(common_dates)):
+            dt_days = (common_dates[i] - common_dates[i - 1]).days
+            # Use left-point integration for resolved duplicate series so step
+            # changes (for example, shut-in to re-open) do not create phantom
+            # production before the effective change date.
+            cumulative_value = cumulative_points[-1] + selected_q[i - 1] * dt_days
+            cumulative_points.append(float(cumulative_value))
+
+        min_rank_index = min(range(len(rows)), key=lambda index: ranks[index])
+        representative = rows[min_rank_index]
+        all_categories = " | ".join(
+            sorted({str(row.get("categoria", "")).strip() for row in rows if str(row.get("categoria", "")).strip()})
+        )
+        all_classes = " | ".join(
+            sorted({str(row.get("classe", "")).strip() for row in rows if str(row.get("classe", "")).strip()})
+        )
+
+        t_years_points = np.array(
+            [((date_value - common_dates[0]).days / 365.25) for date_value in common_dates],
+            dtype=float,
+        )
+        resolved_well = {
+            **representative,
+            "categoria": all_categories or str(representative.get("categoria", "")),
+            "classe": all_classes or str(representative.get("classe", "")),
+            "start_date": common_dates[0],
+            "qi": float(selected_q[0]) if selected_q else float(representative.get("qi", 0.0)),
+            "resolved_dates": common_dates,
+            "resolved_t_years": t_years_points.tolist(),
+            "resolved_q": selected_q,
+            "resolved_cum": cumulative_points,
+            "resolved_categoria": selected_categoria,
+            "resolved_classe": selected_classe,
+            "resolved_zona": selected_zona,
+        }
+
+        key = well_name
+        if key in resolved:
+            key = f"{well_name}__{fluid}"
+        resolved[key] = resolved_well
+
+    return resolved
+
+
 def get_threshold(fluid: str) -> float:
     """Return the production threshold by fluid in the same units as the workbook values."""
     return 2.0 if fluid == "gas" else 1.0
+
+
+def qi_source_label(fluid: str) -> str:
+    """Return the source column name used as qi for the given fluid."""
+    return "Qg (M m3/dia)" if fluid == "gas" else "Qo (m3/dia)"
+
+
+def fluid_label(fluid: str) -> str:
+    """Return a user-friendly fluid label for exports."""
+    return "Gás" if fluid == "gas" else "Óleo"
+
+
+def combine_text_field(wells: list[dict[str, Any]], field: str) -> str:
+    """Combine unique text values from a field across wells."""
+    return " | ".join(
+        sorted({str(well.get(field, "")).strip() for well in wells if str(well.get(field, "")).strip()})
+    )
+
+
+def category_bucket(value: object) -> str:
+    """Normalize category values to P1, P2, P3 buckets."""
+    text = normalize_header(value)
+    if text == "p1":
+        return "P1"
+    if text == "p2":
+        return "P2"
+    if text == "p3":
+        return "P3"
+    return ""
+
+
+def build_category_cumulative_series(
+    wells: list[dict[str, Any]],
+    fluid: str,
+) -> tuple[np.ndarray, dict[str, np.ndarray]]:
+    """Build cumulative production series by category (P1/P2/P3) for a fluid."""
+    fluid_wells = [well for well in wells if str(well.get("fluido", "")) == fluid]
+    if not fluid_wells:
+        return np.array([], dtype=object), {"P1": np.array([]), "P2": np.array([]), "P3": np.array([])}
+
+    series_list = [build_decline_series(well, get_threshold(fluid)) for well in fluid_wells]
+    min_start = min(well["start_date"] for well in fluid_wells)
+    max_end = max(series["dates"][-1] for series in series_list)
+
+    common_dates = month_starts_between(min_start, max_end)
+    if not common_dates:
+        common_dates = [min_start]
+    if common_dates[0] != min_start:
+        common_dates = [min_start] + common_dates
+
+    common_dates_array = np.array(common_dates, dtype=object)
+
+    category_cumulative_sum: dict[str, np.ndarray] = {
+        "P1": np.zeros(len(common_dates_array), dtype=float),
+        "P2": np.zeros(len(common_dates_array), dtype=float),
+        "P3": np.zeros(len(common_dates_array), dtype=float),
+    }
+
+    for well, series in zip(fluid_wells, series_list):
+        dates = np.array(series["dates"], dtype=object)
+        cumulative = np.array(series["cum"], dtype=float)
+        if len(dates) == 0:
+            continue
+
+        resolved_category = list(well.get("resolved_categoria", []))
+
+        # Partition each well cumulative increment to the active category at the
+        # beginning of the interval [i-1, i].
+        per_bucket_cum: dict[str, np.ndarray] = {
+            "P1": np.zeros(len(dates), dtype=float),
+            "P2": np.zeros(len(dates), dtype=float),
+            "P3": np.zeros(len(dates), dtype=float),
+        }
+
+        for i in range(1, len(dates)):
+            for bucket in ("P1", "P2", "P3"):
+                per_bucket_cum[bucket][i] = per_bucket_cum[bucket][i - 1]
+
+            delta_cum = float(cumulative[i] - cumulative[i - 1])
+            category_value = resolved_category[i - 1] if (i - 1) < len(resolved_category) else well.get("categoria", "")
+            bucket = category_bucket(category_value)
+            if bucket:
+                per_bucket_cum[bucket][i] += delta_cum
+
+        offsets = np.array([(date_value - well["start_date"]).days for date_value in dates], dtype=float)
+        common_offsets = np.array([(date_value - well["start_date"]).days for date_value in common_dates_array], dtype=float)
+
+        for bucket in ("P1", "P2", "P3"):
+            bucket_cum = per_bucket_cum[bucket]
+            interpolated = np.interp(
+                common_offsets,
+                offsets,
+                bucket_cum,
+                left=0.0,
+                right=float(bucket_cum[-1]),
+            )
+            category_cumulative_sum[bucket] += interpolated
+
+    return common_dates_array, category_cumulative_sum
 
 
 def build_combined_series(wells: list[dict[str, Any]]) -> tuple[np.ndarray, np.ndarray]:
@@ -349,8 +651,8 @@ def build_combined_series(wells: list[dict[str, Any]]) -> tuple[np.ndarray, np.n
             continue
 
         t_years = offset_days[valid_mask] / 365.25
-        q_values = float(well["qi"]) * np.exp(-float(well["di"]) * t_years)
-        q_values = np.where(q_values >= thresholds, q_values, 0.0)
+        q_values = decline_rate(float(well["qi"]), float(well["di"]), float(well.get("b", 0.0)), t_years)
+        q_values = np.where(q_values > thresholds, q_values, 0.0)
         summed_values[valid_mask] += q_values
 
     return common_dates_array, summed_values
@@ -427,8 +729,12 @@ def detect_simultaneous_zone_production(wells: list[dict[str, Any]]) -> list[str
 
         for i in range(len(intervals)):
             start_i, end_i, zone_i = intervals[i]
+            fluid_i = str(rows[i].get("fluido", ""))
             for j in range(i + 1, len(intervals)):
                 start_j, end_j, zone_j = intervals[j]
+                fluid_j = str(rows[j].get("fluido", ""))
+                if fluid_i != fluid_j:
+                    continue
                 if zone_i == zone_j:
                     continue
 
@@ -554,9 +860,7 @@ class ProductionDeclineApp:
         if not matched_wells:
             return []
 
-        if matched_wells[0]["fluido"] != fluid_filter:
-            return []
-        return matched_wells
+        return [well for well in matched_wells if well["fluido"] == fluid_filter]
 
     def show_message(self, message: str) -> None:
         self.axes.clear()
@@ -648,6 +952,7 @@ class ProductionDeclineApp:
             self._add_well_cumulative_sheet(workbook, wells_sorted)
             self._add_fluid_flow_sheet(workbook, wells_sorted)
             self._add_fluid_cumulative_sheet(workbook, wells_sorted)
+            self._add_category_cumulative_sheet(workbook, wells_sorted)
 
             workbook.save(target_path)
         except Exception as exc:  # pragma: no cover - runtime guard
@@ -666,37 +971,66 @@ class ProductionDeclineApp:
 
     def _add_well_flow_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
         sheet = workbook.create_sheet("vazao_pocos")
-        sheet.append(["Data", "Poço", "Fluido", "Zona", "Vazão"])
+        sheet.append(["Data", "Poço", "Fluido", "Categoria", "Classe", "Origem Qi", "Qi utilizado", "Zona", "Vazão"])
 
         for well in wells:
             series = build_decline_series(well, get_threshold(well["fluido"]))
-            for date_value, q_value in zip(series["dates"], series["q"]):
+            qi_source = qi_source_label(str(well["fluido"]))
+            qi_used = float(well["qi"])
+            category_series = list(well.get("resolved_categoria", []))
+            class_series = list(well.get("resolved_classe", []))
+            zone_series = list(well.get("resolved_zona", []))
+            for idx, (date_value, q_value) in enumerate(zip(series["dates"], series["q"])):
+                categoria = category_series[idx] if idx < len(category_series) else str(well.get("categoria", ""))
+                classe = class_series[idx] if idx < len(class_series) else str(well.get("classe", ""))
+                zona = zone_series[idx] if idx < len(zone_series) else str(well.get("zona", ""))
                 sheet.append([
                     format_export_date(date_value),
                     well["name"],
-                    well["fluido"],
-                    well.get("zona", ""),
+                    fluid_label(str(well["fluido"])),
+                    categoria,
+                    classe,
+                    qi_source,
+                    qi_used,
+                    zona,
                     float(q_value),
                 ])
 
     def _add_well_cumulative_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
         sheet = workbook.create_sheet("acumulada_pocos")
-        sheet.append(["Data", "Poço", "Fluido", "Volume acumulado"])
+        sheet.append([
+            "Data",
+            "Poço",
+            "Fluido",
+            "Categoria",
+            "Classe",
+            "Origem Qi",
+            "Qi utilizado",
+            "Volume acumulado",
+        ])
 
         grouped = group_wells_by_name_and_fluid(wells)
         for (well_name, fluid), grouped_wells in sorted(grouped.items()):
             dates, values = build_combined_cumulative_series(grouped_wells)
+            qi_source = qi_source_label(fluid)
+            qi_used = float(sum(float(well["qi"]) for well in grouped_wells))
+            categorias = combine_text_field(grouped_wells, "categoria")
+            classes = combine_text_field(grouped_wells, "classe")
             for date_value, cum_value in zip(dates, values):
                 sheet.append([
                     format_export_date(date_value),
                     well_name,
-                    fluid,
+                    fluid_label(fluid),
+                    categorias,
+                    classes,
+                    qi_source,
+                    qi_used,
                     float(cum_value),
                 ])
 
     def _add_fluid_flow_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
         sheet = workbook.create_sheet("vazao_conc_fluido")
-        sheet.append(["Data", "Fluido", "Vazão concatenada"])
+        sheet.append(["Data", "Fluido", "Categoria", "Classe", "Origem Qi", "Qi utilizado", "Vazão concatenada"])
 
         for fluid in ("gas", "oil"):
             fluid_wells = [well for well in wells if well["fluido"] == fluid]
@@ -704,12 +1038,24 @@ class ProductionDeclineApp:
                 continue
 
             dates, values = build_combined_series(fluid_wells)
+            categorias = combine_text_field(fluid_wells, "categoria")
+            classes = combine_text_field(fluid_wells, "classe")
+            qi_source = qi_source_label(fluid)
+            qi_used = float(sum(float(well["qi"]) for well in fluid_wells))
             for date_value, q_value in zip(dates, values):
-                sheet.append([format_export_date(date_value), fluid, float(q_value)])
+                sheet.append([
+                    format_export_date(date_value),
+                    fluid_label(fluid),
+                    categorias,
+                    classes,
+                    qi_source,
+                    qi_used,
+                    float(q_value),
+                ])
 
     def _add_fluid_cumulative_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
         sheet = workbook.create_sheet("acum_conc_fluido")
-        sheet.append(["Data", "Fluido", "Acumulada concatenada"])
+        sheet.append(["Data", "Fluido", "Categoria", "Classe", "Origem Qi", "Qi utilizado", "Acumulada concatenada"])
 
         for fluid in ("gas", "oil"):
             fluid_wells = [well for well in wells if well["fluido"] == fluid]
@@ -717,8 +1063,45 @@ class ProductionDeclineApp:
                 continue
 
             dates, values = build_combined_cumulative_series(fluid_wells)
+            categorias = combine_text_field(fluid_wells, "categoria")
+            classes = combine_text_field(fluid_wells, "classe")
+            qi_source = qi_source_label(fluid)
+            qi_used = float(sum(float(well["qi"]) for well in fluid_wells))
             for date_value, cum_value in zip(dates, values):
-                sheet.append([format_export_date(date_value), fluid, float(cum_value)])
+                sheet.append([
+                    format_export_date(date_value),
+                    fluid_label(fluid),
+                    categorias,
+                    classes,
+                    qi_source,
+                    qi_used,
+                    float(cum_value),
+                ])
+
+    def _add_category_cumulative_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
+        sheet = workbook.create_sheet("acum_conc_categoria")
+        sheet.append(["Data", "Fluido", "Acumulada P1", "Acumulada P2", "Acumulada P3"])
+
+        for fluid in ("gas", "oil"):
+            dates, category_series = build_category_cumulative_series(wells, fluid)
+            if len(dates) == 0:
+                continue
+
+            values_p1 = category_series.get("P1", np.zeros(len(dates), dtype=float))
+            values_p2 = category_series.get("P2", np.zeros(len(dates), dtype=float))
+            values_p3 = category_series.get("P3", np.zeros(len(dates), dtype=float))
+
+            for idx, date_value in enumerate(dates):
+                p1 = float(values_p1[idx]) if idx < len(values_p1) else 0.0
+                p2 = float(values_p2[idx]) if idx < len(values_p2) else 0.0
+                p3 = float(values_p3[idx]) if idx < len(values_p3) else 0.0
+                sheet.append([
+                    format_export_date(date_value),
+                    fluid_label(fluid),
+                    p1,
+                    p2,
+                    p3,
+                ])
 
     def plot_cumulative(self, wells: list[dict[str, Any]], fluid_filter: str) -> None:
         if self.selected_well.get() == "Todos os poços":
@@ -787,7 +1170,7 @@ def main() -> None:
         for name, well in sorted(wells.items()):
             series = build_decline_series(well, get_threshold(well["fluido"]))
             print(
-                f"{name}: fluid={well['fluido']}, Qi={well['qi']}, Di={well['di']}, "
+                f"{name}: fluid={well['fluido']}, Qi={well['qi']}, Di={well['di']}, b={well.get('b', 0.0)}, "
                 f"end_date={series['dates'][-1].date()}"
             )
         return
