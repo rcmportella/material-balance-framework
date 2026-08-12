@@ -78,6 +78,7 @@ COLUMN_ALIASES = {
     "Qg": ("qg", "qgmm3dia", "qgmm3d", "qgm3dia", "qgm3d"),
     "Qo": ("qo", "qom3dia", "qom3d"),
     "Qw": ("qw", "qwm3dia", "qwm3d"),
+    "Constante": ("constante", "const", "fator", "ratio"),
     "Di": ("di", "di1ano", "diano", "declini", "declinio"),
     "b": ("b",),
 }
@@ -229,6 +230,18 @@ def category_class_priority(categoria: str, classe: str) -> int:
     return 5
 
 
+def infer_constant(fluid: str, qg: float, qo: float, raw_constant: float | None) -> float:
+    """Infer secondary-fluid conversion factor when Constante is not explicitly provided."""
+    if raw_constant is not None:
+        return float(raw_constant)
+
+    if fluid == "gas" and qg > 0.0:
+        return float(qo / qg)
+    if fluid == "oil" and qo > 0.0:
+        return float(qg / qo)
+    return 0.0
+
+
 def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, dict[str, Any]]:
     """Read the well metadata workbook and group the data by well name."""
     workbook = load_workbook(filepath, data_only=True, read_only=True)
@@ -272,6 +285,11 @@ def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, di
             qg = float(row[column_map["Qg"]])
             qo = float(row[column_map["Qo"]])
             qw = float(row[column_map["Qw"]]) if "Qw" in column_map and row[column_map["Qw"]] is not None else 0.0
+            raw_constante = (
+                float(row[column_map["Constante"]])
+                if "Constante" in column_map and row[column_map["Constante"]] not in (None, "")
+                else None
+            )
             di = float(row[column_map["Di"]])
             b = float(row[column_map["b"]])
         except (TypeError, ValueError):
@@ -281,6 +299,7 @@ def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, di
         if fluid not in {"gas", "oil"}:
             continue
 
+        constante = infer_constant(fluid, qg, qo, raw_constante)
         qi = qg if fluid == "gas" else qo
 
         unique_key = well_name
@@ -300,6 +319,7 @@ def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, di
             "qg": qg,
             "qo": qo,
             "qw": qw,
+            "constante": constante,
             "qi": qi,
             "di": di,
             "b": b,
@@ -441,6 +461,7 @@ def resolve_duplicate_well_rows(wells: dict[str, dict[str, Any]]) -> dict[str, d
         selected_categoria: list[str] = []
         selected_classe: list[str] = []
         selected_zona: list[str] = []
+        selected_constante: list[float] = []
 
         for date_value in common_dates:
             best_q = 0.0
@@ -473,10 +494,12 @@ def resolve_duplicate_well_rows(wells: dict[str, dict[str, Any]]) -> dict[str, d
                 selected_categoria.append("")
                 selected_classe.append("")
                 selected_zona.append("")
+                selected_constante.append(0.0)
             else:
                 selected_categoria.append(str(rows[best_idx].get("categoria", "")))
                 selected_classe.append(str(rows[best_idx].get("classe", "")))
                 selected_zona.append(str(rows[best_idx].get("zona", "")))
+                selected_constante.append(float(rows[best_idx].get("constante", 0.0)))
 
         cumulative_points: list[float] = [0.0]
         for i in range(1, len(common_dates)):
@@ -513,6 +536,7 @@ def resolve_duplicate_well_rows(wells: dict[str, dict[str, Any]]) -> dict[str, d
             "resolved_categoria": selected_categoria,
             "resolved_classe": selected_classe,
             "resolved_zona": selected_zona,
+            "resolved_constante": selected_constante,
         }
 
         key = well_name
@@ -545,6 +569,17 @@ def combine_text_field(wells: list[dict[str, Any]], field: str) -> str:
     )
 
 
+def has_secondary_contribution(well: dict[str, Any]) -> bool:
+    """Return whether a well has secondary-fluid contribution via Constante."""
+    if abs(float(well.get("constante", 0.0))) > 0.0:
+        return True
+
+    resolved_const = well.get("resolved_constante", [])
+    if isinstance(resolved_const, list):
+        return any(abs(float(value)) > 0.0 for value in resolved_const)
+    return False
+
+
 def category_bucket(value: object) -> str:
     """Normalize category values to P1, P2, P3 buckets."""
     text = normalize_header(value)
@@ -557,18 +592,38 @@ def category_bucket(value: object) -> str:
     return ""
 
 
+def class_bucket(value: object) -> str:
+    """Normalize class values to PDP, PDNP, PUD, 5PRB, 6POS buckets."""
+    text = normalize_header(value)
+    if text == "pdp":
+        return "PDP"
+    if text == "pdnp":
+        return "PDNP"
+    if text == "pud":
+        return "PUD"
+    if text == "5prb":
+        return "5PRB"
+    if text == "6pos":
+        return "6POS"
+    return ""
+
+
 def build_category_cumulative_series(
     wells: list[dict[str, Any]],
     fluid: str,
 ) -> tuple[np.ndarray, dict[str, np.ndarray]]:
     """Build cumulative production series by category (P1/P2/P3) for a fluid."""
-    fluid_wells = [well for well in wells if str(well.get("fluido", "")) == fluid]
-    if not fluid_wells:
+    contributor_wells = [well for well in wells if (str(well.get("fluido", "")) == fluid) or has_secondary_contribution(well)]
+    if not contributor_wells:
         return np.array([], dtype=object), {"P1": np.array([]), "P2": np.array([]), "P3": np.array([])}
 
-    series_list = [build_decline_series(well, get_threshold(fluid)) for well in fluid_wells]
-    min_start = min(well["start_date"] for well in fluid_wells)
-    max_end = max(series["dates"][-1] for series in series_list)
+    series_list = [build_effective_decline_series(well, fluid) for well in contributor_wells]
+    valid_pairs = [(well, series) for well, series in zip(contributor_wells, series_list) if len(series["dates"]) > 0]
+    if not valid_pairs:
+        return np.array([], dtype=object), {"P1": np.array([]), "P2": np.array([]), "P3": np.array([])}
+
+    min_start = min(well["start_date"] for well, _ in valid_pairs)
+    max_end = max(series["dates"][-1] for _, series in valid_pairs)
 
     common_dates = month_starts_between(min_start, max_end)
     if not common_dates:
@@ -584,7 +639,7 @@ def build_category_cumulative_series(
         "P3": np.zeros(len(common_dates_array), dtype=float),
     }
 
-    for well, series in zip(fluid_wells, series_list):
+    for well, series in valid_pairs:
         dates = np.array(series["dates"], dtype=object)
         cumulative = np.array(series["cum"], dtype=float)
         if len(dates) == 0:
@@ -627,6 +682,159 @@ def build_category_cumulative_series(
     return common_dates_array, category_cumulative_sum
 
 
+def build_class_cumulative_series(
+    wells: list[dict[str, Any]],
+    fluid: str,
+) -> tuple[np.ndarray, dict[str, np.ndarray]]:
+    """Build cumulative production series by class (PDP/PDNP/PUD/5PRB/6POS) for a fluid."""
+    buckets = ("PDP", "PDNP", "PUD", "5PRB", "6POS")
+    contributor_wells = [well for well in wells if (str(well.get("fluido", "")) == fluid) or has_secondary_contribution(well)]
+    if not contributor_wells:
+        return np.array([], dtype=object), {bucket: np.array([]) for bucket in buckets}
+
+    series_list = [build_effective_decline_series(well, fluid) for well in contributor_wells]
+    valid_pairs = [(well, series) for well, series in zip(contributor_wells, series_list) if len(series["dates"]) > 0]
+    if not valid_pairs:
+        return np.array([], dtype=object), {bucket: np.array([]) for bucket in buckets}
+
+    min_start = min(well["start_date"] for well, _ in valid_pairs)
+    max_end = max(series["dates"][-1] for _, series in valid_pairs)
+
+    common_dates = month_starts_between(min_start, max_end)
+    if not common_dates:
+        common_dates = [min_start]
+    if common_dates[0] != min_start:
+        common_dates = [min_start] + common_dates
+
+    common_dates_array = np.array(common_dates, dtype=object)
+    class_cumulative_sum: dict[str, np.ndarray] = {
+        bucket: np.zeros(len(common_dates_array), dtype=float) for bucket in buckets
+    }
+
+    for well, series in valid_pairs:
+        dates = np.array(series["dates"], dtype=object)
+        cumulative = np.array(series["cum"], dtype=float)
+        if len(dates) == 0:
+            continue
+
+        resolved_class = list(well.get("resolved_classe", []))
+        per_bucket_cum: dict[str, np.ndarray] = {
+            bucket: np.zeros(len(dates), dtype=float) for bucket in buckets
+        }
+
+        for i in range(1, len(dates)):
+            for bucket in buckets:
+                per_bucket_cum[bucket][i] = per_bucket_cum[bucket][i - 1]
+
+            delta_cum = float(cumulative[i] - cumulative[i - 1])
+            class_value = resolved_class[i - 1] if (i - 1) < len(resolved_class) else well.get("classe", "")
+            bucket = class_bucket(class_value)
+            if bucket:
+                per_bucket_cum[bucket][i] += delta_cum
+
+        offsets = np.array([(date_value - well["start_date"]).days for date_value in dates], dtype=float)
+        common_offsets = np.array([(date_value - well["start_date"]).days for date_value in common_dates_array], dtype=float)
+
+        for bucket in buckets:
+            bucket_cum = per_bucket_cum[bucket]
+            interpolated = np.interp(
+                common_offsets,
+                offsets,
+                bucket_cum,
+                left=0.0,
+                right=float(bucket_cum[-1]),
+            )
+            class_cumulative_sum[bucket] += interpolated
+
+    return common_dates_array, class_cumulative_sum
+
+
+def build_effective_decline_series(well: dict[str, Any], target_fluid: str) -> dict[str, np.ndarray]:
+    """Return a well series converted to the requested fluid using Constante when needed."""
+    source_fluid = str(well.get("fluido", ""))
+    source_series = build_decline_series(well, get_threshold(source_fluid))
+
+    dates = np.array(source_series["dates"], dtype=object)
+    t_years = np.array(source_series["t_years"], dtype=float)
+    q_source = np.array(source_series["q"], dtype=float)
+
+    if len(dates) == 0:
+        return {"dates": dates, "t_years": t_years, "q": np.array([], dtype=float), "cum": np.array([], dtype=float)}
+
+    if source_fluid == target_fluid:
+        return {
+            "dates": dates,
+            "t_years": t_years,
+            "q": q_source,
+            "cum": np.array(source_series["cum"], dtype=float),
+        }
+
+    resolved_const = list(well.get("resolved_constante", []))
+    if resolved_const:
+        constants = np.array([float(resolved_const[idx]) if idx < len(resolved_const) else float(resolved_const[-1]) for idx in range(len(dates))])
+    else:
+        constants = np.full(len(dates), float(well.get("constante", 0.0)), dtype=float)
+
+    q_effective = q_source * constants
+    cumulative = np.zeros(len(dates), dtype=float)
+    use_left_integration = all(key in well for key in ("resolved_dates", "resolved_q", "resolved_cum"))
+    for i in range(1, len(dates)):
+        dt_days = (dates[i] - dates[i - 1]).days
+        if use_left_integration:
+            cumulative[i] = cumulative[i - 1] + q_effective[i - 1] * dt_days
+        else:
+            cumulative[i] = cumulative[i - 1] + 0.5 * (q_effective[i - 1] + q_effective[i]) * dt_days
+
+    return {
+        "dates": dates,
+        "t_years": t_years,
+        "q": q_effective,
+        "cum": cumulative,
+    }
+
+
+def build_combined_cumulative_series_for_fluid(wells: list[dict[str, Any]], target_fluid: str) -> tuple[np.ndarray, np.ndarray]:
+    """Aggregate cumulative volume for the target fluid including secondary-fluid conversion via Constante."""
+    contributor_wells = [well for well in wells if (str(well.get("fluido", "")) == target_fluid) or has_secondary_contribution(well)]
+    if not contributor_wells:
+        return np.array([], dtype=object), np.array([], dtype=float)
+
+    series_list = [build_effective_decline_series(well, target_fluid) for well in contributor_wells]
+    valid_pairs = [(well, series) for well, series in zip(contributor_wells, series_list) if len(series["dates"]) > 0]
+    if not valid_pairs:
+        return np.array([], dtype=object), np.array([], dtype=float)
+
+    min_start = min(well["start_date"] for well, _ in valid_pairs)
+    max_end = max(series["dates"][-1] for _, series in valid_pairs)
+
+    common_dates = month_starts_between(min_start, max_end)
+    if not common_dates:
+        common_dates = [min_start]
+    if common_dates[0] != min_start:
+        common_dates = [min_start] + common_dates
+
+    common_dates_array = np.array(common_dates, dtype=object)
+    summed_values = np.zeros(len(common_dates_array), dtype=float)
+
+    for well, series in valid_pairs:
+        offsets = np.array([(date_value - well["start_date"]).days for date_value in series["dates"]], dtype=float)
+        cumulative = np.array(series["cum"], dtype=float)
+        if len(offsets) == 0:
+            continue
+
+        common_offsets = np.array([(date_value - well["start_date"]).days for date_value in common_dates_array], dtype=float)
+        interpolated = np.interp(
+            common_offsets,
+            offsets,
+            cumulative,
+            left=0.0,
+            right=float(cumulative[-1]),
+        )
+        summed_values += interpolated
+
+    return common_dates_array, summed_values
+
+
 def build_combined_series(wells: list[dict[str, Any]]) -> tuple[np.ndarray, np.ndarray]:
     """Aggregate the decline rates for all wells of a given fluid on a common time grid."""
     if not wells:
@@ -654,6 +862,48 @@ def build_combined_series(wells: list[dict[str, Any]]) -> tuple[np.ndarray, np.n
         q_values = decline_rate(float(well["qi"]), float(well["di"]), float(well.get("b", 0.0)), t_years)
         q_values = np.where(q_values > thresholds, q_values, 0.0)
         summed_values[valid_mask] += q_values
+
+    return common_dates_array, summed_values
+
+
+def build_combined_series_for_fluid(wells: list[dict[str, Any]], target_fluid: str) -> tuple[np.ndarray, np.ndarray]:
+    """Aggregate flow rate for the target fluid including secondary-fluid conversion via Constante."""
+    contributor_wells = [well for well in wells if (str(well.get("fluido", "")) == target_fluid) or has_secondary_contribution(well)]
+    if not contributor_wells:
+        return np.array([], dtype=object), np.array([], dtype=float)
+
+    series_list = [build_effective_decline_series(well, target_fluid) for well in contributor_wells]
+    valid_pairs = [(well, series) for well, series in zip(contributor_wells, series_list) if len(series["dates"]) > 0]
+    if not valid_pairs:
+        return np.array([], dtype=object), np.array([], dtype=float)
+
+    min_start = min(well["start_date"] for well, _ in valid_pairs)
+    max_end = max(series["dates"][-1] for _, series in valid_pairs)
+
+    common_dates = month_starts_between(min_start, max_end)
+    if not common_dates:
+        common_dates = [min_start]
+    if common_dates[0] != min_start:
+        common_dates = [min_start] + common_dates
+
+    common_dates_array = np.array(common_dates, dtype=object)
+    summed_values = np.zeros(len(common_dates_array), dtype=float)
+
+    for well, series in valid_pairs:
+        offsets = np.array([(date_value - well["start_date"]).days for date_value in series["dates"]], dtype=float)
+        q_values = np.array(series["q"], dtype=float)
+        if len(offsets) == 0:
+            continue
+
+        common_offsets = np.array([(date_value - well["start_date"]).days for date_value in common_dates_array], dtype=float)
+        interpolated = np.interp(
+            common_offsets,
+            offsets,
+            q_values,
+            left=0.0,
+            right=0.0,
+        )
+        summed_values += interpolated
 
     return common_dates_array, summed_values
 
@@ -854,13 +1104,13 @@ class ProductionDeclineApp:
 
         selected_name = self.selected_well.get()
         if selected_name == "Todos os poços":
-            return [well for well in self.wells.values() if well["fluido"] == fluid_filter]
+            return list(self.wells.values())
 
         matched_wells = [well for well in self.wells.values() if well["name"] == selected_name]
         if not matched_wells:
             return []
 
-        return [well for well in matched_wells if well["fluido"] == fluid_filter]
+        return matched_wells
 
     def show_message(self, message: str) -> None:
         self.axes.clear()
@@ -875,19 +1125,6 @@ class ProductionDeclineApp:
             return
 
         wells = self.get_filtered_wells()
-        selected_name = self.selected_well.get()
-        if selected_name != "Todos os poços":
-            wells_with_same_name = [well for well in self.wells.values() if well["name"] == selected_name]
-            if not wells_with_same_name:
-                self.show_message("Poço não encontrado.")
-                return
-
-            if not any(well["fluido"] == fluid_filter for well in wells_with_same_name):
-                self.show_message(
-                    f"O poço '{selected_name}' não possui o fluido selecionado ({'gás' if fluid_filter == 'gas' else 'óleo'})."
-                )
-                return
-
         if not wells:
             self.show_message("Nenhum poço encontrado para a seleção.")
             return
@@ -904,7 +1141,10 @@ class ProductionDeclineApp:
 
     def plot_flow(self, wells: list[dict[str, Any]], fluid_filter: str) -> None:
         if self.selected_well.get() == "Todos os poços":
-            dates, values = build_combined_series(wells)
+            dates, values = build_combined_series_for_fluid(wells, fluid_filter)
+            if len(dates) == 0:
+                self.show_message("Nenhum dado disponível para o fluido selecionado.")
+                return
             self.axes.plot(dates, values, linewidth=2.0, color="tab:blue")
             self.axes.set_title("Vazão consolidada por fluido")
             self.axes.set_ylabel("Vazão (Mm3/dia)" if fluid_filter == "gas" else "Vazão (m3/dia)")
@@ -912,16 +1152,19 @@ class ProductionDeclineApp:
             self.axes.grid(True, alpha=0.3)
             return
 
-        for well in wells:
-            series = build_decline_series(well, get_threshold(well["fluido"]))
-            self.axes.plot(series["dates"], series["q"], marker="o", linewidth=1.8, label=well["name"])
+        selected_name = self.selected_well.get()
+        dates, values = build_combined_series_for_fluid(wells, fluid_filter)
+        if len(dates) == 0:
+            self.show_message("Nenhum dado disponível para o fluido selecionado.")
+            return
+
+        self.axes.plot(dates, values, marker="o", linewidth=1.8, label=selected_name)
 
         self.axes.set_title("Vazão prevista por poço")
         self.axes.set_ylabel("Vazão (Mm3/dia)" if fluid_filter == "gas" else "Vazão (m3/dia)")
         self.axes.set_xlabel("Data")
         self.axes.grid(True, alpha=0.3)
-        if len(wells) > 1:
-            self.axes.legend(loc="best")
+        self.axes.legend(loc="best")
 
     def export_results(self) -> None:
         """Export well-level and fluid-concatenated flow/cumulative data to Excel."""
@@ -953,6 +1196,7 @@ class ProductionDeclineApp:
             self._add_fluid_flow_sheet(workbook, wells_sorted)
             self._add_fluid_cumulative_sheet(workbook, wells_sorted)
             self._add_category_cumulative_sheet(workbook, wells_sorted)
+            self._add_class_cumulative_sheet(workbook, wells_sorted)
 
             workbook.save(target_path)
         except Exception as exc:  # pragma: no cover - runtime guard
@@ -971,61 +1215,90 @@ class ProductionDeclineApp:
 
     def _add_well_flow_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
         sheet = workbook.create_sheet("vazao_pocos")
-        sheet.append(["Data", "Poço", "Fluido", "Categoria", "Classe", "Origem Qi", "Qi utilizado", "Zona", "Vazão"])
+        sheet.append(["Data", "Poço", "Categoria", "Classe", "Zona", "Qg", "Qo"])
 
-        for well in wells:
-            series = build_decline_series(well, get_threshold(well["fluido"]))
-            qi_source = qi_source_label(str(well["fluido"]))
-            qi_used = float(well["qi"])
-            category_series = list(well.get("resolved_categoria", []))
-            class_series = list(well.get("resolved_classe", []))
-            zone_series = list(well.get("resolved_zona", []))
-            for idx, (date_value, q_value) in enumerate(zip(series["dates"], series["q"])):
-                categoria = category_series[idx] if idx < len(category_series) else str(well.get("categoria", ""))
-                classe = class_series[idx] if idx < len(class_series) else str(well.get("classe", ""))
-                zona = zone_series[idx] if idx < len(zone_series) else str(well.get("zona", ""))
+        well_names = sorted({str(well["name"]) for well in wells})
+        for well_name in well_names:
+            grouped_wells = [well for well in wells if str(well["name"]) == well_name]
+            categorias = combine_text_field(grouped_wells, "categoria")
+            classes = combine_text_field(grouped_wells, "classe")
+            zonas = combine_text_field(grouped_wells, "zona")
+
+            dates_g, qg_values = build_combined_series_for_fluid(grouped_wells, "gas")
+            dates_o, qo_values = build_combined_series_for_fluid(grouped_wells, "oil")
+
+            all_dates = sorted(set(dates_g.tolist()) | set(dates_o.tolist()))
+            if not all_dates:
+                continue
+
+            all_dates_array = np.array(all_dates, dtype=object)
+            base_date = min(well["start_date"] for well in grouped_wells)
+            target_offsets = np.array([(date_value - base_date).days for date_value in all_dates_array], dtype=float)
+
+            if len(dates_g) > 0:
+                gas_offsets = np.array([(date_value - base_date).days for date_value in dates_g], dtype=float)
+                qg_aligned = np.interp(target_offsets, gas_offsets, qg_values, left=0.0, right=0.0)
+            else:
+                qg_aligned = np.zeros(len(all_dates_array), dtype=float)
+
+            if len(dates_o) > 0:
+                oil_offsets = np.array([(date_value - base_date).days for date_value in dates_o], dtype=float)
+                qo_aligned = np.interp(target_offsets, oil_offsets, qo_values, left=0.0, right=0.0)
+            else:
+                qo_aligned = np.zeros(len(all_dates_array), dtype=float)
+
+            for idx, date_value in enumerate(all_dates_array):
                 sheet.append([
                     format_export_date(date_value),
-                    well["name"],
-                    fluid_label(str(well["fluido"])),
-                    categoria,
-                    classe,
-                    qi_source,
-                    qi_used,
-                    zona,
-                    float(q_value),
+                    well_name,
+                    categorias,
+                    classes,
+                    zonas,
+                    float(qg_aligned[idx]),
+                    float(qo_aligned[idx]),
                 ])
 
     def _add_well_cumulative_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
         sheet = workbook.create_sheet("acumulada_pocos")
-        sheet.append([
-            "Data",
-            "Poço",
-            "Fluido",
-            "Categoria",
-            "Classe",
-            "Origem Qi",
-            "Qi utilizado",
-            "Volume acumulado",
-        ])
+        sheet.append(["Data", "Poço", "Categoria", "Classe", "Gp", "Np"])
 
-        grouped = group_wells_by_name_and_fluid(wells)
-        for (well_name, fluid), grouped_wells in sorted(grouped.items()):
-            dates, values = build_combined_cumulative_series(grouped_wells)
-            qi_source = qi_source_label(fluid)
-            qi_used = float(sum(float(well["qi"]) for well in grouped_wells))
+        well_names = sorted({str(well["name"]) for well in wells})
+        for well_name in well_names:
+            grouped_wells = [well for well in wells if str(well["name"]) == well_name]
             categorias = combine_text_field(grouped_wells, "categoria")
             classes = combine_text_field(grouped_wells, "classe")
-            for date_value, cum_value in zip(dates, values):
+
+            dates_g, gp_values = build_combined_cumulative_series_for_fluid(grouped_wells, "gas")
+            dates_o, np_values = build_combined_cumulative_series_for_fluid(grouped_wells, "oil")
+
+            all_dates = sorted(set(dates_g.tolist()) | set(dates_o.tolist()))
+            if not all_dates:
+                continue
+
+            all_dates_array = np.array(all_dates, dtype=object)
+            base_date = min(well["start_date"] for well in grouped_wells)
+            target_offsets = np.array([(date_value - base_date).days for date_value in all_dates_array], dtype=float)
+
+            if len(dates_g) > 0:
+                gas_offsets = np.array([(date_value - base_date).days for date_value in dates_g], dtype=float)
+                gp_aligned = np.interp(target_offsets, gas_offsets, gp_values, left=0.0, right=float(gp_values[-1]))
+            else:
+                gp_aligned = np.zeros(len(all_dates_array), dtype=float)
+
+            if len(dates_o) > 0:
+                oil_offsets = np.array([(date_value - base_date).days for date_value in dates_o], dtype=float)
+                np_aligned = np.interp(target_offsets, oil_offsets, np_values, left=0.0, right=float(np_values[-1]))
+            else:
+                np_aligned = np.zeros(len(all_dates_array), dtype=float)
+
+            for idx, date_value in enumerate(all_dates_array):
                 sheet.append([
                     format_export_date(date_value),
                     well_name,
-                    fluid_label(fluid),
                     categorias,
                     classes,
-                    qi_source,
-                    qi_used,
-                    float(cum_value),
+                    float(gp_aligned[idx]),
+                    float(np_aligned[idx]),
                 ])
 
     def _add_fluid_flow_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
@@ -1033,15 +1306,16 @@ class ProductionDeclineApp:
         sheet.append(["Data", "Fluido", "Categoria", "Classe", "Origem Qi", "Qi utilizado", "Vazão concatenada"])
 
         for fluid in ("gas", "oil"):
-            fluid_wells = [well for well in wells if well["fluido"] == fluid]
-            if not fluid_wells:
+            dates, values = build_combined_series_for_fluid(wells, fluid)
+            if len(dates) == 0:
                 continue
 
-            dates, values = build_combined_series(fluid_wells)
-            categorias = combine_text_field(fluid_wells, "categoria")
-            classes = combine_text_field(fluid_wells, "classe")
+            contributor_wells = [well for well in wells if (str(well.get("fluido", "")) == fluid) or has_secondary_contribution(well)]
+            primary_wells = [well for well in contributor_wells if str(well.get("fluido", "")) == fluid]
+            categorias = combine_text_field(contributor_wells, "categoria")
+            classes = combine_text_field(contributor_wells, "classe")
             qi_source = qi_source_label(fluid)
-            qi_used = float(sum(float(well["qi"]) for well in fluid_wells))
+            qi_used = float(sum(float(well.get("qi", 0.0)) for well in primary_wells))
             for date_value, q_value in zip(dates, values):
                 sheet.append([
                     format_export_date(date_value),
@@ -1058,15 +1332,16 @@ class ProductionDeclineApp:
         sheet.append(["Data", "Fluido", "Categoria", "Classe", "Origem Qi", "Qi utilizado", "Acumulada concatenada"])
 
         for fluid in ("gas", "oil"):
-            fluid_wells = [well for well in wells if well["fluido"] == fluid]
-            if not fluid_wells:
+            dates, values = build_combined_cumulative_series_for_fluid(wells, fluid)
+            if len(dates) == 0:
                 continue
 
-            dates, values = build_combined_cumulative_series(fluid_wells)
-            categorias = combine_text_field(fluid_wells, "categoria")
-            classes = combine_text_field(fluid_wells, "classe")
+            contributor_wells = [well for well in wells if (str(well.get("fluido", "")) == fluid) or has_secondary_contribution(well)]
+            primary_wells = [well for well in contributor_wells if str(well.get("fluido", "")) == fluid]
+            categorias = combine_text_field(contributor_wells, "categoria")
+            classes = combine_text_field(contributor_wells, "classe")
             qi_source = qi_source_label(fluid)
-            qi_used = float(sum(float(well["qi"]) for well in fluid_wells))
+            qi_used = float(sum(float(well["qi"]) for well in primary_wells))
             for date_value, cum_value in zip(dates, values):
                 sheet.append([
                     format_export_date(date_value),
@@ -1103,9 +1378,40 @@ class ProductionDeclineApp:
                     p3,
                 ])
 
+    def _add_class_cumulative_sheet(self, workbook: Workbook, wells: list[dict[str, Any]]) -> None:
+        sheet = workbook.create_sheet("acum_conc_classe")
+        sheet.append(["Data", "Fluido", "Acumulada PDP", "Acumulada PDNP", "Acumulada PUD", "Acumulada 5PRB", "Acumulada 6POS"])
+
+        for fluid in ("gas", "oil"):
+            dates, class_series = build_class_cumulative_series(wells, fluid)
+            if len(dates) == 0:
+                continue
+
+            values_pdp = class_series.get("PDP", np.zeros(len(dates), dtype=float))
+            values_pdnp = class_series.get("PDNP", np.zeros(len(dates), dtype=float))
+            values_pud = class_series.get("PUD", np.zeros(len(dates), dtype=float))
+            values_5prb = class_series.get("5PRB", np.zeros(len(dates), dtype=float))
+            values_6pos = class_series.get("6POS", np.zeros(len(dates), dtype=float))
+
+            for idx, date_value in enumerate(dates):
+                pdp = float(values_pdp[idx]) if idx < len(values_pdp) else 0.0
+                pdnp = float(values_pdnp[idx]) if idx < len(values_pdnp) else 0.0
+                pud = float(values_pud[idx]) if idx < len(values_pud) else 0.0
+                c5prb = float(values_5prb[idx]) if idx < len(values_5prb) else 0.0
+                c6pos = float(values_6pos[idx]) if idx < len(values_6pos) else 0.0
+                sheet.append([
+                    format_export_date(date_value),
+                    fluid_label(fluid),
+                    pdp,
+                    pdnp,
+                    pud,
+                    c5prb,
+                    c6pos,
+                ])
+
     def plot_cumulative(self, wells: list[dict[str, Any]], fluid_filter: str) -> None:
         if self.selected_well.get() == "Todos os poços":
-            dates, values = build_combined_cumulative_series(wells)
+            dates, values = build_combined_cumulative_series_for_fluid(list(self.wells.values()), fluid_filter)
             self.axes.plot(dates, values, linewidth=2.0, color="tab:green")
             self.axes.set_title("Volume acumulado consolidado")
             self.axes.set_ylabel("Volume acumulado (m3)" if fluid_filter == "oil" else "Volume acumulado (Mm3)")
@@ -1113,10 +1419,10 @@ class ProductionDeclineApp:
             self.axes.grid(True, alpha=0.3)
             return
 
-        grouped = group_wells_by_name_and_fluid(wells)
-        for (well_name, _), grouped_wells in sorted(grouped.items()):
-            dates, values = build_combined_cumulative_series(grouped_wells)
-            self.axes.plot(dates, values, marker="o", linewidth=1.8, label=well_name)
+        selected_name = self.selected_well.get()
+        grouped_wells = [well for well in self.wells.values() if str(well["name"]) == selected_name]
+        dates, values = build_combined_cumulative_series_for_fluid(grouped_wells, fluid_filter)
+        self.axes.plot(dates, values, marker="o", linewidth=1.8, label=selected_name)
 
         self.axes.set_title("Volume produzido acumulado")
         self.axes.set_ylabel("Volume acumulado (m3)" if fluid_filter == "oil" else "Volume acumulado (Mm3)")

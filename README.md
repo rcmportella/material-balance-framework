@@ -328,6 +328,7 @@ The output workbook includes:
 - `vazao_conc_fluido`
 - `acum_conc_fluido`
 - `acum_conc_categoria`
+- `acum_conc_classe`
 
 `acum_conc_categoria` is exported in wide format:
 
@@ -339,6 +340,16 @@ The output workbook includes:
 
 The sum `P1 + P2 + P3` is numerically consistent with the fluid total cumulative
 (subject only to floating-point tolerance).
+
+`acum_conc_classe` is exported in wide format:
+
+- Data
+- Fluido
+- Acumulada PDP
+- Acumulada PDNP
+- Acumulada PUD
+- Acumulada 5PRB
+- Acumulada 6POS
 
 ## Material Balance Equations
 
