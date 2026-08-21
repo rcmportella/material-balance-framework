@@ -295,29 +295,27 @@ The extrapolation end date is hard-coded to `31/12/2052`.
 
 ### Shut-in threshold behavior
 
-- Gas threshold: `2.0`
-- Oil threshold: `1.0`
+- Gas threshold: user-configurable in the GUI (default `0.0`)
+- Oil threshold: user-configurable in the GUI (default `0.0`)
 
 If `qi` is at or below threshold, the interval starts shut-in (`q = 0`).
 During extrapolation, if `q <= threshold`, production is shut-in from that point.
+Threshold changes can be applied from the GUI and trigger a full extrapolation refresh.
 
 ### Duplicate rows for the same well
 
-When the same well appears in multiple rows, the app resolves an effective well series
-with the following rules:
+When the same well appears in multiple rows, the app supports two extrapolation modes:
 
-1. Priority order (best first):
-    - P1 + PDP
-    - P1 + PDNP
-    - P1 + PUD
-    - P2 (any class)
-    - P3 (any class)
-2. On overlapping dates, use the highest rate.
-3. If rates tie, use the priority above.
-4. Each interval is truncated at the next start date for that well (including fluid switches).
+1. `Sequencial (encerra produção anterior)`:
+    - uses priority order (`P1+PDP`, `P1+PDNP`, `P1+PUD`, `P2`, `P3`),
+    - resolves overlaps using highest rate (then priority on ties),
+    - truncates the previous interval at the next start date.
+2. `Independente (soma às produções anteriores)`:
+    - keeps prior intervals active,
+    - sums active contributions for the same well over time,
+    - integrates cumulative production with trapezoidal integration for smoother declines.
 
-This ensures that when a well changes interval/fluid, the previous interval does not
-reactivate later.
+The extrapolation mode can be changed directly in the GUI.
 
 ### Exports
 
@@ -326,6 +324,8 @@ The output workbook includes:
 - `vazao_pocos`
 - `acumulada_pocos`
 - `vazao_conc_fluido`
+- `vazao_conc_categoria`
+- `vazao_conc_classe`
 - `acum_conc_fluido`
 - `acum_conc_categoria`
 - `acum_conc_classe`
@@ -337,6 +337,13 @@ The output workbook includes:
 - Acumulada P1
 - Acumulada P2
 - Acumulada P3
+
+`vazao_conc_categoria` is exported in wide format with the corresponding
+instantaneous flow columns `Vazão P1`, `Vazão P2`, and `Vazão P3`.
+
+`vazao_conc_classe` is exported in wide format with the corresponding
+instantaneous flow columns `Vazão PDP`, `Vazão PDNP`, `Vazão PUD`, `Vazão 5PRB`,
+and `Vazão 6POS`.
 
 The sum `P1 + P2 + P3` is numerically consistent with the fluid total cumulative
 (subject only to floating-point tolerance).
@@ -596,6 +603,7 @@ This repository was updated with a major improvement to the Excel-based well his
 - Implemented fit export/import to Excel (`decline_fits` sheet), including fit mode and interval metadata.
 - Improved import compatibility with both label styles (`Qg/Qo/Qw`) and internal names (`Qgm/Qom/Qwm`), plus whitespace normalization.
 - Fixed loaded-fit plotting issues by preserving aligned `fit_dates` and `fit_values` from reconstructed fits during import.
+- Added a `Load Workbook` button in the GUI to replace the currently loaded dataset without restarting the app.
 
 Sample fit and data workbooks were also included/updated in this commit to preserve reproducibility of the GUI flow.
 

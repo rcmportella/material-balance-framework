@@ -580,7 +580,8 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
     controls = ttk.Frame(root, padding=10)
     controls.pack(fill="x")
 
-    ttk.Label(controls, text=f"Workbook: {workbook_path.name}").pack(side="left", padx=(0, 16))
+    workbook_label_text = tk.StringVar(value=f"Workbook: {workbook_path.name}")
+    ttk.Label(controls, textvariable=workbook_label_text).pack(side="left", padx=(0, 16))
     ttk.Label(controls, text="Well:").pack(side="left")
 
     well_names = [*sorted(wells), "All Wells"]
@@ -701,6 +702,48 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
     decline_results: list[dict[str, Any]] = []
     well_fit_overlays: dict[str, list[dict[str, Any]]] = {}
+
+    def load_new_workbook() -> None:
+        nonlocal wells, workbook_path
+
+        if filedialog is None:
+            fit_status.set("File dialog unavailable to load workbook")
+            return
+
+        selected_path = filedialog.askopenfilename(
+            title="Select new Excel workbook",
+            filetypes=[("Excel files", "*.xlsx *.xlsm *.xls")],
+            initialdir=str(workbook_path.parent),
+        )
+        if not selected_path:
+            fit_status.set("Workbook load cancelled")
+            return
+
+        candidate = Path(selected_path)
+        try:
+            loaded_wells = read_workbook(candidate)
+        except Exception as exc:
+            fit_status.set(f"Failed to load workbook: {exc}")
+            return
+
+        previous_well = selected_well.get()
+
+        wells = loaded_wells
+        workbook_path = candidate
+        workbook_label_text.set(f"Workbook: {workbook_path.name}")
+
+        new_well_names = [*sorted(wells), "All Wells"]
+        well_combo["values"] = new_well_names
+        if previous_well in new_well_names:
+            selected_well.set(previous_well)
+        else:
+            selected_well.set(new_well_names[0] if new_well_names else "All Wells")
+
+        decline_results.clear()
+        well_fit_overlays.clear()
+        refresh_interval_options()
+        update_plot()
+        fit_status.set(f"Workbook loaded: {workbook_path.name}")
 
     def date_to_str(value: datetime) -> str:
         return value.strftime("%Y-%m-%d")
@@ -1111,6 +1154,9 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
     export_button = ttk.Button(controls, text="Export Fits", command=export_decline_results)
     export_button.pack(side="left", padx=(6, 0))
+
+    load_workbook_button = ttk.Button(controls, text="Load Workbook", command=load_new_workbook)
+    load_workbook_button.pack(side="left", padx=(6, 0))
 
     well_combo.bind("<<ComboboxSelected>>", refresh_interval_options)
     well_combo.bind("<<ComboboxSelected>>", update_plot, add="+")
