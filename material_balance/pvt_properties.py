@@ -149,7 +149,7 @@ class CorrelationsPVT:
             Bo: Oil formation volume factor (m3/m3 std)
         """
         T_F = T * 9/5 + 32  # Convert to Fahrenheit for correlation
-        Rs_scf_stb = Rs * 178.107  # Convert m3/m3 to scf/stb
+        Rs_scf_stb = Rs / 0.178107  # Convert m3/m3 to scf/stb
         F = Rs_scf_stb * (gamma_g / gamma_o)**0.5 + 1.25 * T_F
         Bo = 0.9759 + 0.00012 * F**1.2
         return Bo
@@ -170,9 +170,12 @@ class CorrelationsPVT:
         """
         P_psia = P * 14.2233  # Convert to psia
         T_F = T * 9/5 + 32  # Convert to Fahrenheit
-        x = 0.0125 * gamma_o / gamma_g * (P_psia**0.83 * 10**(0.00091*T_F - 0.0125*gamma_o))
+        # Standing returns Rs in SCF/STB. Convert it using
+        # 1 SCF/STB = 0.178107 m3/m3 std.
+        API = 141.5 / gamma_o - 131.5
+        x = (P_psia / 18.2 + 1.4) * 10**(0.0125 * API - 0.00091 * T_F)
         Rs_scf_stb = gamma_g * x**1.2048
-        Rs = Rs_scf_stb / 178.107  # Convert scf/stb to m3/m3
+        Rs = Rs_scf_stb * 0.178107  # Convert scf/stb to m3/m3
         return Rs
     
     @staticmethod
@@ -202,13 +205,14 @@ class CorrelationsPVT:
         
         # Initial guess
         y = 0.001
-        
+        t = 1 / Tpr
+
         # Newton-Raphson iteration
         for _ in range(20):
-            A = 0.06125 * Ppr * np.exp(-1.2 * (1 - 1/Tpr)**2) / Tpr
-            B = 14.76 * (1 - 1/Tpr) - 9.76 * (1 - 1/Tpr)**2 + 4.58 * (1 - 1/Tpr)**3
-            C = 90.7 * (1 - 1/Tpr) - 242.2 * (1 - 1/Tpr)**2 + 42.4 * (1 - 1/Tpr)**3
-            D = 2.18 + 2.82 * (1 - 1/Tpr)
+            A = 0.06125 * Ppr * t * np.exp(-1.2 * (1 - t)**2)
+            B = 14.76 * t - 9.76 * t**2 + 4.58 * t**3
+            C = 90.7 * t - 242.2 * t**2 + 42.4 * t**3
+            D = 2.18 + 2.82 * t
             
             F = -A + (y + y**2 + y**3 - y**4) / (1 - y)**3 - B*y**2 + C*y**D
             dF = (1 + 4*y + 4*y**2 - 4*y**3 + y**4) / (1 - y)**4 - 2*B*y + C*D*y**(D-1)
@@ -240,6 +244,64 @@ class CorrelationsPVT:
         # At standard conditions: P_sc = 1.0332 kgf/cm2, T_sc = 288.15 K
         Bg = 0.00351 * z * T / P  # Simplified coefficient for metric units
         return Bg
+
+    @staticmethod
+    def gas_viscosity_lee_gonzalez_eakin(P: float, T: float, gamma_g: float, z: float) -> float:
+        """
+        Lee-Gonzalez-Eakin correlation for natural gas viscosity.
+
+        Args:
+            P: Pressure (kgf/cm2)
+            T: Temperature (K)
+            gamma_g: Gas specific gravity (air=1)
+            z: Gas compressibility factor (dimensionless)
+
+        Returns:
+            mu_g: Gas viscosity (cP)
+        """
+        # Convert to field units for correlation
+        P_psia = P * 14.2233
+        T_R = T * 1.8
+
+        MW_g = gamma_g * 28.97  # lb/lbmol
+        rho_g = (P_psia * MW_g) / (z * 10.73 * T_R)  # lb/ft3
+
+        Kv = (9.379 + 0.01607 * MW_g) * T_R**1.5 / (209.2 + 19.26 * MW_g + T_R)
+        Xv = 3.448 + 986.4 / T_R + 0.01009 * MW_g
+        Yv = 2.447 - 0.2224 * Xv
+
+        mu_g = 1e-4 * Kv * np.exp(Xv * (rho_g / 62.4)**Yv)
+        return mu_g
+
+    @staticmethod
+    def oil_viscosity_beggs_robinson(API: float, T: float, Rs: float) -> float:
+        """
+        Beggs-Robinson correlation for saturated (dead + live) oil viscosity.
+
+        Args:
+            API: Oil API gravity
+            T: Temperature (°C)
+            Rs: Solution GOR (m3/m3 std)
+
+        Returns:
+            mu_ob: Saturated oil viscosity (cP)
+        """
+        # Convert to field units for correlation
+        T_F = T * 9 / 5 + 32
+        T_R = T_F + 459.67
+        Rs_scf_stb = Rs / 0.178107
+
+        # Dead oil viscosity
+        Z = 3.0324 - 0.02023 * API
+        Y = 10**Z
+        x = Y * (T_R - 460)**(-1.163)
+        mu_od = 10**x - 1
+
+        # Saturated oil viscosity
+        a = 10.715 * (Rs_scf_stb + 100)**(-0.515)
+        b = 5.44 * (Rs_scf_stb + 150)**(-0.338)
+        mu_ob = a * mu_od**b
+        return mu_ob
     
     @staticmethod
     def vasquez_beggs_Bo(Rs: float, gamma_g: float, gamma_o: float, T: float, P: float, 
@@ -262,7 +324,7 @@ class CorrelationsPVT:
         """
         # Convert to field units
         T_F = T * 9/5 + 32
-        Rs_scf_stb = Rs * 178.107
+        Rs_scf_stb = Rs / 0.178107
         sep_p_psia = separator_pressure * 14.2233
         
         # Correct gas gravity to 100 psi separator
@@ -275,3 +337,101 @@ class CorrelationsPVT:
         
         Bo = 1.0 + C1 * Rs_scf_stb + (T_F - 60) * (API / gamma_gs) * (C2 + C3 * Rs_scf_stb)
         return Bo
+
+    @staticmethod
+    def vasquez_beggs_co(P: float, Rs: float, gamma_g: float, API: float, T: float) -> float:
+        """Calculate oil compressibility using the Vasquez-Beggs correlation.
+
+        Inputs use the metric conventions of this module: pressure in kgf/cm2,
+        solution GOR in m3/m3 std and temperature in degrees C. The result is
+        returned in 1/(kgf/cm2).
+        """
+        if P <= 0 or Rs < 0 or gamma_g <= 0 or API <= 0:
+            raise ValueError("P, Rs, gamma_g and API must be positive values.")
+
+        pressure_psia = P * 14.2233
+        rs_scf_stb = Rs / 0.178107
+        temperature_f = T * 9 / 5 + 32
+        numerator = -1433 + 5 * rs_scf_stb + 17.2 * temperature_f - 1180 * gamma_g + 12.61 * API
+        compressibility_psi = numerator / (100000 * pressure_psia)
+        return compressibility_psi * 14.2233
+
+    @staticmethod
+    def vasquez_beggs_oil_pvt(
+        pressures: np.ndarray,
+        temperature_c: float,
+        bubble_point_pressure: float,
+        gamma_g: float,
+        API: float,
+    ) -> dict[str, np.ndarray]:
+        """Calculate saturated and undersaturated oil PVT properties.
+
+        Below or at the bubble point, Standing Rs and Vasquez-Beggs Bo are
+        used. Above the bubble point, Rs remains equal to Rsb and Bo is
+        calculated from the traditional compressibility relation, integrated
+        from Bob at the bubble point. Returned arrays are ordered like
+        ``pressures`` and use metric units.
+        """
+        pressure_array = np.asarray(pressures, dtype=float)
+        if pressure_array.ndim != 1 or pressure_array.size == 0:
+            raise ValueError("pressures must be a non-empty one-dimensional array.")
+        if bubble_point_pressure <= 0:
+            raise ValueError("bubble_point_pressure must be greater than zero.")
+        if API <= 0 or API > 100 or gamma_g <= 0:
+            raise ValueError("API must be between 0 and 100, and gamma_g must be positive.")
+
+        gamma_o = 141.5 / (API + 131.5)
+
+        rs_at_bubble = CorrelationsPVT.standing_Rs(
+            bubble_point_pressure, gamma_g, gamma_o, temperature_c
+        )
+        bo_at_bubble = CorrelationsPVT.vasquez_beggs_Bo(
+            rs_at_bubble, gamma_g, gamma_o, temperature_c, bubble_point_pressure, API
+        )
+
+        rs_values = np.empty_like(pressure_array)
+        bo_values = np.empty_like(pressure_array)
+        co_values = np.empty_like(pressure_array)
+        saturated = pressure_array <= bubble_point_pressure
+
+        for index, pressure in enumerate(pressure_array):
+            if saturated[index]:
+                rs_values[index] = CorrelationsPVT.standing_Rs(
+                    pressure, gamma_g, gamma_o, temperature_c
+                )
+                bo_values[index] = CorrelationsPVT.vasquez_beggs_Bo(
+                    rs_values[index], gamma_g, gamma_o, temperature_c, pressure, API
+                )
+            else:
+                rs_values[index] = rs_at_bubble
+            co_values[index] = CorrelationsPVT.vasquez_beggs_co(
+                pressure, rs_values[index], gamma_g, API, temperature_c
+            )
+
+        above_indices = np.flatnonzero(~saturated)
+        if above_indices.size:
+            above_pressures = pressure_array[above_indices]
+            order = np.argsort(above_pressures)
+            sorted_pressures = above_pressures[order]
+            sorted_co = co_values[above_indices][order]
+            integration_pressures = np.concatenate(([bubble_point_pressure], sorted_pressures))
+            integration_co = np.concatenate((
+                [CorrelationsPVT.vasquez_beggs_co(
+                    bubble_point_pressure, rs_at_bubble, gamma_g, API, temperature_c
+                )],
+                sorted_co,
+            ))
+            expansion = np.zeros(integration_pressures.size)
+            expansion[1:] = np.cumsum(
+                0.5 * (integration_co[1:] + integration_co[:-1])
+                * np.diff(integration_pressures)
+            )
+            bo_values[above_indices[order]] = bo_at_bubble * np.exp(-expansion[1:])
+
+        return {
+            "Rs": rs_values,
+            "Bo": bo_values,
+            "co": co_values,
+            "Rsb": np.array([rs_at_bubble]),
+            "Bob": np.array([bo_at_bubble]),
+        }
