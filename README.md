@@ -27,8 +27,11 @@ A comprehensive Python framework for calculating initial volumes in-place (STOII
   - Standing correlation (Bo, Rs)
   - Vasquez-Beggs correlation (Bo)
   - Hall-Yarborough correlation (Z-factor)
+  - Lee-Gonzalez-Eakin correlation (gas viscosity)
+  - Beggs-Robinson correlation (oil viscosity)
   - Formation volume factor calculations
 - Support for measured PVT data
+- **PVT Table Generator GUI** ([material_balance/PVT_table.py](material_balance/PVT_table.py)) with plotting, Excel export and OPM/Eclipse (`PVDG`/`PVTO`) export
 
 ### Darcy Radial Flow
 - **Oil flow rate calculations** using Darcy's Law
@@ -68,6 +71,7 @@ PetroleumEngineering/
 │   ├── oil_reservoir.py         # Oil reservoir material balance
 │   ├── gas_reservoir.py         # Gas reservoir material balance
 │   ├── pvt_properties.py        # PVT properties and correlations
+│   ├── PVT_table.py             # PVT table generator GUI (Excel/OPM export)
 │   └── utils.py                 # Utility functions
 ├── examples/
 │   └── example_usage.py         # Example scripts
@@ -654,4 +658,29 @@ Optional headless mode:
 
 ```bash
 python examples/extrapola_producao_pocos.py --headless [workbook_path]
+```
+
+## New App: PVT Table Generator (2026-08-27)
+
+A dedicated Tkinter GUI for generating pressure-dependent PVT tables and exporting them for use in Excel or reservoir simulators:
+
+- Script: [material_balance/PVT_table.py](material_balance/PVT_table.py)
+- Correlations used: Vasquez-Beggs/Standing (Bo, Rs), Hall-Yarborough (Z), Lee-Gonzalez-Eakin (gas viscosity), Beggs-Robinson (oil viscosity)
+
+### What It Does
+
+- Calculates `Bo`, `Bg`, `Rs`, `Z`, `co`, gas viscosity (`mu_g`) and oil viscosity (`mu_o`) across a pressure range at a fixed temperature, honoring the bubble point pressure.
+- Plots all properties against pressure in a single window.
+- Lets you pick a **METRIC** (bar, m³, °C) or **FIELD** (psia, bbl, scf, °F) unit system for inputs, plots and Excel export; viscosities are always in cP and API/gamma_g are unaffected (dimensionless).
+- Closes the underlying matplotlib figure and forces the process to exit when the window is closed, so it doesn't linger in the terminal.
+
+### Exports
+
+- **Excel**: full property table plus an input-parameters sheet, using the selected unit system's units.
+- **OPM/Eclipse keywords**: `PVDG` (gas pressure, Bg, gas viscosity) and `PVTO` (Rs, bubble point pressure, oil FVF, oil viscosity), written in the currently selected unit system (METRIC: bar and sm3/sm3; FIELD: psia, rb/Mscf and Mscf/stb). Pressures above the bubble point are appended as undersaturated continuation rows under the highest-Rs row, per the format's requirements.
+
+### Run
+
+```bash
+python material_balance/PVT_table.py
 ```
