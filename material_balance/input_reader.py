@@ -9,6 +9,7 @@ Users can prepare their input files in Excel (save as CSV) or any text editor.
 
 import json
 import csv
+import unicodedata
 import numpy as np
 from pathlib import Path
 from typing import Dict, List, Optional, Any
@@ -27,6 +28,15 @@ class InputReader:
     - Production history from CSV files
     - Reservoir configuration from JSON files
     """
+
+    @staticmethod
+    def _detect_csv_delimiter(filepath: Path) -> str:
+        with filepath.open('r', encoding='utf-8-sig', newline='') as csv_file:
+            sample = csv_file.read(8192)
+        try:
+            return csv.Sniffer().sniff(sample, delimiters=',;').delimiter
+        except csv.Error:
+            return ','
     
     @staticmethod
     def read_pvt_from_csv(filepath: str, unit_system: UnitSystem = UnitSystem.METRIC) -> PVTProperties:
@@ -56,9 +66,14 @@ class InputReader:
         
         # Read CSV file
         data = {}
-        with open(filepath, 'r') as f:
-            reader = csv.DictReader(f)
+        with open(filepath, 'r', encoding='utf-8-sig', newline='') as f:
+            reader = csv.DictReader(f, delimiter=InputReader._detect_csv_delimiter(filepath))
             for row in reader:
+                if not row or all(
+                    not value or value.strip().startswith('#')
+                    for value in row.values()
+                ):
+                    continue
                 for key, value in row.items():
                     key = key.strip()
                     if key not in data:
@@ -89,6 +104,88 @@ class InputReader:
                 pvt_kwargs[prop] = data[prop]
         
         return PVTProperties(**pvt_kwargs)
+
+    @staticmethod
+    def read_pvt_from_excel(filepath: str, unit_system: UnitSystem = UnitSystem.METRIC) -> PVTProperties:
+        """Read the PVT worksheet exported by ``PVT_table.py``."""
+        from openpyxl import load_workbook
+
+        filepath = Path(filepath)
+        if not filepath.exists():
+            raise FileNotFoundError(f"PVT file not found: {filepath}")
+
+        workbook = load_workbook(filepath, read_only=True, data_only=True)
+        try:
+            sheet = workbook['PVT'] if 'PVT' in workbook.sheetnames else workbook.active
+            headers = list(next(sheet.iter_rows(min_row=1, max_row=1, values_only=True), ()))
+
+            def normalize_header(value: Any) -> str:
+                text = unicodedata.normalize('NFKD', str(value or ''))
+                text = ''.join(char for char in text if not unicodedata.combining(char))
+                return text.split('(', 1)[0].strip().casefold().replace(' ', '_')
+
+            aliases = {
+                'pressure': 'pressure', 'pressao': 'pressure',
+                'bo': 'Bo', 'bg': 'Bg', 'rs': 'Rs', 'z': 'z', 'co': 'co',
+                'bw': 'Bw', 'cw': 'cw', 'cf': 'cf', 'cg': 'cg',
+            }
+            columns = {
+                index: aliases[normalize_header(header)]
+                for index, header in enumerate(headers)
+                if normalize_header(header) in aliases
+            }
+            if 'pressure' not in columns.values():
+                raise ValueError("PVT Excel sheet must contain a pressure column")
+
+            values_by_property = {name: [] for name in columns.values()}
+            for row in sheet.iter_rows(min_row=2, values_only=True):
+                if not row or all(value is None for value in row):
+                    continue
+                for index, name in columns.items():
+                    value = row[index] if index < len(row) else None
+                    if value is None:
+                        raise ValueError(f"PVT Excel column '{name}' contains an empty value")
+                    values_by_property[name].append(float(value))
+
+            if not values_by_property.get('pressure'):
+                raise ValueError("PVT Excel sheet contains no data rows")
+            if not {'Bo', 'Rs'}.issubset(values_by_property):
+                raise ValueError("PVT Excel sheet must contain Bo and Rs columns")
+
+            workbook_unit_system = unit_system
+            if 'Parâmetros' in workbook.sheetnames:
+                parameter_sheet = workbook['Parâmetros']
+                for label, value in parameter_sheet.iter_rows(min_col=1, max_col=2, values_only=True):
+                    normalized_label = normalize_header(label)
+                    if normalized_label == 'sistema_de_unidades' and value:
+                        workbook_unit_system = UnitSystem[str(value).strip().upper()]
+                        break
+
+            pressure_header = str(headers[next(
+                index for index, name in columns.items() if name == 'pressure'
+            )]).casefold()
+            if 'bar' in pressure_header:
+                values_by_property['pressure'] = [value / 0.980665 for value in values_by_property['pressure']]
+                if 'co' in values_by_property:
+                    values_by_property['co'] = [value * 0.980665 for value in values_by_property['co']]
+
+            return PVTProperties(
+                pressure=values_by_property.pop('pressure'),
+                unit_system=workbook_unit_system,
+                **values_by_property,
+            )
+        finally:
+            workbook.close()
+
+    @staticmethod
+    def read_pvt_from_file(filepath: str, unit_system: UnitSystem = UnitSystem.METRIC) -> PVTProperties:
+        """Read PVT data from CSV or the Excel format exported by ``PVT_table.py``."""
+        suffix = Path(filepath).suffix.casefold()
+        if suffix == '.csv':
+            return InputReader.read_pvt_from_csv(filepath, unit_system)
+        if suffix in {'.xlsx', '.xlsm'}:
+            return InputReader.read_pvt_from_excel(filepath, unit_system)
+        raise ValueError("PVT file must be a CSV, XLSX, or XLSM file")
     
     @staticmethod
     def read_production_from_csv(filepath: str, 
@@ -122,9 +219,14 @@ class InputReader:
         
         # Read CSV file
         data = {}
-        with open(filepath, 'r') as f:
-            reader = csv.DictReader(f)
+        with open(filepath, 'r', encoding='utf-8-sig', newline='') as f:
+            reader = csv.DictReader(f, delimiter=InputReader._detect_csv_delimiter(filepath))
             for row in reader:
+                if not row or all(
+                    not value or value.strip().startswith('#')
+                    for value in row.values()
+                ):
+                    continue
                 for key, value in row.items():
                     key = key.strip()
                     if key not in data:
@@ -218,7 +320,7 @@ class InputReader:
         unit_system = config.get('unit_system', UnitSystem.METRIC)
         
         # Read PVT properties
-        pvt = InputReader.read_pvt_from_csv(pvt_file, unit_system)
+        pvt = InputReader.read_pvt_from_file(pvt_file, unit_system)
         
         # Read production data
         production = InputReader.read_production_from_csv(

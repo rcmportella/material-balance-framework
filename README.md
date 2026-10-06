@@ -78,6 +78,20 @@ PetroleumEngineering/
 └── README.md                    # This file
 ```
 
+## File-Driven Oil Material Balance
+
+Run the desktop app from the project root:
+
+```bash
+python -m material_balance.oil_material_balance_app
+```
+
+Select a PVT file and production-history CSV, then enter the reservoir properties in the GUI: unit system, initial pressure, reservoir temperature, gas-cap ratio `m`, water compressibility `cw`, formation compressibility `cf`, and initial water saturation `Swi`. The `cw` and `cf` inputs use the framework's internal units of 1/(kgf/cm²), for either selected unit system; defaults are `4.3e-5` and `1.4223e-5`. `Swi` is a fraction and defaults to `0.2`. GUI `cw` and `cf` values take precedence over any such values in the PVT file.
+
+The PVT file can be an XLSX exported by `PVT_table.py` or a CSV with `pressure`, `Bo`, `Rs`, and optional `Bg`, `Bw`, `cw`, and `cf` columns. The XLSX reader uses the workbook's unit-system metadata and converts metric pressure in bar to the framework's internal kgf/cm². The GUI unit selection defines the units for PVT and production CSV data. Both comma- and semicolon-delimited CSV files are accepted. Production CSVs use `time,Np,Gp,Wp,pressure` columns.
+
+Results are displayed and exported in the selected unit system: FIELD uses psia, STB, SCF, and reservoir barrels (rb); METRIC uses kgf/cm² and m³. The table and export include the Havlena–Odeh terms `F`, `Eo`, `Eg`, `mEg`, `Efw`, and `Et`, plus pointwise STOIIP. Expansion terms are dimensionless. The plot shows underground withdrawal `F` against full expansion `Et = Eo + m * Eg + Efw`. The aquifer checkbox is informational only: water-influx history `We` is not currently supplied by this app.
+
 ## Quick Start
 
 ### Example 1: Oil Reservoir

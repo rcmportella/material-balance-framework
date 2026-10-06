@@ -72,7 +72,10 @@ class OilReservoir:
                  reservoir_temperature: float,
                  m: float = 0.0,
                  aquifer_influx: bool = False,
-                 unit_system: UnitSystem = UnitSystem.METRIC):
+                 unit_system: UnitSystem = UnitSystem.METRIC,
+                 cw: Optional[float] = None,
+                 cf: Optional[float] = None,
+                 swi: float = 0.2):
         """
         Initialize Oil Reservoir Material Balance Calculator.
         
@@ -83,6 +86,9 @@ class OilReservoir:
             m: Gas cap size ratio (G/N*Boi), default 0 for undersaturated
             aquifer_influx: Whether to consider aquifer influx
             unit_system: Unit system for input/output (METRIC or FIELD)
+            cw: Water compressibility in 1/(kgf/cm2); PVT/default value if omitted
+            cf: Formation compressibility in 1/(kgf/cm2); PVT/default value if omitted
+            swi: Initial water saturation, as a fraction
         """
         self.pvt = pvt_properties
         self.unit_system = unit_system
@@ -93,6 +99,9 @@ class OilReservoir:
         self.T = self.converter.temperature_to_kelvin(reservoir_temperature, unit_system)
         self.m = m
         self.aquifer_influx = aquifer_influx
+        self.cw = cw
+        self.cf = cf
+        self.swi = swi
         
         # Get initial properties (already in metric from PVT)
         self.initial_props = pvt_properties.get_properties_at_pressure(self.Pi)
@@ -137,18 +146,17 @@ class OilReservoir:
         Eo = (Bo - self.Boi) + (self.Rsi - Rs) * Bg
         
         # Gas cap expansion term
-        if self.m > 0 and self.Bgi is not None:
+        if self.Bgi is not None:
             Eg = self.Boi * ((Bg / self.Bgi) - 1)
         else:
             Eg = 0.0
         
         # Water and formation expansion term
-        cw = props.get('cw', 43e-6)  # Default water compressibility (1/(kgf/cm2))
-        cf = props.get('cf', 43e-6)  # Default formation compressibility (1/(kgf/cm2))
-        Swi = 0.2  # Initial water saturation (can be made a parameter)
+        cw = self.cw if self.cw is not None else props.get('cw', 43e-6)
+        cf = self.cf if self.cf is not None else props.get('cf', 14.223e-6)
         
         delta_P = self.Pi - pressure
-        Efw = (1 + self.m) * self.Boi * (cw * Swi + cf) * delta_P
+        Efw = (1 + self.m) * self.Boi * (cw * self.swi + cf) * delta_P
         
         return Eo, Eg, Efw
     
