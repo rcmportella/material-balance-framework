@@ -78,6 +78,22 @@ PetroleumEngineering/
 └── README.md                    # This file
 ```
 
+## Desktop Application Launcher
+
+Start the application hub from the project root:
+
+```bash
+python Petroleum_Engineering_Apps.py
+```
+
+The launcher opens the Oil Material Balance, Gas P/Z Analysis, PVT Table Generator, Corey Relative Permeability, Production Decline, and Well Production Viewer applications. Each tool opens in its own window; closing the launcher also closes the applications it started.
+
+### Corey Relative Permeability
+
+The relative-permeability app generates water-oil Corey curves for `SWOF` and gas-oil Corey curves for `SGOF`. Set connate/critical and residual-oil saturations, endpoint relative permeabilities, Corey exponents, and the number of saturation points. Curves are plotted interactively; export either table or both as OPM/Eclipse keyword blocks. Saturation and relative permeability are dimensionless, and exported capillary pressure is set to zero.
+
+For each phase pair, effective saturation is clipped to [0, 1]. The wetting/gas curve is `kr = kr_endpoint * Se**n`; the oil curve is `kro = kro_endpoint * (1 - Se)**no`. These are Corey two-phase curves and do not model hysteresis, capillary pressure, or three-phase interpolation.
+
 ## File-Driven Oil Material Balance
 
 Run the desktop app from the project root:
@@ -88,9 +104,11 @@ python -m material_balance.oil_material_balance_app
 
 Select a PVT file and production-history CSV, then enter the reservoir properties in the GUI: unit system, initial pressure, reservoir temperature, gas-cap ratio `m`, water compressibility `cw`, formation compressibility `cf`, and initial water saturation `Swi`. The `cw` and `cf` inputs use the framework's internal units of 1/(kgf/cm²), for either selected unit system; defaults are `4.3e-5` and `1.4223e-5`. `Swi` is a fraction and defaults to `0.2`. GUI `cw` and `cf` values take precedence over any such values in the PVT file.
 
-The PVT file can be an XLSX exported by `PVT_table.py` or a CSV with `pressure`, `Bo`, `Rs`, and optional `Bg`, `Bw`, `cw`, and `cf` columns. The XLSX reader uses the workbook's unit-system metadata and converts metric pressure in bar to the framework's internal kgf/cm². The GUI unit selection defines the units for PVT and production CSV data. Both comma- and semicolon-delimited CSV files are accepted. Production CSVs use `time,Np,Gp,Wp,pressure` columns.
+The PVT file can be an XLSX exported by `PVT_table.py` or a CSV with `pressure`, `Bo`, `Rs`, and optional `Bg`, `Bw`, `cw`, and `cf` columns. The XLSX reader uses the workbook's unit-system metadata and converts metric pressure in bar to the framework's internal kgf/cm². The GUI unit selection defines the units for PVT and production CSV data. Both comma- and semicolon-delimited CSV files are accepted. Production CSVs require `time,Np,Gp,Wp,pressure`; optional cumulative columns are `Winj`, `Ginj`, and `We`. Omitted optional columns default to zero.
 
-Results are displayed and exported in the selected unit system: FIELD uses psia, STB, SCF, and reservoir barrels (rb); METRIC uses kgf/cm² and m³. The table and export include the Havlena–Odeh terms `F`, `Eo`, `Eg`, `mEg`, `Efw`, and `Et`, plus pointwise STOIIP. Expansion terms are dimensionless. The plot shows underground withdrawal `F` against full expansion `Et = Eo + m * Eg + Efw`. The aquifer checkbox is informational only: water-influx history `We` is not currently supplied by this app.
+`Np`, `Gp`, `Wp`, `Winj`, and `Ginj` use surface/standard volumes in the selected unit system. `We` is cumulative aquifer influx at reservoir conditions (`m³` in METRIC or `rb` in FIELD), not injected water. Positive `We` reduces net withdrawal. The app calculates `F = Np*Bo + (Gp - Np*Rs)*Bg + Wp*Bw - Winj*Bw - Ginj*Bg - We`. Injection reservoir volumes use the current pressure's PVT `Bw`/`Bg`; separate injection-condition formation-volume factors are not modeled.
+
+Results are displayed and exported in the selected unit system: FIELD uses psia, STB, SCF, and reservoir barrels (rb); METRIC uses kgf/cm² and m³. The table and export include production withdrawal, water/gas injection reservoir-volume terms, `We`, net `F`, the Havlena–Odeh expansion terms `Eo`, `Eg`, `mEg`, `Efw`, and `Et`, plus pointwise STOIIP. Expansion terms are dimensionless. The plot shows net underground withdrawal `F` against full expansion `Et = Eo + m * Eg + Efw`.
 
 ## Quick Start
 

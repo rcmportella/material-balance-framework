@@ -21,6 +21,9 @@ class ProductionData:
     Wp: np.ndarray    # Cumulative water production
     pressure: np.ndarray  # Average reservoir pressure
     unit_system: UnitSystem = UnitSystem.METRIC  # Unit system for input data
+    Winj: Optional[np.ndarray] = None  # Cumulative injected water at surface conditions
+    Ginj: Optional[np.ndarray] = None  # Cumulative injected gas at standard conditions
+    We: Optional[np.ndarray] = None  # Cumulative aquifer influx at reservoir conditions
     
     def __post_init__(self):
         """Convert lists to numpy arrays and convert to metric units if needed"""
@@ -30,17 +33,34 @@ class ProductionData:
         
         # Convert volumes
         self.Np = np.array(self.Np)
-        self.Np = converter.oil_volume_to_metric(self.Np, self.unit_system)
+        self.Np = np.atleast_1d(converter.oil_volume_to_metric(self.Np, self.unit_system))
         
         self.Gp = np.array(self.Gp)
-        self.Gp = converter.gas_volume_to_metric(self.Gp, self.unit_system)
+        self.Gp = np.atleast_1d(converter.gas_volume_to_metric(self.Gp, self.unit_system))
         
         self.Wp = np.array(self.Wp)
-        self.Wp = converter.oil_volume_to_metric(self.Wp, self.unit_system)
+        self.Wp = np.atleast_1d(converter.oil_volume_to_metric(self.Wp, self.unit_system))
+
+        self.Winj = np.zeros_like(self.Wp) if self.Winj is None else np.array(self.Winj)
+        self.Winj = np.atleast_1d(
+            converter.oil_volume_to_metric(self.Winj, self.unit_system)
+        )
+
+        self.Ginj = np.zeros_like(self.Gp) if self.Ginj is None else np.array(self.Ginj)
+        self.Ginj = np.atleast_1d(
+            converter.gas_volume_to_metric(self.Ginj, self.unit_system)
+        )
+
+        self.We = np.zeros_like(self.Wp) if self.We is None else np.array(self.We)
+        self.We = np.atleast_1d(
+            converter.reservoir_volume_to_metric(self.We, self.unit_system)
+        )
         
         # Convert pressure
         self.pressure = np.array(self.pressure)
-        self.pressure = converter.pressure_to_metric(self.pressure, self.unit_system)
+        self.pressure = np.atleast_1d(
+            converter.pressure_to_metric(self.pressure, self.unit_system)
+        )
         
         # After conversion, all internal data is in metric units
         self.unit_system = UnitSystem.METRIC
@@ -51,19 +71,24 @@ class OilReservoir:
     Oil Reservoir Material Balance Calculator
     
     Implements the general material balance equation:
-    N = (Np*Bo + (Gp - Np*Rs)*Bg + Wp*Bw) / (Eo + m*Eg + Efw)
+    N = (Np*Bo + (Gp - Np*Rs)*Bg + Wp*Bw - Winj*Bw - Ginj*Bg - We)
+        / (Eo + m*Eg + Efw)
     
     Where:
         N = Initial oil in place (m3 std)
         Np = Cumulative oil produced (m3 std)
         Gp = Cumulative gas produced (m3 std)
         Wp = Cumulative water produced (m3 std)
+        Winj = Cumulative water injected (m3 std)
+        Ginj = Cumulative gas injected (m3 std)
+        We = Cumulative aquifer influx at reservoir conditions (m3)
         Bo, Bg, Bw = Formation volume factors (m3/m3 std)
         Rs = Solution gas-oil ratio (m3/m3 std)
         m = Ratio of initial gas cap volume to initial oil volume
         Eo = Oil expansion term
         Eg = Gas cap expansion term
         Efw = Water and formation expansion term
+        Positive Winj, Ginj, and We reduce net underground withdrawal F
     """
     
     def __init__(self, 
@@ -115,6 +140,7 @@ class OilReservoir:
         self.Efw_values = []
         self.Et_values = []
         self.F_values = []
+        self.withdrawal_terms_values = {}
         self.pressure_values = []
         
         # Last calculated values (for backward compatibility)
@@ -123,6 +149,7 @@ class OilReservoir:
         self.Efw = None
         self.Et = None
         self.F = None
+        self.withdrawal_terms = {}
         self.last_pressure = None
         
     def calculate_expansion_terms(self, pressure: float) -> Tuple[float, float, float]:
@@ -160,12 +187,47 @@ class OilReservoir:
         
         return Eo, Eg, Efw
     
+    def _calculate_withdrawal_terms(
+        self,
+        Np: float,
+        Gp: float,
+        Wp: float,
+        pressure: float,
+        Winj: float = 0.0,
+        Ginj: float = 0.0,
+        We: float = 0.0,
+    ) -> dict[str, float]:
+        props = self.pvt.get_properties_at_pressure(pressure)
+        Bo = props['Bo']
+        Rs = props['Rs']
+        Bg = props.get('Bg', 0)
+        Bw = props.get('Bw', 1.0)
+
+        terms = {
+            'oil_production': Np * Bo,
+            'free_gas_production': (Gp - Np * Rs) * Bg,
+            'water_production': Wp * Bw,
+            'water_injection': Winj * Bw,
+            'gas_injection': Ginj * Bg,
+            'water_influx': We,
+        }
+        terms['production_total'] = sum(
+            terms[name] for name in ('oil_production', 'free_gas_production', 'water_production')
+        )
+        terms['F'] = (
+            terms['production_total'] - terms['water_injection']
+            - terms['gas_injection'] - terms['water_influx']
+        )
+        return terms
+
     def calculate_STOIIP(self, 
                         Np: float, 
                         Gp: float, 
                         Wp: float, 
                         pressure: float,
-                        We: float = 0.0) -> float:
+                        We: float = 0.0,
+                        Winj: float = 0.0,
+                        Ginj: float = 0.0) -> float:
         """
         Calculate Stock Tank Oil Initially In Place (STOIIP).
         
@@ -173,24 +235,21 @@ class OilReservoir:
             Np: Cumulative oil produced (m3 std)
             Gp: Cumulative gas produced (m3 std)
             Wp: Cumulative water produced (m3 std)
+            Winj: Cumulative water injected (m3 std)
+            Ginj: Cumulative gas injected (m3 std)
             pressure: Current average reservoir pressure (kgf/cm2)
-            We: Cumulative water influx from aquifer (m3), default 0
+            We: Cumulative aquifer influx at reservoir conditions (m3), default 0
             
         Returns:
             N: Initial oil in place (m3 std)
         """
-        # Get properties at current pressure
-        props = self.pvt.get_properties_at_pressure(pressure)
-        Bo = props['Bo']
-        Rs = props['Rs']
-        Bg = props.get('Bg', 0)
-        Bw = props.get('Bw', 1.0)
-        
         # Calculate expansion terms
         Eo, Eg, Efw = self.calculate_expansion_terms(pressure)
         
-        # Underground withdrawal
-        F = Np * Bo + (Gp - Np * Rs) * Bg + Wp * Bw - We
+        self.withdrawal_terms = self._calculate_withdrawal_terms(
+            Np, Gp, Wp, pressure, Winj=Winj, Ginj=Ginj, We=We
+        )
+        F = self.withdrawal_terms['F']
         
         # Total expansion
         Et = Eo + self.m * Eg + Efw
@@ -238,10 +297,15 @@ class OilReservoir:
         self.Efw_values = []
         self.Et_values = []
         self.F_values = []
+        term_names = (
+            'oil_production', 'free_gas_production', 'water_production',
+            'water_injection', 'gas_injection', 'water_influx', 'production_total',
+        )
+        self.withdrawal_terms_values = {name: [] for name in term_names}
         self.pressure_values = []
         
         if We_values is None:
-            We_values = np.zeros(n_points)
+            We_values = production_data.We
         
         for i in range(n_points):
             try:
@@ -250,7 +314,9 @@ class OilReservoir:
                     Gp=production_data.Gp[i],
                     Wp=production_data.Wp[i],
                     pressure=production_data.pressure[i],
-                    We=We_values[i]
+                    We=We_values[i],
+                    Winj=production_data.Winj[i],
+                    Ginj=production_data.Ginj[i],
                 )
                 # Store expansion terms for this point
                 self.Eo_values.append(self.Eo)
@@ -258,6 +324,8 @@ class OilReservoir:
                 self.Efw_values.append(self.Efw)
                 self.Et_values.append(self.Et)
                 self.F_values.append(self.F)
+                for name in term_names:
+                    self.withdrawal_terms_values[name].append(self.withdrawal_terms[name])
                 self.pressure_values.append(production_data.pressure[i])
             except Exception as e:
                 print(f"Warning: Could not calculate STOIIP at point {i}: {e}")
@@ -268,6 +336,8 @@ class OilReservoir:
                 self.Efw_values.append(np.nan)
                 self.Et_values.append(np.nan)
                 self.F_values.append(np.nan)
+                for name in term_names:
+                    self.withdrawal_terms_values[name].append(np.nan)
                 self.pressure_values.append(production_data.pressure[i])
         
         # Calculate statistics (excluding NaN values)
@@ -314,19 +384,14 @@ class OilReservoir:
         Et_values = np.zeros(n_points)
         
         if We_values is None:
-            We_values = np.zeros(n_points)
+            We_values = production_data.We
         
         for i in range(n_points):
-            props = self.pvt.get_properties_at_pressure(production_data.pressure[i])
-            Bo = props['Bo']
-            Rs = props['Rs']
-            Bg = props.get('Bg', 0)
-            Bw = props.get('Bw', 1.0)
-            
-            # Underground withdrawal
-            F_values[i] = (production_data.Np[i] * Bo + 
-                          (production_data.Gp[i] - production_data.Np[i] * Rs) * Bg + 
-                          production_data.Wp[i] * Bw - We_values[i])
+            F_values[i] = self._calculate_withdrawal_terms(
+                production_data.Np[i], production_data.Gp[i], production_data.Wp[i],
+                production_data.pressure[i], Winj=production_data.Winj[i],
+                Ginj=production_data.Ginj[i], We=We_values[i],
+            )['F']
             
             # Total expansion
             Eo, Eg, Efw = self.calculate_expansion_terms(production_data.pressure[i])
@@ -386,20 +451,16 @@ class OilReservoir:
         n_points = len(production_data.time)
         
         if We_values is None:
-            We_values = np.zeros(n_points)
+            We_values = production_data.We
         
         # Calculate F values (independent of m)
         F_values = np.zeros(n_points)
         for i in range(n_points):
-            props = self.pvt.get_properties_at_pressure(production_data.pressure[i])
-            Bo = props['Bo']
-            Rs = props['Rs']
-            Bg = props.get('Bg', 0)
-            Bw = props.get('Bw', 1.0)
-            
-            F_values[i] = (production_data.Np[i] * Bo + 
-                          (production_data.Gp[i] - production_data.Np[i] * Rs) * Bg + 
-                          production_data.Wp[i] * Bw - We_values[i])
+            F_values[i] = self._calculate_withdrawal_terms(
+                production_data.Np[i], production_data.Gp[i], production_data.Wp[i],
+                production_data.pressure[i], Winj=production_data.Winj[i],
+                Ginj=production_data.Ginj[i], We=We_values[i],
+            )['F']
         
         # Calculate Eo and Eg for each pressure point
         Eo_values = np.zeros(n_points)
@@ -495,20 +556,16 @@ class OilReservoir:
         n_points = len(production_data.time)
         
         if We_values is None:
-            We_values = np.zeros(n_points)
+            We_values = production_data.We
         
         # Calculate F values (independent of m)
         F_values = np.zeros(n_points)
         for i in range(n_points):
-            props = self.pvt.get_properties_at_pressure(production_data.pressure[i])
-            Bo = props['Bo']
-            Rs = props['Rs']
-            Bg = props.get('Bg', 0)
-            Bw = props.get('Bw', 1.0)
-            
-            F_values[i] = (production_data.Np[i] * Bo + 
-                          (production_data.Gp[i] - production_data.Np[i] * Rs) * Bg + 
-                          production_data.Wp[i] * Bw - We_values[i])
+            F_values[i] = self._calculate_withdrawal_terms(
+                production_data.Np[i], production_data.Gp[i], production_data.Wp[i],
+                production_data.pressure[i], Winj=production_data.Winj[i],
+                Ginj=production_data.Ginj[i], We=We_values[i],
+            )['F']
         
         # Calculate Eo and Eg for each pressure point
         Eo_values = np.zeros(n_points)

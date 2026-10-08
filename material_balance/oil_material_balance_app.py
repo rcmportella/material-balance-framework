@@ -98,23 +98,42 @@ def export_analysis_csv(
         writer = csv.writer(output_file)
         writer.writerow([
             'time_days', f'pressure_{pressure_unit}', f'Np_{oil_unit}', f'Gp_{gas_unit}',
-            f'Wp_{oil_unit}', 'Eo', 'Eg', 'mEg', 'Eo_plus_mEg', 'Efw', 'Et',
-            f'F_{reservoir_volume_unit}', f'STOIIP_{oil_unit}',
+            f'Wp_{oil_unit}', f'Winj_{oil_unit}', f'Ginj_{gas_unit}',
+            f'We_{reservoir_volume_unit}', 'Eo', 'Eg', 'mEg', 'Eo_plus_mEg', 'Efw', 'Et',
+            f'F_production_{reservoir_volume_unit}',
+            f'F_water_injection_{reservoir_volume_unit}',
+            f'F_gas_injection_{reservoir_volume_unit}',
+            f'F_net_{reservoir_volume_unit}', f'STOIIP_{oil_unit}',
         ])
         for index, stoiip in enumerate(stoiip_values):
             pressure = converter.pressure_from_metric(production.pressure[index], unit_system)
             oil_production = converter.oil_volume_from_metric(production.Np[index], unit_system)
             gas_production = converter.gas_volume_from_metric(production.Gp[index], unit_system)
             water_production = converter.oil_volume_from_metric(production.Wp[index], unit_system)
+            water_injection = converter.oil_volume_from_metric(production.Winj[index], unit_system)
+            gas_injection = converter.gas_volume_from_metric(production.Ginj[index], unit_system)
+            water_influx = converter.reservoir_volume_from_metric(production.We[index], unit_system)
             withdrawal = converter.reservoir_volume_from_metric(reservoir.F_values[index], unit_system)
+            terms = reservoir.withdrawal_terms_values
+            production_withdrawal = converter.reservoir_volume_from_metric(
+                terms['production_total'][index], unit_system
+            )
+            water_injection_term = converter.reservoir_volume_from_metric(
+                terms['water_injection'][index], unit_system
+            )
+            gas_injection_term = converter.reservoir_volume_from_metric(
+                terms['gas_injection'][index], unit_system
+            )
             stoiip_output = converter.oil_volume_from_metric(stoiip, unit_system)
             writer.writerow([
                 production.time[index], pressure, oil_production, gas_production,
-                water_production, reservoir.Eo_values[index],
+                water_production, water_injection, gas_injection, water_influx,
+                reservoir.Eo_values[index],
                 reservoir.Eg_values[index],
                 reservoir.m * reservoir.Eg_values[index],
                 reservoir.Eo_values[index] + reservoir.m * reservoir.Eg_values[index],
                 reservoir.Efw_values[index], reservoir.Et_values[index],
+                production_withdrawal, water_injection_term, gas_injection_term,
                 withdrawal, stoiip_output,
             ])
 
@@ -163,7 +182,6 @@ class OilMaterialBalanceApp:
         self.initial_pressure_var = tk.StringVar(value='')
         self.reservoir_temperature_var = tk.StringVar(value='25')
         self.gas_cap_ratio_var = tk.StringVar(value='0')
-        self.aquifer_influx_var = tk.BooleanVar(value=False)
         self.cw_var = tk.StringVar(value='4.3e-05')
         self.cf_var = tk.StringVar(value='1.4223e-05')
         self.swi_var = tk.StringVar(value='0.2')
@@ -196,10 +214,9 @@ class OilMaterialBalanceApp:
         ttk.Entry(reservoir, textvariable=self.gas_cap_ratio_var, width=16).grid(
             row=2, column=1, padx=8, pady=6, sticky=tk.W
         )
-        ttk.Checkbutton(
+        ttk.Label(
             reservoir,
-            text='Aquifer influx flag (We history is not supplied)',
-            variable=self.aquifer_influx_var,
+            text='Optional production CSV columns: Winj, Ginj, We (positive We reduces F)',
         ).grid(row=2, column=2, columnspan=2, padx=8, pady=6, sticky=tk.W)
         ttk.Label(reservoir, text='cw (1/(kgf/cm²))').grid(
             row=3, column=0, padx=8, pady=6, sticky=tk.W
@@ -248,14 +265,20 @@ class OilMaterialBalanceApp:
         views.add(table_frame, text='STOIIP results')
         views.add(plot_frame, text='F vs Et')
 
-        columns = ('time', 'pressure', 'F', 'Eo', 'Eg', 'mEg', 'Efw', 'Et', 'stoiip')
+        columns = (
+            'time', 'pressure', 'Winj', 'Ginj', 'We', 'F_production',
+            'F_water_injection', 'F_gas_injection', 'F', 'Eo', 'Eg', 'mEg',
+            'Efw', 'Et', 'stoiip',
+        )
         self.table = ttk.Treeview(table_frame, columns=columns, show='headings', height=12)
         self.table.heading('time', text='Time (days)')
-        for column in ('pressure', 'F', 'Eo', 'Eg', 'mEg', 'Efw', 'Et', 'stoiip'):
+        for column in columns[1:]:
             self.table.heading(column, text=column)
         for column, width in {
-            'time': 95, 'pressure': 115, 'F': 125, 'Eo': 100, 'Eg': 100,
-            'mEg': 100, 'Efw': 100, 'Et': 100, 'stoiip': 135,
+            'time': 85, 'pressure': 105, 'Winj': 100, 'Ginj': 105, 'We': 100,
+            'F_production': 125, 'F_water_injection': 145,
+            'F_gas_injection': 130, 'F': 110, 'Eo': 90, 'Eg': 90,
+            'mEg': 90, 'Efw': 90, 'Et': 90, 'stoiip': 125,
         }.items():
             self.table.column(column, width=width, anchor=tk.E, stretch=False)
         horizontal_scroll = ttk.Scrollbar(table_frame, orient=tk.HORIZONTAL, command=self.table.xview)
@@ -291,7 +314,6 @@ class OilMaterialBalanceApp:
                 initial_pressure=float(self.initial_pressure_var.get()),
                 reservoir_temperature=float(self.reservoir_temperature_var.get()),
                 m=float(self.gas_cap_ratio_var.get()),
-                aquifer_influx=self.aquifer_influx_var.get(),
                 cw=float(self.cw_var.get()),
                 cf=float(self.cf_var.get()),
                 swi=float(self.swi_var.get()),
@@ -323,9 +345,30 @@ class OilMaterialBalanceApp:
             withdrawal = converter.reservoir_volume_from_metric(
                 reservoir.F_values[index], unit_system
             )
+            water_injection = converter.oil_volume_from_metric(
+                production.Winj[index], unit_system
+            )
+            gas_injection = converter.gas_volume_from_metric(
+                production.Ginj[index], unit_system
+            )
+            water_influx = converter.reservoir_volume_from_metric(
+                production.We[index], unit_system
+            )
+            terms = reservoir.withdrawal_terms_values
+            production_withdrawal = converter.reservoir_volume_from_metric(
+                terms['production_total'][index], unit_system
+            )
+            water_injection_term = converter.reservoir_volume_from_metric(
+                terms['water_injection'][index], unit_system
+            )
+            gas_injection_term = converter.reservoir_volume_from_metric(
+                terms['gas_injection'][index], unit_system
+            )
             oil_in_place = converter.oil_volume_from_metric(stoiip, unit_system)
             values = (
-                production.time[index], pressure, withdrawal,
+                production.time[index], pressure, water_injection, gas_injection,
+                water_influx, production_withdrawal, water_injection_term,
+                gas_injection_term, withdrawal,
                 reservoir.Eo_values[index], reservoir.Eg_values[index],
                 reservoir.m * reservoir.Eg_values[index], reservoir.Efw_values[index],
                 reservoir.Et_values[index], oil_in_place,
@@ -335,7 +378,12 @@ class OilMaterialBalanceApp:
                   for value in values),
             ))
         self.table.heading('pressure', text=f'Pressure ({pressure_unit})')
-        self.table.heading('F', text=f'F ({f_unit})')
+        unit_suffix = 'rb' if unit_system == UnitSystem.FIELD else 'm³'
+        self.table.heading('Winj', text=f'Winj ({oil_unit})')
+        self.table.heading('Ginj', text=f'Ginj ({"SCF" if unit_system == UnitSystem.FIELD else "m³ std"})')
+        self.table.heading('We', text=f'We ({unit_suffix})')
+        for column in ('F_production', 'F_water_injection', 'F_gas_injection', 'F'):
+            self.table.heading(column, text=f'{column} ({f_unit})')
         for column in ('Eo', 'Eg', 'mEg', 'Efw', 'Et'):
             self.table.heading(column, text=column)
         self.table.heading('stoiip', text=f'STOIIP ({oil_unit})')

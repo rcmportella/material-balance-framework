@@ -43,10 +43,10 @@ Contains production data over time.
 
 **Example: `dake_production.csv`**
 ```csv
-time,Np,Gp,Wp,pressure
-0,0,0,0,3330
-365,3295000,3459750000,0,3150
-730,5903000,6257180000,0,3000
+time,Np,Gp,Wp,pressure,Winj,Ginj,We
+0,0,0,0,3330,0,0,0
+365,3295000,3459750000,0,3150,0,0,0
+730,5903000,6257180000,0,3000,0,0,0
 ```
 
 **Column Descriptions:**
@@ -55,6 +55,11 @@ time,Np,Gp,Wp,pressure
 - `Gp`: Cumulative gas production (SCF for FIELD, m³ for METRIC)
 - `Wp`: Cumulative water production (STB for FIELD, m³ for METRIC)
 - `pressure`: Average reservoir pressure (psia for FIELD, kgf/cm² for METRIC)
+- `Winj` (optional): Cumulative water injection at surface conditions (STB for FIELD, m³ for METRIC)
+- `Ginj` (optional): Cumulative gas injection at standard conditions (SCF for FIELD, m³ for METRIC)
+- `We` (optional): Cumulative aquifer influx at reservoir conditions (rb for FIELD, m³ for METRIC)
+
+If omitted, `Winj`, `Ginj`, and `We` default to zero. Positive injection and aquifer-influx volumes reduce net underground withdrawal. `We` is aquifer influx, not injected water. Injection volumes are converted using the PVT `Bw`/`Bg` at each observation pressure.
 
 For gas reservoirs, `Np` column can be omitted.
 

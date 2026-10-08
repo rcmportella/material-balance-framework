@@ -22,6 +22,8 @@ time,Np,Gp,Wp,pressure
 730,6000000,6000000000,0,2700
 ```
 
+Optional cumulative columns `Winj`, `Ginj`, and `We` can be added to the same CSV. `Winj` uses surface water volume units (STB/m³), `Ginj` uses standard gas volume units (SCF/m³), and `We` uses reservoir volume units (rb/m³). Missing columns default to zero; positive values reduce net withdrawal. `We` represents aquifer influx, not injected water.
+
 **`config.json`** - Your reservoir parameters
 ```json
 {

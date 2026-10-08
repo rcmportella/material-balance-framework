@@ -136,11 +136,13 @@ The fundamental equations remain the same, only the units change:
 N = F / Et
 
 where:
-F = Np·Bo + (Gp - Np·Rs)·Bg + Wp·Bw - We    [m³]
+F = Np·Bo + (Gp - Np·Rs)·Bg + Wp·Bw - Winj·Bw - Ginj·Bg - We    [m³]
 Et = Eo + m·Eg + Efw                         [m³/m³ std]
 
 Result: N in m³ std
 ```
+
+`Winj` and `Ginj` are cumulative injected water and gas at surface/standard conditions. `We` is cumulative aquifer influx at reservoir conditions; positive values reduce net withdrawal. If injection columns or `We` are omitted, they default to zero. The injection terms use the current pressure's PVT `Bw` and `Bg`.
 
 ### Gas Reservoir
 ```

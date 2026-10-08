@@ -8,6 +8,7 @@ from types import SimpleNamespace
 from openpyxl import Workbook
 
 from material_balance.input_reader import InputReader
+from material_balance.oil_reservoir import ProductionData
 from material_balance.oil_material_balance_app import (
     calculate_oil_material_balance,
     export_analysis_csv,
@@ -39,12 +40,16 @@ class OilMaterialBalanceFileInputTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             output_path = Path(directory) / 'results.csv'
             production = SimpleNamespace(
-                time=[10], pressure=[100], Np=[10], Gp=[2], Wp=[5]
+                time=[10], pressure=[100], Np=[10], Gp=[2], Wp=[5],
+                Winj=[6], Ginj=[8], We=[9],
             )
             reservoir = SimpleNamespace(
                 unit_system=UnitSystem.FIELD,
                 m=0.5, Eo_values=[0.1], Eg_values=[0.2], Efw_values=[0.3],
                 Et_values=[0.6], F_values=[3],
+                withdrawal_terms_values={
+                    'production_total': [4], 'water_injection': [0.6], 'gas_injection': [0.8],
+                },
             )
 
             export_analysis_csv(str(output_path), production, reservoir, [1000])
@@ -54,14 +59,22 @@ class OilMaterialBalanceFileInputTests(unittest.TestCase):
 
         self.assertEqual(rows[0], [
             'time_days', 'pressure_psia', 'Np_STB', 'Gp_SCF', 'Wp_STB',
-            'Eo', 'Eg', 'mEg', 'Eo_plus_mEg', 'Efw', 'Et', 'F_rb', 'STOIIP_STB',
+            'Winj_STB', 'Ginj_SCF', 'We_rb', 'Eo', 'Eg', 'mEg', 'Eo_plus_mEg',
+            'Efw', 'Et', 'F_production_rb', 'F_water_injection_rb',
+            'F_gas_injection_rb', 'F_net_rb', 'STOIIP_STB',
         ])
         self.assertAlmostEqual(float(rows[1][1]), 100 * 14.2233)
         self.assertAlmostEqual(float(rows[1][2]), 10 * 6.28981)
         self.assertAlmostEqual(float(rows[1][3]), 2 * 35.3147)
         self.assertAlmostEqual(float(rows[1][4]), 5 * 6.28981)
-        self.assertAlmostEqual(float(rows[1][11]), 3 * 6.28981)
-        self.assertAlmostEqual(float(rows[1][12]), 1000 * 6.28981)
+        self.assertAlmostEqual(float(rows[1][5]), 6 * 6.28981)
+        self.assertAlmostEqual(float(rows[1][6]), 8 * 35.3147)
+        self.assertAlmostEqual(float(rows[1][7]), 9 * 6.28981)
+        self.assertAlmostEqual(float(rows[1][14]), 4 * 6.28981)
+        self.assertAlmostEqual(float(rows[1][15]), 0.6 * 6.28981)
+        self.assertAlmostEqual(float(rows[1][16]), 0.8 * 6.28981)
+        self.assertAlmostEqual(float(rows[1][17]), 3 * 6.28981)
+        self.assertAlmostEqual(float(rows[1][18]), 1000 * 6.28981)
 
     def test_loads_pvt_and_production_data_with_gui_reservoir_inputs(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -89,11 +102,11 @@ class OilMaterialBalanceFileInputTests(unittest.TestCase):
 
             production_path = root / 'production.csv'
             production_path.write_text(
-                'time,Np,Gp,Wp,pressure\n'
-                '# days,# m3,# m3,# m3,# kgf/cm2\n'
-                '0,0,0,0,200\n'
-                '1,100,20000,0,180\n'
-                '2,200,40000,0,160\n',
+                'time,Np,Gp,Wp,pressure,Winj,Ginj,We\n'
+                '# days,# m3,# m3,# m3,# kgf/cm2,# m3,# m3,# m3 reservoir\n'
+                '0,0,0,0,200,0,0,0\n'
+                '1,100,20000,5,180,10,500,25\n'
+                '2,200,40000,0,160,20,1000,50\n',
                 encoding='utf-8',
             )
             reservoir, production, stoiip_values, statistics = calculate_oil_material_balance(
@@ -104,9 +117,23 @@ class OilMaterialBalanceFileInputTests(unittest.TestCase):
             self.assertEqual(len(stoiip_values), 3)
             self.assertEqual(statistics['count'], 2)
             self.assertAlmostEqual(production.pressure[0], 200)
+            self.assertEqual(production.Winj.tolist(), [0, 10, 20])
+            self.assertEqual(production.Ginj.tolist(), [0, 500, 1000])
+            self.assertEqual(production.We.tolist(), [0, 25, 50])
             self.assertIsNotNone(reservoir.F_values[1])
             self.assertNotEqual(reservoir.Eg_values[1], 0)
             self.assertEqual((reservoir.cw, reservoir.cf, reservoir.swi), (4e-5, 2e-5, 0.3))
+            pressure_props = pvt.get_properties_at_pressure(production.pressure[1])
+            expected_withdrawal = (
+                production.Np[1] * pressure_props['Bo']
+                + (production.Gp[1] - production.Np[1] * pressure_props['Rs'])
+                * pressure_props['Bg']
+                + production.Wp[1] * pressure_props.get('Bw', 1.0)
+                - production.Winj[1] * pressure_props.get('Bw', 1.0)
+                - production.Ginj[1] * pressure_props['Bg']
+                - production.We[1]
+            )
+            self.assertAlmostEqual(reservoir.F_values[1], expected_withdrawal)
 
     def test_reads_semicolon_delimited_pvt_and_production_csv(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -132,6 +159,20 @@ class OilMaterialBalanceFileInputTests(unittest.TestCase):
         self.assertEqual(pvt.pressure.tolist(), [200, 180])
         self.assertEqual(production.pressure.tolist(), [200, 180])
         self.assertEqual(production.Np.tolist(), [0, 100])
+        self.assertEqual(production.Winj.tolist(), [0, 0])
+        self.assertEqual(production.Ginj.tolist(), [0, 0])
+        self.assertEqual(production.We.tolist(), [0, 0])
+
+    def test_converts_injection_and_influx_series_from_field_units(self):
+        production = ProductionData(
+            time=[0, 1], Np=[0, 0], Gp=[0, 0], Wp=[0, 0], pressure=[100, 90],
+            Winj=[10, 20], Ginj=[100, 200], We=[5, 10],
+            unit_system=UnitSystem.FIELD,
+        )
+
+        self.assertAlmostEqual(production.Winj[0], 10 * 0.158987)
+        self.assertAlmostEqual(production.Ginj[0], 100 * 0.0283168)
+        self.assertAlmostEqual(production.We[0], 5 * 0.158987)
 
 
 if __name__ == '__main__':

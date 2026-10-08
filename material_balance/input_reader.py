@@ -195,9 +195,9 @@ class InputReader:
         Read production history from a CSV file.
         
         Expected CSV format for oil reservoir:
-        time,Np,Gp,Wp,pressure
-        0,0,0,0,3330
-        365,3295000,3459750000,0,3150
+        time,Np,Gp,Wp,pressure,Winj,Ginj,We
+        0,0,0,0,3330,0,0,0
+        365,3295000,3459750000,0,3150,1000,0,0
         
         Expected CSV format for gas reservoir:
         time,Gp,Wp,pressure
@@ -248,7 +248,10 @@ class InputReader:
                 Gp=data.get('Gp', np.zeros(len(data['pressure']))),
                 Wp=data.get('Wp', np.zeros(len(data['pressure']))),
                 pressure=data['pressure'],
-                unit_system=unit_system
+                unit_system=unit_system,
+                Winj=data.get('Winj'),
+                Ginj=data.get('Ginj'),
+                We=data.get('We'),
             )
         elif reservoir_type.lower() == 'gas':
             return GasProductionData(
