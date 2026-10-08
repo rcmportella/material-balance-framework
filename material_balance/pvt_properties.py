@@ -302,6 +302,26 @@ class CorrelationsPVT:
         b = 5.44 * (Rs_scf_stb + 150)**(-0.338)
         mu_ob = a * mu_od**b
         return mu_ob
+
+    @staticmethod
+    def oil_viscosity_beggs_robinson_undersaturated(
+        pressure: float, bubble_point_pressure: float, mu_ob: float
+    ) -> float:
+        """Calculate undersaturated oil viscosity with Beggs-Robinson.
+
+        Pressures use this module's metric convention (kgf/cm2), while the
+        pressure difference is converted to psi for the correlation.
+        """
+        if pressure < bubble_point_pressure:
+            raise ValueError("pressure must be greater than or equal to bubble_point_pressure.")
+        if mu_ob <= 0:
+            raise ValueError("mu_ob must be greater than zero.")
+
+        pressure_difference_psi = (pressure - bubble_point_pressure) * 14.2233
+        viscosity_increase = 0.001 * pressure_difference_psi * (
+            0.024 * mu_ob**1.6 + 0.038 * mu_ob**0.56
+        )
+        return mu_ob + viscosity_increase
     
     @staticmethod
     def vasquez_beggs_Bo(Rs: float, gamma_g: float, gamma_o: float, T: float, P: float, 

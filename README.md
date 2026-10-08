@@ -709,7 +709,7 @@ A dedicated Tkinter GUI for generating pressure-dependent PVT tables and exporti
 ### Exports
 
 - **Excel**: full property table plus an input-parameters sheet, using the selected unit system's units.
-- **OPM/Eclipse keywords**: `PVDG` (gas pressure, Bg, gas viscosity) and `PVTO` (Rs, bubble point pressure, oil FVF, oil viscosity), written in the currently selected unit system (METRIC: bar and sm3/sm3; FIELD: psia, rb/Mscf and Mscf/stb). Pressures above the bubble point are appended as undersaturated continuation rows under the highest-Rs row, per the format's requirements.
+- **OPM/Eclipse keywords**: `PVDG` (gas pressure, Bg, gas viscosity) and `PVTO` (Rs, bubble point pressure, oil FVF, oil viscosity), written in the currently selected unit system (METRIC: bar and sm3/sm3; FIELD: psia, rb/Mscf and Mscf/stb). Only the final pressure above the bubble point is appended as an undersaturated continuation row under the highest-Rs row, with no Rs value.
 
 ### Run
 

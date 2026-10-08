@@ -13,6 +13,7 @@ selector that can be changed at any time.
 from __future__ import annotations
 
 import sys
+import warnings
 from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -22,10 +23,11 @@ import numpy as np
 
 try:
     import tkinter as tk
-    from tkinter import filedialog, ttk
+    from tkinter import filedialog, messagebox, ttk
 except ImportError:
     tk = None
     filedialog = None
+    messagebox = None
     ttk = None
 
 try:
@@ -148,6 +150,94 @@ def get_sorted_well_series(well_data: dict[str, list]) -> list[tuple]:
         zip(well_data["date"], *[well_data[var] for var, _ in VARIABLES]),
         key=lambda item: item[0],
     )
+
+
+def next_month(value: datetime) -> datetime:
+    """Return the first day of the month after ``value``."""
+    if value.month == 12:
+        return datetime(value.year + 1, 1, 1)
+    return datetime(value.year, value.month + 1, 1)
+
+
+def build_opm_wconprod_text(wells: dict[str, dict[str, list]]) -> str:
+    """Format monthly well production history as OPM ``DATES``/``WCONPROD`` data."""
+    if not wells:
+        raise ValueError("At least one well is required for OPM export.")
+
+    rates_by_well: dict[str, dict[tuple[int, int], tuple[float, float]]] = {}
+    injection_rates_by_well: dict[str, dict[tuple[int, int], tuple[float, float]]] = {}
+    all_months: set[tuple[int, int]] = set()
+    for well_name, well_data in sorted(wells.items()):
+        opm_well_name = well_name[:8]
+
+        monthly_rates: dict[tuple[int, int], tuple[float, float]] = {}
+        monthly_injection_rates: dict[tuple[int, int], tuple[float, float]] = {}
+        for row in get_sorted_well_series(well_data):
+            date_value, qg, _qw, qo, _qcl, qwi, qgi = row
+            month_key = (date_value.year, date_value.month)
+            monthly_rates[month_key] = (
+                0.0 if qg is None else float(qg),
+                0.0 if qo is None else float(qo),
+            )
+            monthly_injection_rates[month_key] = (
+                0.0 if qwi is None else float(qwi),
+                0.0 if qgi is None else float(qgi),
+            )
+            all_months.add(month_key)
+        rates_by_well[opm_well_name] = monthly_rates
+        injection_rates_by_well[opm_well_name] = monthly_injection_rates
+        if not any(qwi > 0.0 or qgi > 0.0 for qwi, qgi in monthly_injection_rates.values()):
+            warnings.warn(
+                f"No water or gas injection rates found for well {well_name}; WCONINJE is omitted.",
+                stacklevel=2,
+            )
+
+    if not all_months:
+        raise ValueError("No production dates are available for OPM export.")
+
+    first_year, first_month = min(all_months)
+    last_year, last_month = max(all_months)
+    current_month = datetime(first_year, first_month, 1)
+    final_month = datetime(last_year, last_month, 1)
+    lines: list[str] = []
+
+    while current_month <= final_month:
+        month_key = (current_month.year, current_month.month)
+        lines.extend([
+            "DATES",
+            f" 1 '{current_month.strftime('%b').upper()}' {current_month.year} /",
+            "/",
+            "",
+        ])
+        production_rows: list[str] = []
+        for well_name, monthly_rates in rates_by_well.items():
+            qg, qo = monthly_rates.get(month_key, (0.0, 0.0))
+            if qo <= 0.0 and qg <= 0.0:
+                continue
+            control = "ORAT" if qo > 0.0 else "GRAT"
+            oil_rate = f"{qo:.6g}" if control == "ORAT" else "1*"
+            gas_rate = f"{qg:.6g}" if control == "GRAT" else "1*"
+            production_rows.append(
+                f" '{well_name}' 'OPEN' '{control}' {oil_rate} 1* {gas_rate} 2* 50 /"
+            )
+        if production_rows:
+            lines.extend(["WCONPROD", *production_rows, "/", ""])
+        injection_rows: list[str] = []
+        for well_name, monthly_injection_rates in injection_rates_by_well.items():
+            water_rate, gas_rate = monthly_injection_rates.get(month_key, (0.0, 0.0))
+            if gas_rate > 0.0:
+                injection_rows.append(
+                    f" '{well_name}' 'GAS' 'OPEN' 'RATE' {gas_rate:.6g} 1* 210 /"
+                )
+            elif water_rate > 0.0:
+                injection_rows.append(
+                    f" '{well_name}' 'WAT' 'OPEN' 'RATE' {water_rate:.6g} 1* 210 /"
+                )
+        if injection_rows:
+            lines.extend(["WCONINJE", *injection_rows, "/", ""])
+        current_month = next_month(current_month)
+
+    return "\n".join(lines)
 
 
 def aggregate_wells_data(wells: dict[str, dict[str, list]]) -> dict[str, list]:
@@ -630,6 +720,54 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
     fit_status = tk.StringVar(value="Select one variable (Qg, Qo or Qw), interval, then click Fit Decline")
     ttk.Label(controls, textvariable=fit_status).pack(side="right")
 
+    actions = ttk.Frame(root, padding=(10, 0, 10, 6))
+    actions.pack(fill="x")
+
+    export_selection = ttk.LabelFrame(root, text="OPM export wells", padding=(10, 4, 10, 6))
+    export_selection.pack(fill="x", padx=10, pady=(0, 6))
+    export_list_frame = ttk.Frame(export_selection)
+    export_list_frame.pack(side="left", fill="x", expand=True)
+    export_well_list = tk.Listbox(
+        export_list_frame,
+        height=3,
+        exportselection=False,
+        selectmode=tk.EXTENDED,
+    )
+    export_well_list.pack(side="left", fill="x", expand=True)
+    export_well_scrollbar = ttk.Scrollbar(
+        export_list_frame, orient="vertical", command=export_well_list.yview
+    )
+    export_well_scrollbar.pack(side="right", fill="y")
+    export_well_list.configure(yscrollcommand=export_well_scrollbar.set)
+
+    def scroll_export_well_list(event: Any) -> str:
+        export_well_list.yview_scroll(-int(event.delta / 120), "units")
+        return "break"
+
+    export_well_list.bind("<MouseWheel>", scroll_export_well_list)
+
+    def refresh_export_well_list(selected_names: list[str] | None = None) -> None:
+        selected_names = selected_names or []
+        export_well_list.delete(0, tk.END)
+        for index, name in enumerate(sorted(wells)):
+            export_well_list.insert(tk.END, name)
+            if name in selected_names:
+                export_well_list.selection_set(index)
+
+    def select_all_export_wells() -> None:
+        export_well_list.selection_set(0, tk.END)
+
+    def clear_export_well_selection() -> None:
+        export_well_list.selection_clear(0, tk.END)
+
+    ttk.Button(export_selection, text="Select all", command=select_all_export_wells).pack(
+        side="left", padx=(8, 0)
+    )
+    ttk.Button(export_selection, text="Clear selection", command=clear_export_well_selection).pack(
+        side="left", padx=(6, 0)
+    )
+    refresh_export_well_list([selected_well.get()])
+
     info_frame = ttk.Frame(root, padding=(10, 0, 10, 6))
     info_frame.pack(fill="x")
 
@@ -741,6 +879,7 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
         decline_results.clear()
         well_fit_overlays.clear()
+        refresh_export_well_list([selected_well.get()])
         refresh_interval_options()
         update_plot()
         fit_status.set(f"Workbook loaded: {workbook_path.name}")
@@ -826,6 +965,61 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
         workbook.save(output_path)
         fit_status.set(f"Exported {len(decline_results)} fit(s) to {output_path.name}")
+
+    def export_opm_wconprod() -> None:
+        well_name = selected_well.get()
+        selected_export_wells = [
+            export_well_list.get(index) for index in export_well_list.curselection()
+        ]
+        if selected_export_wells:
+            export_wells = {name: wells[name] for name in selected_export_wells}
+        elif well_name == "All Wells":
+            export_wells = wells
+        else:
+            export_wells = {well_name: wells[well_name]}
+        wells_without_injection = [
+            name for name, well_data in export_wells.items()
+            if not any(
+                (qwi or 0.0) > 0.0 or (qgi or 0.0) > 0.0
+                for qwi, qgi in zip(well_data["Qwim"], well_data["Qgim"])
+            )
+        ]
+        suggested_name = f"wconprod_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+
+        if filedialog is not None:
+            output_file = filedialog.asksaveasfilename(
+                title="Save OPM WCONPROD data",
+                defaultextension=".txt",
+                initialfile=suggested_name,
+                filetypes=[("Text files", "*.txt"), ("All files", "*.*")],
+                initialdir=str(workbook_path.parent),
+            )
+            if not output_file:
+                fit_status.set("OPM export cancelled")
+                return
+            output_path = Path(output_file)
+        else:
+            output_path = workbook_path.parent / suggested_name
+
+        try:
+            output_path.write_text(build_opm_wconprod_text(export_wells), encoding="utf-8")
+        except (OSError, UnicodeError, ValueError) as exc:
+            fit_status.set(f"Failed to export OPM data: {exc}")
+            if messagebox is not None:
+                messagebox.showerror("OPM export", f"Could not save the file:\n{exc}", parent=root)
+            return
+
+        success_message = f"OPM WCONPROD data saved to:\n{output_path}"
+        fit_status.set(success_message)
+        if messagebox is not None:
+            messagebox.showinfo("OPM export", success_message, parent=root)
+            if wells_without_injection:
+                messagebox.showwarning(
+                    "OPM export",
+                    "WCONINJE was omitted because no injection rates were found for:\n"
+                    + ", ".join(wells_without_injection),
+                    parent=root,
+                )
 
     def load_decline_results() -> None:
         if filedialog is not None:
@@ -1143,19 +1337,22 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
         fit_status.set(f"Cleared {removed_count} fit(s) for {well_name}")
         update_plot()
 
-    fit_button = ttk.Button(controls, text="Fit Decline", command=perform_fit)
+    fit_button = ttk.Button(actions, text="Fit Decline", command=perform_fit)
     fit_button.pack(side="left", padx=(10, 0))
 
-    clear_well_button = ttk.Button(controls, text="Clear Fits Well", command=clear_fits_well)
+    clear_well_button = ttk.Button(actions, text="Clear Fits Well", command=clear_fits_well)
     clear_well_button.pack(side="left", padx=(6, 0))
 
-    load_button = ttk.Button(controls, text="Load Fits", command=load_decline_results)
+    load_button = ttk.Button(actions, text="Load Fits", command=load_decline_results)
     load_button.pack(side="left", padx=(6, 0))
 
-    export_button = ttk.Button(controls, text="Export Fits", command=export_decline_results)
+    export_button = ttk.Button(actions, text="Export Fits", command=export_decline_results)
     export_button.pack(side="left", padx=(6, 0))
 
-    load_workbook_button = ttk.Button(controls, text="Load Workbook", command=load_new_workbook)
+    export_opm_button = ttk.Button(actions, text="Export OPM", command=export_opm_wconprod)
+    export_opm_button.pack(side="left", padx=(6, 0))
+
+    load_workbook_button = ttk.Button(actions, text="Load Workbook", command=load_new_workbook)
     load_workbook_button.pack(side="left", padx=(6, 0))
 
     well_combo.bind("<<ComboboxSelected>>", refresh_interval_options)

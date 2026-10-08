@@ -54,7 +54,9 @@ def calculate_pvt_table(
     pressures = np.linspace(pressure_min, pressure_max, point_count)
     if not pressure_min <= bubble_point_pressure <= pressure_max:
         raise ValueError("A pressão de bolha deve estar entre a pressão mínima e máxima.")
-    if pressure_min < bubble_point_pressure < pressure_max:
+    if pressure_min < bubble_point_pressure < pressure_max and not np.any(
+        np.isclose(pressures, bubble_point_pressure)
+    ):
         pressures = np.sort(np.append(pressures, bubble_point_pressure))
     point_count = len(pressures)
     temperature_k = temperature_c + 273.15
@@ -68,6 +70,9 @@ def calculate_pvt_table(
     bg_values = np.empty(point_count)
     mu_g_values = np.empty(point_count)
     mu_o_values = np.empty(point_count)
+    mu_ob = CorrelationsPVT.oil_viscosity_beggs_robinson(
+        API, temperature_c, oil_properties["Rsb"][0]
+    )
 
     for index, pressure in enumerate(pressures):
         z = CorrelationsPVT.gas_z_factor_hall_yarborough(
@@ -77,9 +82,14 @@ def calculate_pvt_table(
         mu_g = CorrelationsPVT.gas_viscosity_lee_gonzalez_eakin(
             pressure, temperature_k, gamma_g, z
         )
-        mu_o = CorrelationsPVT.oil_viscosity_beggs_robinson(
-            API, temperature_c, rs_values[index]
-        )
+        if pressure <= bubble_point_pressure:
+            mu_o = CorrelationsPVT.oil_viscosity_beggs_robinson(
+                API, temperature_c, rs_values[index]
+            )
+        else:
+            mu_o = CorrelationsPVT.oil_viscosity_beggs_robinson_undersaturated(
+                pressure, bubble_point_pressure, mu_ob
+            )
         z_values[index] = z
         bg_values[index] = bg
         mu_g_values[index] = mu_g
@@ -178,8 +188,8 @@ def build_opm_pvt_text(
 
     Pressures at or below the bubble point become saturated ``PVTO`` rows
     (each with its own Rs, matching the natural Rs(P) curve). Pressures above
-    the bubble point are appended as undersaturated continuation rows under
-    the last (highest Rs) saturated row, as required by the format.
+    the bubble point contribute only the final calculated pressure as an
+    undersaturated continuation row under the last saturated row, with no Rs.
     """
     pressure = results["pressure"]
     if unit_system == "METRIC":
@@ -226,14 +236,13 @@ def build_opm_pvt_text(
         is_last_saturated = index == saturated_indices[-1]
         lines.append(row if is_last_saturated and undersaturated_indices.size else row + " /")
 
-    for index in undersaturated_indices:
+    if undersaturated_indices.size:
+        index = undersaturated_indices[-1]
         row = (
             f"\t{pressure_fmt.format(pressure_display[index])}\t"
             f"{results['Bo'][index]:.4f}\t"
-            f"{results['mu_o'][index]:.4f}"
+            f"{results['mu_o'][index]:.4f} /"
         )
-        if index == undersaturated_indices[-1]:
-            row += " /"
         lines.append(row)
 
     return "\n".join(lines) + "\n"
