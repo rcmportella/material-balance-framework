@@ -73,6 +73,7 @@ PetroleumEngineering/
 │   ├── gas_reservoir.py         # Gas reservoir material balance
 │   ├── pvt_properties.py        # PVT properties and correlations
 │   ├── PVT_table.py             # PVT table generator GUI (Excel/OPM export)
+│   ├── initial_conditions_app.py # Initial reservoir pressure and temperature GUI
 │   └── utils.py                 # Utility functions
 ├── examples/
 │   └── example_usage.py         # Example scripts
@@ -87,7 +88,7 @@ Start the application hub from the project root:
 python Petroleum_Engineering_Apps.py
 ```
 
-The launcher opens the Oil Material Balance, Gas P/Z Analysis, PVT Table Generator, Corey Relative Permeability, Production Decline, and Well Production Viewer applications. Each tool opens in its own window; closing the launcher also closes the applications it started.
+The launcher opens the Oil Material Balance, Gas P/Z Analysis, PVT Table Generator, Corey Relative Permeability, Initial Pressure & Temperature, Production Decline, and Well Production Viewer applications. Each tool opens in its own window; closing the launcher also closes the applications it started.
 
 ### Gas P/Z Analysis
 

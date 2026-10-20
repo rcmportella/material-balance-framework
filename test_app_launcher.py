@@ -16,6 +16,7 @@ class ApplicationLauncherTests(unittest.TestCase):
                 'Gas P/Z Analysis',
                 'PVT Table Generator',
                 'Relative Permeability (Corey)',
+                'Initial Pressure & Temperature',
                 'Production Decline',
                 'Well Production Viewer',
             ],

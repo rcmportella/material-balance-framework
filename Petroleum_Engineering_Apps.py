@@ -42,6 +42,10 @@ def get_applications(project_root: Path = PROJECT_ROOT) -> tuple[Application, ..
             (python, '-m', 'material_balance.relative_permeability_app'),
         ),
         Application(
+            'initial_conditions', 'Initial Pressure & Temperature', 'Reservoir & PVT',
+            (python, '-m', 'material_balance.initial_conditions_app'),
+        ),
+        Application(
             'production_decline', 'Production Decline', 'Well Production',
             (python, str(examples / 'extrapola_producao_pocos.py')),
         ),
