@@ -55,11 +55,12 @@ A comprehensive Python framework for calculating initial volumes in-place (STOII
 Python >= 3.7
 numpy >= 1.19.0
 matplotlib >= 3.3.0 (optional, for plotting)
+opencv-python-headless >= 4.5.5 (required by `GeraACTNUM.py`)
 ```
 
 ### Install Dependencies
 ```bash
-pip install numpy matplotlib
+pip install -r requirements.txt
 ```
 
 ## Project Structure
@@ -87,6 +88,10 @@ python Petroleum_Engineering_Apps.py
 ```
 
 The launcher opens the Oil Material Balance, Gas P/Z Analysis, PVT Table Generator, Corey Relative Permeability, Production Decline, and Well Production Viewer applications. Each tool opens in its own window; closing the launcher also closes the applications it started.
+
+### Gas P/Z Analysis
+
+The Gas P/Z Analysis app reads a production-history CSV with `time`, `Gp`, and `pressure` columns. Use **Save inputs...** and **Load inputs...** to store or restore the CSV path, reservoir temperature, gas specific gravity, and optional final reservoir pressure in a JSON settings file.
 
 ### Corey Relative Permeability
 

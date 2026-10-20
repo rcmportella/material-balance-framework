@@ -1,10 +1,13 @@
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import Mock, patch
 
 import numpy as np
 
 from material_balance.gas_pz_app import (
+    GasPZApp,
     ProductionHistory,
     calculate_pz_analysis,
     estimate_gp_at_pressure,
@@ -14,6 +17,39 @@ from material_balance.pvt_properties import CorrelationsPVT
 
 
 class GasPZAppTests(unittest.TestCase):
+    def test_saves_and_loads_all_input_values(self):
+        values = {
+            "csv_path": r"C:\data\production.csv",
+            "temperature": "104",
+            "gas_gravity": "0.65",
+            "final_pressure": "130",
+        }
+        variables = {
+            name: Mock() for name in values
+        }
+        for name, value in values.items():
+            variables[name].get.return_value = value
+        app = SimpleNamespace(root=None, **variables)
+
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            settings_path = Path(temporary_directory) / "inputs.json"
+            with patch(
+                "material_balance.gas_pz_app.filedialog.asksaveasfilename",
+                return_value=str(settings_path),
+            ):
+                GasPZApp._save_inputs(app)
+
+            for variable in variables.values():
+                variable.get.return_value = ""
+            with patch(
+                "material_balance.gas_pz_app.filedialog.askopenfilename",
+                return_value=str(settings_path),
+            ):
+                GasPZApp._load_inputs(app)
+
+        for name, value in values.items():
+            variables[name].set.assert_called_once_with(value)
+
     def test_reads_metric_production_csv(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             csv_path = Path(temporary_directory) / "production.csv"

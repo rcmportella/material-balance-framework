@@ -8,6 +8,7 @@ Run from the project root with::
 from __future__ import annotations
 
 import csv
+import json
 import math
 import sys
 import tkinter as tk
@@ -253,6 +254,13 @@ class GasPZApp:
             row=2, column=3, padx=8, pady=(2, 10), sticky=tk.E
         )
 
+        ttk.Button(controls, text="Load inputs...", command=self._load_inputs).grid(
+            row=3, column=2, padx=8, pady=(0, 8), sticky=tk.E
+        )
+        ttk.Button(controls, text="Save inputs...", command=self._save_inputs).grid(
+            row=3, column=3, padx=8, pady=(0, 8), sticky=tk.E
+        )
+
         result_bar = ttk.Frame(self.root)
         result_bar.pack(fill=tk.X, padx=16, pady=(4, 8))
         ttk.Label(result_bar, textvariable=self.estimate_text, font=("Segoe UI", 21, "bold")).pack(
@@ -283,6 +291,54 @@ class GasPZApp:
         )
         if selected:
             self.csv_path.set(selected)
+
+    def _save_inputs(self) -> None:
+        selected = filedialog.asksaveasfilename(
+            parent=self.root,
+            title="Save gas P/Z inputs",
+            defaultextension=".json",
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")],
+        )
+        if not selected:
+            return
+
+        settings = {
+            "csv_path": self.csv_path.get(),
+            "temperature": self.temperature.get(),
+            "gas_gravity": self.gas_gravity.get(),
+            "final_pressure": self.final_pressure.get(),
+        }
+        try:
+            with Path(selected).open("w", encoding="utf-8") as settings_file:
+                json.dump(settings, settings_file, indent=2)
+        except OSError as error:
+            messagebox.showerror("Unable to save inputs", str(error), parent=self.root)
+
+    def _load_inputs(self) -> None:
+        selected = filedialog.askopenfilename(
+            parent=self.root,
+            title="Load gas P/Z inputs",
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")],
+        )
+        if not selected:
+            return
+
+        try:
+            with Path(selected).open("r", encoding="utf-8") as settings_file:
+                settings = json.load(settings_file)
+            keys = ("csv_path", "temperature", "gas_gravity", "final_pressure")
+            if not isinstance(settings, dict) or any(
+                not isinstance(settings.get(key), str) for key in keys
+            ):
+                raise ValueError("Input settings file has an invalid format.")
+        except (OSError, json.JSONDecodeError, ValueError) as error:
+            messagebox.showerror("Unable to load inputs", str(error), parent=self.root)
+            return
+
+        self.csv_path.set(settings["csv_path"])
+        self.temperature.set(settings["temperature"])
+        self.gas_gravity.set(settings["gas_gravity"])
+        self.final_pressure.set(settings["final_pressure"])
 
     def calculate(self) -> None:
         try:
