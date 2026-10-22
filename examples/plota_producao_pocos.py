@@ -114,12 +114,35 @@ def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, di
 
     wells: dict[str, dict[str, list]] = defaultdict(lambda: {"date": [], **{key: [] for key, _ in VARIABLES}})
 
-    for row in worksheet.iter_rows(min_row=2, values_only=True):
-        if len(row) < 9:
+    rows_iter = worksheet.iter_rows(values_only=True)
+    header = next(rows_iter, None) or ()
+    # Headers may carry units after a line break, e.g. "Qgm\n(Mm3/d)".
+    column_by_label: dict[str, int] = {}
+    for position, cell in enumerate(header):
+        if cell is None:
+            continue
+        parts = str(cell).split()
+        if parts:
+            column_by_label.setdefault(parts[0].lower(), position)
+
+    date_col = column_by_label.get("date", 1)
+    well_col = column_by_label.get("entity", column_by_label.get("well", 2))
+    missing = [name for name, _ in VARIABLES if name.lower() not in column_by_label]
+    if len(missing) == len(VARIABLES):
+        # No recognizable labels: fall back to the legacy fixed layout.
+        variable_cols = {name: index for index, (name, _) in enumerate(VARIABLES, start=3)}
+    elif missing:
+        raise ValueError(f"Missing column(s) in workbook header: {', '.join(missing)}")
+    else:
+        variable_cols = {name: column_by_label[name.lower()] for name, _ in VARIABLES}
+    min_length = max([date_col, well_col, *variable_cols.values()]) + 1
+
+    for row in rows_iter:
+        if len(row) < min_length:
             continue
 
-        date_value = row[1]
-        well_name = normalize_well_name(row[2])
+        date_value = row[date_col]
+        well_name = normalize_well_name(row[well_col])
         if not date_value or not well_name:
             continue
 
@@ -131,8 +154,8 @@ def read_workbook(filepath: Path, sheet_name: str | None = None) -> dict[str, di
         well_bucket = wells[well_name]
         well_bucket["date"].append(date)
 
-        for index, (variable_name, _) in enumerate(VARIABLES, start=3):
-            value = row[index]
+        for variable_name, _ in VARIABLES:
+            value = row[variable_cols[variable_name]]
             if value is None or value == "":
                 well_bucket[variable_name].append(None)
             else:
@@ -1058,6 +1081,7 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
         loaded_count = 0
         skipped_count = 0
+        loaded_wells_order: list[str] = []
         for row in rows:
             if not row:
                 continue
@@ -1152,7 +1176,7 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
                 scale_min = forced_fit.get("scale_min", scale_min)
                 scale_max = forced_fit.get("scale_max", scale_max)
                 normalized = forced_fit.get("normalized", normalized)
-            except (ValueError, TypeError):
+            except Exception:
                 skipped_count += 1
                 continue
 
@@ -1187,6 +1211,13 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
             decline_results.append(result)
             well_fit_overlays.setdefault(well_name, []).append(result)
             loaded_count += 1
+            if well_name not in loaded_wells_order:
+                loaded_wells_order.append(well_name)
+
+        # Fits are drawn only for the selected well, so jump to a well that has loaded fits.
+        if loaded_wells_order and selected_well.get() not in loaded_wells_order:
+            selected_well.set(loaded_wells_order[0])
+            refresh_interval_options()
 
         fit_status.set(f"Loaded {loaded_count} fit(s) from {input_path.name}; skipped {skipped_count}")
         update_plot()
