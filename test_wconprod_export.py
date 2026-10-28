@@ -1,10 +1,42 @@
 import unittest
 from datetime import datetime
+from math import exp
 
-from examples.plota_producao_pocos import build_opm_wconprod_text
+from examples.plota_producao_pocos import build_opm_wconprod_text, calculate_fit_rate
 
 
 class WconprodExportTests(unittest.TestCase):
+    def test_calculates_rate_from_fit_interval_start(self):
+        fit = {
+            "model": "Exponential",
+            "qi": 100.0,
+            "Di": 0.36525,
+            "b": None,
+            "interval_start": datetime(2026, 1, 1),
+            "interval_end": datetime(2026, 12, 1),
+        }
+
+        rate = calculate_fit_rate(fit, datetime(2026, 2, 1))
+
+        self.assertAlmostEqual(rate, 100.0 * exp(-0.36525 * 31 / 365.25), places=5)
+
+    def test_calculates_rate_after_fit_interval(self):
+        fit = {
+            "model": "Exponential",
+            "qi": 100.0,
+            "Di": 0.36525,
+            "interval_start": datetime(2026, 1, 1),
+            "interval_end": datetime(2026, 3, 1),
+        }
+
+        rate = calculate_fit_rate(fit, datetime(2027, 1, 1))
+
+        self.assertAlmostEqual(rate, 100.0 * exp(-0.36525 * 365 / 365.25), places=5)
+
+        rate_before = calculate_fit_rate(fit, datetime(2025, 1, 1))
+
+        self.assertAlmostEqual(rate_before, 100.0 * exp(0.36525 * 365 / 365.25), places=5)
+
     def test_formats_only_positive_orat_and_grat_monthly_records(self):
         wells = {
             "FU-016D": {

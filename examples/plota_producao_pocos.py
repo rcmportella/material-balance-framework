@@ -550,6 +550,41 @@ def calculate_asymptotic_exponential_curve(
     return [float(value) for value in q_pred]
 
 
+def calculate_fit_rate(fit: dict[str, Any], target_date: datetime) -> float:
+    """Calculate the rate predicted by one stored fit for any target date."""
+    interval_start = fit.get("interval_start")
+    if not isinstance(interval_start, datetime):
+        raise ValueError("Fit start date is missing or invalid.")
+
+    evaluation_dates = [interval_start, target_date]
+    model_name = str(fit.get("model", ""))
+    if model_name == "Asymptotic Exponential":
+        di_value = fit.get("Di")
+        if di_value is None:
+            raise ValueError("Missing Di for asymptotic exponential model.")
+        values = calculate_asymptotic_exponential_curve(
+            float(di_value),
+            evaluation_dates,
+            float(fit.get("scale_min", 0.0)),
+            float(fit.get("scale_max", 1.0)),
+        )
+    else:
+        qi_value = fit.get("qi")
+        if qi_value is None:
+            raise ValueError(f"Missing qi for {model_name} model.")
+        values = calculate_decline_curve(
+            model_name,
+            float(qi_value),
+            None if fit.get("Di") is None else float(fit["Di"]),
+            None if fit.get("b") is None else float(fit["b"]),
+            evaluation_dates,
+        )
+    rate = values[-1]
+    if not np.isfinite(rate):
+        raise ValueError("The fitted equation is not defined for the target month.")
+    return rate
+
+
 def plot_well_history(
     axis_left,
     axis_right,
@@ -743,6 +778,10 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
     fit_status = tk.StringVar(value="Select one variable (Qg, Qo or Qw), interval, then click Fit Decline")
     ttk.Label(controls, textvariable=fit_status).pack(side="right")
 
+    ttk.Label(controls, text="Rate month:").pack(side="left", padx=(16, 0))
+    rate_month = tk.StringVar(value=datetime.now().strftime("%Y-%m"))
+    ttk.Entry(controls, textvariable=rate_month, width=9).pack(side="left", padx=6)
+
     actions = ttk.Frame(root, padding=(10, 0, 10, 6))
     actions.pack(fill="x")
 
@@ -912,6 +951,9 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
     def str_to_date(value: str) -> datetime:
         return datetime.strptime(value, "%Y-%m-%d")
+
+    def str_to_month(value: str) -> datetime:
+        return datetime.strptime(value, "%Y-%m")
 
     def internal_to_fit_label(variable_name: str) -> str:
         reverse_map = {internal_name: label for label, internal_name in FIT_VARIABLE_MAP.items()}
@@ -1353,6 +1395,52 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
         )
         update_plot()
 
+    def calculate_rate_for_month() -> None:
+        well_name = selected_well.get()
+        if well_name not in wells and well_name != "All Wells":
+            return
+
+        try:
+            target_date = str_to_month(rate_month.get().strip())
+        except ValueError:
+            fit_status.set("Invalid month; use YYYY-MM")
+            return
+
+        variable_label = fit_variable.get()
+        target_variable = FIT_VARIABLE_MAP.get(variable_label)
+        if target_variable is None:
+            fit_status.set("Invalid fit variable")
+            return
+
+        matching_fits = [
+            fit
+            for fit in well_fit_overlays.get(well_name, [])
+            if fit.get("variable") == target_variable
+        ]
+        if not matching_fits:
+            fit_status.set(
+                f"No {variable_label} fit found for {well_name}"
+            )
+            return
+
+        rates: list[str] = []
+        for fit_index, fit in enumerate(matching_fits, start=1):
+            try:
+                rate = calculate_fit_rate(fit, target_date)
+            except (TypeError, ValueError) as exc:
+                fit_status.set(f"Could not calculate rate for fit #{fit_index}: {exc}")
+                return
+            interval_text = (
+                f"{fit['interval_start'].strftime('%Y-%m')}"
+                f"..{fit['interval_end'].strftime('%Y-%m')}"
+            )
+            rates.append(f"fit #{fit_index} {fit['model']} ({interval_text}): {rate:.3f}")
+
+        fit_status.set(
+            f"{well_name} [{variable_label}] {target_date.strftime('%Y-%m')}: "
+            + " | ".join(rates)
+        )
+
     def clear_fits_well() -> None:
         well_name = selected_well.get()
         if well_name not in wells and well_name != "All Wells":
@@ -1370,6 +1458,9 @@ def launch_gui(wells: dict[str, dict[str, list]], workbook_path: Path) -> None:
 
     fit_button = ttk.Button(actions, text="Fit Decline", command=perform_fit)
     fit_button.pack(side="left", padx=(10, 0))
+
+    rate_button = ttk.Button(actions, text="Calculate Rate", command=calculate_rate_for_month)
+    rate_button.pack(side="left", padx=(6, 0))
 
     clear_well_button = ttk.Button(actions, text="Clear Fits Well", command=clear_fits_well)
     clear_well_button.pack(side="left", padx=(6, 0))
