@@ -1,0 +1,4872 @@
+DATES
+ 1 'SEP' 1974 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 39.5767 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1974 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 58.7258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1974 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 50.3833 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1974 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 48.6871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 38.7645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 40.2036 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 34.3903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 28.2733 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 15.5613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 15.4433 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 14.5194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 14.3065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.26 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 16.0677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 33.2167 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1975 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 1.79355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 5.63871 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 235.797 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 89.2483 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 209.193 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 91.7871 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 156.184 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 86.65 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 144.617 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 88.1742 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 120.955 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 78.52 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 101.13 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 88.7032 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 90.5645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 78.3484 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 100.368 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 66.98 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 88.38 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 62.6677 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 74.8935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 67.6 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 77.9267 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1976 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 43.6065 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 59.6452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 50.9194 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 55.6839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 53.4429 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 41.5321 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 45.7 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 25.4065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 43.7833 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 22.65 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 39.2645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 35.1867 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.16 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 32.7968 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 17.5806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 29.5097 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 42.2548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 29.6367 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 59.5533 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 28.9774 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 65.071 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 28.6133 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 64.9033 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1977 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 27.729 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 61.2323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 23.8613 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 57.9129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 23.525 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 20.9393 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 22.2323 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 8.73226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 19.17 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 7.85161 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 21.1548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1978 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.523333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 9.45161 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.5548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 7.80667 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 21.1033 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 7.35161 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 48.8935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 10.2067 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 31.84 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1978 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.0806 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 40.7774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.9742 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 20.7419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 1.07857 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 19.5679 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.5581 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 19.4226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 9.03 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 21.6633 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.3581 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 24.6452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 9.84667 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 29.8367 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 20.871 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 6.35484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 23.771 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 26.5267 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 26.6968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 20.8833 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'GRAT' 1* 1* 66.2 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1979 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 21.2258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 23.2 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 23.6034 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 20.229 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 22.2767 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 22.4258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 20.0133 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 21.9871 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 8.80323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 20.0258 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 12.229 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 18.6533 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 10.1833 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 18.7806 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 9.77097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 17.35 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 8.16 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1980 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 15.8032 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 5.21613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 14.6806 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.93871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 15.8536 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 5.73214 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 14.7419 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.96129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 8.38667 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.97 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.81935 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.03226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 13.4433 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.79333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 12.0871 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.0871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 10.8065 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.40645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 10.7967 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.03333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 12.5323 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.983871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 13.58 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.796667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1981 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 12.6032 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.0419355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.3323 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 16.1226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.3857 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 25.3821 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 8.50645 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 21.8968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 5.49333 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 16.7467 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 5.50645 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 15.3323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 6.36 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 14.19 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 5.47742 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 11.6484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 5.55484 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 10.7323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 5.93333 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 10.15 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 5.66774 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 10.0258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.86 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.39667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1982 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 3.40323 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.45484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1983 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 1.95161 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.72581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1983 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.296429 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.275 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1983 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.93548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1983 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.33333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1983 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.33226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1983 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.27333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1983 /
+/
+
+DATES
+ 1 'AUG' 1983 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 3.35806 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.50968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1983 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 3.72 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.94 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1983 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.41935 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1983 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.79 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 5.19 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1983 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.63871 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 5.22903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1984 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 3.04839 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.67419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1984 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.21034 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1984 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.16129 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.53871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1984 /
+/
+
+DATES
+ 1 'MAY' 1984 /
+/
+
+DATES
+ 1 'JUN' 1984 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.783333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1984 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.19355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1984 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 1.35161 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.26452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1984 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 10.73 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.27 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1984 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 27.0032 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.22581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1984 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 37.4967 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.2 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1984 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 39.4226 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.16774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 38.0839 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.13871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 34.2607 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.08929 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 28.3613 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.12903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 28.2167 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.14 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 29.129 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 27.98 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.14333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 18.7226 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.06452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 13.3581 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.877419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 13.2033 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 39.94 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 9.12581 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 41.9871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.08 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 41.6733 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1985 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 2.7 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 43.1194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 14.3226 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 41.5806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 13.5179 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 30.8143 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 11.5742 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 25.8645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 9.93333 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 20.3567 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 10.8742 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 19.8226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 10.45 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 19.0167 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 9.59677 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 18.6839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 8.90645 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 17.9935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 10.2667 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 14.54 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 9.55484 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 14.4355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 6.31667 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 13.0167 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1986 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 6.14516 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 11.1806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 8.1129 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 11.8452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 7.47857 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 9.14286 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 6.99032 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 8.93548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 6.36 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 8.05 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 6.8871 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 8.75161 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 5.11333 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 8.25667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.93226 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 7.86129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.62258 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 7.55806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.82 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 7.86667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 4.72258 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 7.70968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1987 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 1.38333 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 6.87667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1987 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 5.39355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1988 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 2.93548 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 6.16774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1988 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 1.24138 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 6.1931 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1988 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.119355 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 6.30323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1988 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.28333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1988 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.40323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1988 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.73667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1988 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.99032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1988 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.36774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1988 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.27333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1988 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.783871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1988 /
+/
+
+DATES
+ 1 'DEC' 1988 /
+/
+
+DATES
+ 1 'JAN' 1989 /
+/
+
+DATES
+ 1 'FEB' 1989 /
+/
+
+DATES
+ 1 'MAR' 1989 /
+/
+
+DATES
+ 1 'APR' 1989 /
+/
+
+DATES
+ 1 'MAY' 1989 /
+/
+
+DATES
+ 1 'JUN' 1989 /
+/
+
+DATES
+ 1 'JUL' 1989 /
+/
+
+DATES
+ 1 'AUG' 1989 /
+/
+
+DATES
+ 1 'SEP' 1989 /
+/
+
+DATES
+ 1 'OCT' 1989 /
+/
+
+DATES
+ 1 'NOV' 1989 /
+/
+
+DATES
+ 1 'DEC' 1989 /
+/
+
+DATES
+ 1 'JAN' 1990 /
+/
+
+DATES
+ 1 'FEB' 1990 /
+/
+
+DATES
+ 1 'MAR' 1990 /
+/
+
+DATES
+ 1 'APR' 1990 /
+/
+
+DATES
+ 1 'MAY' 1990 /
+/
+
+DATES
+ 1 'JUN' 1990 /
+/
+
+DATES
+ 1 'JUL' 1990 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.36452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1990 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 9.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1990 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 5.10333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1990 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.02258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1990 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.68333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1990 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.81935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.06774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.32143 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.32258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.70667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.73548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.66333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.06452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.32581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.44667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.12258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.00333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1991 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.76774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1992 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.09677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1992 /
+/
+
+DATES
+ 1 'MAR' 1992 /
+/
+
+DATES
+ 1 'APR' 1992 /
+/
+
+DATES
+ 1 'MAY' 1992 /
+/
+
+DATES
+ 1 'JUN' 1992 /
+/
+
+DATES
+ 1 'JUL' 1992 /
+/
+
+DATES
+ 1 'AUG' 1992 /
+/
+
+DATES
+ 1 'SEP' 1992 /
+/
+
+DATES
+ 1 'OCT' 1992 /
+/
+
+DATES
+ 1 'NOV' 1992 /
+/
+
+DATES
+ 1 'DEC' 1992 /
+/
+
+DATES
+ 1 'JAN' 1993 /
+/
+
+DATES
+ 1 'FEB' 1993 /
+/
+
+DATES
+ 1 'MAR' 1993 /
+/
+
+DATES
+ 1 'APR' 1993 /
+/
+
+DATES
+ 1 'MAY' 1993 /
+/
+
+DATES
+ 1 'JUN' 1993 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.21333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1993 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.46774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1993 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.45161 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1993 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.62 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1993 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.57419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1993 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.62333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1993 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.67742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1994 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.84839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1994 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.81071 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1994 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.07419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1994 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.01333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1994 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1994 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.59 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1994 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 32.7097 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.49677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1994 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 39 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.50968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1994 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 39.1333 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.35333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1994 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 27.6129 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.55161 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1994 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 26.1 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.58667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1994 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 34.8387 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.60968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 40.129 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.39032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 38.5714 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.30714 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 45.1935 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.880645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 40.8667 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.973333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 3.3871 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.106452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 31.9667 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.11 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 16.6452 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.33871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 34.6774 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.50323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 34.3 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.27333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 36.4839 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.17097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1995 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 24.6667 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.926667 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 7.2 1* 210 /
+/
+
+DATES
+ 1 'DEC' 1995 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 25.1613 1* 210 /
+/
+
+DATES
+ 1 'JAN' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 21.6129 1* 210 /
+/
+
+DATES
+ 1 'FEB' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 20.6897 1* 210 /
+/
+
+DATES
+ 1 'MAR' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 9.67742 1* 210 /
+/
+
+DATES
+ 1 'APR' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 1.20501 1* 210 /
+/
+
+DATES
+ 1 'MAY' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 17.6617 1* 210 /
+/
+
+DATES
+ 1 'JUN' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 18.2313 1* 210 /
+/
+
+DATES
+ 1 'JUL' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 18.8746 1* 210 /
+/
+
+DATES
+ 1 'AUG' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 19.0395 1* 210 /
+/
+
+DATES
+ 1 'SEP' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 20.0057 1* 210 /
+/
+
+DATES
+ 1 'OCT' 1996 /
+/
+
+WCONINJE
+ 'FU-25-AL' 'GAS' 'OPEN' 'RATE' 11.5936 1* 210 /
+/
+
+DATES
+ 1 'NOV' 1996 /
+/
+
+DATES
+ 1 'DEC' 1996 /
+/
+
+DATES
+ 1 'JAN' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.56129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.68929 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.32258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.79333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.78387 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.79667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.58387 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.425806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.26333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.23548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.20667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1997 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.27097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1998 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.04839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1998 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.64286 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1998 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.5871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1998 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.62333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1998 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1998 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.87 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1998 /
+/
+
+DATES
+ 1 'AUG' 1998 /
+/
+
+DATES
+ 1 'SEP' 1998 /
+/
+
+DATES
+ 1 'OCT' 1998 /
+/
+
+DATES
+ 1 'NOV' 1998 /
+/
+
+DATES
+ 1 'DEC' 1998 /
+/
+
+DATES
+ 1 'JAN' 1999 /
+/
+
+DATES
+ 1 'FEB' 1999 /
+/
+
+DATES
+ 1 'MAR' 1999 /
+/
+
+DATES
+ 1 'APR' 1999 /
+/
+
+DATES
+ 1 'MAY' 1999 /
+/
+
+DATES
+ 1 'JUN' 1999 /
+/
+
+DATES
+ 1 'JUL' 1999 /
+/
+
+DATES
+ 1 'AUG' 1999 /
+/
+
+DATES
+ 1 'SEP' 1999 /
+/
+
+DATES
+ 1 'OCT' 1999 /
+/
+
+DATES
+ 1 'NOV' 1999 /
+/
+
+DATES
+ 1 'DEC' 1999 /
+/
+
+DATES
+ 1 'JAN' 2000 /
+/
+
+DATES
+ 1 'FEB' 2000 /
+/
+
+DATES
+ 1 'MAR' 2000 /
+/
+
+DATES
+ 1 'APR' 2000 /
+/
+
+DATES
+ 1 'MAY' 2000 /
+/
+
+DATES
+ 1 'JUN' 2000 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.90333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2000 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.516129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2000 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.18065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2000 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2000 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.99355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2000 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.92667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2000 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.0129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.70968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.32857 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.45484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.51667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.52581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.11333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.14839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.84333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.94516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.09 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2001 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.10968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.25357 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.24194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.11 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.07419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.15 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.98387 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.7871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.72333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.29677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.946667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2002 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.7 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2003 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.80968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2003 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2003 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.90323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2003 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2003 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.5 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.86774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2003 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.5 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.89667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2003 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.5 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.84839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2003 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.509677 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.94194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2003 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.483333 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.82333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2003 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.141935 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.9129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2003 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.09 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2003 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 5.65806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.341935 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.5129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.97931 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.68276 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.967742 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.54194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.9 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.33667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.974194 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.46129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.943333 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.41333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'ORAT' 0.0129032 1* 1* 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.40645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 4.05358 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.33226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 6.65726 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.3 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2004 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 1.75275 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.2871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2004 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.85667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2004 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.35806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.13871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.18893 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.912581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.942333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.41355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.58833 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.46839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.66032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.70733 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.26935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.24033 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2005 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.25161 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.27581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.26536 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.30742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.29533 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.31839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.259 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.30355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.33581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.403 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.41968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.36233 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2006 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.3829 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.34645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.39821 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.3929 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.30767 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.2971 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 3.422 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.81516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.24 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.141 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.10806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.114 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2007 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.98129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.492903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.462759 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.499032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.484333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.495161 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.447333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.462258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.422581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.286333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2008 /
+/
+
+DATES
+ 1 'NOV' 2008 /
+/
+
+DATES
+ 1 'DEC' 2008 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.365484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.370323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.383214 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.933226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.233 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.624194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.607667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.16097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2009 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 0.000118065 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.26548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.15667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.05129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.02333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2009 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.943548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2010 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.760645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2010 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.232143 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2010 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.0574194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2010 /
+/
+
+DATES
+ 1 'MAY' 2010 /
+/
+
+DATES
+ 1 'JUN' 2010 /
+/
+
+DATES
+ 1 'JUL' 2010 /
+/
+
+DATES
+ 1 'AUG' 2010 /
+/
+
+DATES
+ 1 'SEP' 2010 /
+/
+
+DATES
+ 1 'OCT' 2010 /
+/
+
+DATES
+ 1 'NOV' 2010 /
+/
+
+DATES
+ 1 'DEC' 2010 /
+/
+
+DATES
+ 1 'JAN' 2011 /
+/
+
+DATES
+ 1 'FEB' 2011 /
+/
+
+DATES
+ 1 'MAR' 2011 /
+/
+
+DATES
+ 1 'APR' 2011 /
+/
+
+DATES
+ 1 'MAY' 2011 /
+/
+
+DATES
+ 1 'JUN' 2011 /
+/
+
+DATES
+ 1 'JUL' 2011 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 0.959136 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.0829032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2011 /
+/
+
+WCONPROD
+ 'FU-16D-A' 'OPEN' 'GRAT' 1* 1* 0.532243 2* 50 /
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.0233226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2011 /
+/
+
+DATES
+ 1 'OCT' 2011 /
+/
+
+DATES
+ 1 'NOV' 2011 /
+/
+
+DATES
+ 1 'DEC' 2011 /
+/
+
+DATES
+ 1 'JAN' 2012 /
+/
+
+DATES
+ 1 'FEB' 2012 /
+/
+
+DATES
+ 1 'MAR' 2012 /
+/
+
+DATES
+ 1 'APR' 2012 /
+/
+
+DATES
+ 1 'MAY' 2012 /
+/
+
+DATES
+ 1 'JUN' 2012 /
+/
+
+DATES
+ 1 'JUL' 2012 /
+/
+
+DATES
+ 1 'AUG' 2012 /
+/
+
+DATES
+ 1 'SEP' 2012 /
+/
+
+DATES
+ 1 'OCT' 2012 /
+/
+
+DATES
+ 1 'NOV' 2012 /
+/
+
+DATES
+ 1 'DEC' 2012 /
+/
+
+DATES
+ 1 'JAN' 2013 /
+/
+
+DATES
+ 1 'FEB' 2013 /
+/
+
+DATES
+ 1 'MAR' 2013 /
+/
+
+DATES
+ 1 'APR' 2013 /
+/
+
+DATES
+ 1 'MAY' 2013 /
+/
+
+DATES
+ 1 'JUN' 2013 /
+/
+
+DATES
+ 1 'JUL' 2013 /
+/
+
+DATES
+ 1 'AUG' 2013 /
+/
+
+DATES
+ 1 'SEP' 2013 /
+/
+
+DATES
+ 1 'OCT' 2013 /
+/
+
+DATES
+ 1 'NOV' 2013 /
+/
+
+DATES
+ 1 'DEC' 2013 /
+/
+
+DATES
+ 1 'JAN' 2014 /
+/
+
+DATES
+ 1 'FEB' 2014 /
+/
+
+DATES
+ 1 'MAR' 2014 /
+/
+
+DATES
+ 1 'APR' 2014 /
+/
+
+DATES
+ 1 'MAY' 2014 /
+/
+
+DATES
+ 1 'JUN' 2014 /
+/
+
+DATES
+ 1 'JUL' 2014 /
+/
+
+DATES
+ 1 'AUG' 2014 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 91.0192 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2014 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 123.853 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2014 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 102.415 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2014 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.75537 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 66.5528 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2014 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 4.934 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 61.0739 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 2.40019 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 62.3918 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.31904 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 66.3481 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.06487 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 75.1658 1* 210 /
+/
+
+DATES
+ 1 'APR' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.78493 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 124.162 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.53655 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 125.475 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.757933 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 83.59 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.26339 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 85.4488 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.03055 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 81.7734 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.39703 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 75.6359 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.804387 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 72.4572 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.0463667 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 38.7671 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2015 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.582258 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 88.389 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.146645 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 97.8262 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.840414 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 91.7905 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.14326 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 87.6134 1* 210 /
+/
+
+DATES
+ 1 'APR' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.425133 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 100.591 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.770258 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 86.3155 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.10843 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 55.135 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.12248 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 59.7714 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.23361 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.9943 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.981516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.9149 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2016 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.837323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.637935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.437857 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.05916 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.11483 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 46.0057 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.11126 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 33.173 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.25043 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 40.6727 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.48052 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 47.5361 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.53948 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 76.5151 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.3597 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 61.8141 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.703161 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 30.8141 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.489 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 37.2079 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2017 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.409581 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 31.5436 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2018 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 32.0488 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2018 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 36.2536 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.544645 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 62.5971 1* 210 /
+/
+
+DATES
+ 1 'APR' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.8403 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 59.9793 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.745484 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 42.3628 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.4735 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 48.93 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.537065 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 49.2655 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.969774 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 53.0741 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.766567 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 40.6643 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.697968 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 27.4879 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.997133 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 54.3843 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2018 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.19558 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 45.0668 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.931161 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 44.5954 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.34457 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 51.3497 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.24219 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 53.2212 1* 210 /
+/
+
+DATES
+ 1 'APR' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.830533 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 52.9471 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.633484 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 45.3991 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.5851 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 43.6523 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.779871 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 32.3227 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.67371 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 23.135 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.527767 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 22.1003 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.856419 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 23.5966 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.5876 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 24.0323 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2019 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.57029 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 22.9546 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.459419 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 18.6217 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.623414 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 24.702 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.455355 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 24.2786 1* 210 /
+/
+
+DATES
+ 1 'APR' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.6934 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 25.0119 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.808 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 20.7407 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.512433 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 19.8658 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.00796774 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 21.8219 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.639419 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 22.9998 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.549267 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 22.3234 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.406742 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 22.0218 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.5073 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 17.7135 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2020 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.642903 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 8.14374 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.690484 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 27.204 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 1.11979 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 37.0929 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.934323 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 119.436 1* 210 /
+/
+
+DATES
+ 1 'APR' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.6196 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 138.939 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.523677 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 141.189 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.597633 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 127.389 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.784548 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 158.245 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.608097 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 95.1348 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2021 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.183433 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 62.8947 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2021 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 60.0958 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2021 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 42.8321 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2021 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 47.6192 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2022 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 52.2207 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.143723 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 23.5881 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.570269 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 23.7671 1* 210 /
+/
+
+DATES
+ 1 'APR' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.321647 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 27.9473 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.584021 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 27.3024 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.460477 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 28.2125 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2022 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 88.081 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.241069 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 70.7905 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.675578 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 49.6687 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.609292 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 50.3215 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.624271 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 132.007 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2022 /
+/
+
+WCONPROD
+ 'FU-25-AL' 'OPEN' 'ORAT' 0.0105171 1* 1* 2* 50 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 119.904 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 56.2989 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 28.336 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 82.1355 1* 210 /
+/
+
+DATES
+ 1 'APR' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 93.7737 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 119.857 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 235.783 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 93.3489 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 212.025 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 145.34 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2023 /
+/
+
+WCONINJE
+ 'FU-16D-A' 'WAT' 'OPEN' 'RATE' 97.4067 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2023 /
+/
+
+DATES
+ 1 'DEC' 2023 /
+/
+
+DATES
+ 1 'JAN' 2024 /
+/
+
+DATES
+ 1 'FEB' 2024 /
+/
+
+DATES
+ 1 'MAR' 2024 /
+/
+
+DATES
+ 1 'APR' 2024 /
+/
+
+DATES
+ 1 'MAY' 2024 /
+/
+
+DATES
+ 1 'JUN' 2024 /
+/
+
+DATES
+ 1 'JUL' 2024 /
+/
+
+DATES
+ 1 'AUG' 2024 /
+/
+
+DATES
+ 1 'SEP' 2024 /
+/
+
+DATES
+ 1 'OCT' 2024 /
+/
+
+DATES
+ 1 'NOV' 2024 /
+/
+
+DATES
+ 1 'DEC' 2024 /
+/
+
+DATES
+ 1 'JAN' 2025 /
+/
+
+DATES
+ 1 'FEB' 2025 /
+/
+
+DATES
+ 1 'MAR' 2025 /
+/
+
+DATES
+ 1 'APR' 2025 /
+/
+
+DATES
+ 1 'MAY' 2025 /
+/
+
+DATES
+ 1 'JUN' 2025 /
+/
+
+DATES
+ 1 'JUL' 2025 /
+/
+
+DATES
+ 1 'AUG' 2025 /
+/
+
+DATES
+ 1 'SEP' 2025 /
+/
+
+DATES
+ 1 'OCT' 2025 /
+/
+
+DATES
+ 1 'NOV' 2025 /
+/
+
+DATES
+ 1 'DEC' 2025 /
+/
+
+DATES
+ 1 'JAN' 2026 /
+/
+
+DATES
+ 1 'FEB' 2026 /
+/
+
+DATES
+ 1 'MAR' 2026 /
+/
+
+DATES
+ 1 'APR' 2026 /
+/
+
+DATES
+ 1 'MAY' 2026 /
+/

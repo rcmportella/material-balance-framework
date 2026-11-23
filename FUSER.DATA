@@ -1,0 +1,480 @@
+-- This reservoir simulation deck is made available under the Open Database
+-- License: http://opendatacommons.org/licenses/odbl/1.0/. Any rights in
+-- individual contents of the database are licensed under the Database Contents
+-- License: http://opendatacommons.org/licenses/dbcl/1.0/
+
+-- Copyright (C) 2015 Statoil
+
+-- This simulation is based on the data given in 
+-- 'Comparison of Solutions to a Three-Dimensional
+-- Black-Oil Reservoir Simulation Problem' by Aziz S. Odeh,
+-- Journal of Petroleum Technology, January 1981
+
+
+---------------------------------------------------------------------------
+------------------------ SPE1 - CASE 1 ------------------------------------
+---------------------------------------------------------------------------
+
+RUNSPEC
+-- -------------------------------------------------------------------------
+
+TITLE
+   SPE1 - CASE 1
+
+DIMENS
+   15 20 2 /
+
+-- The number of equilibration regions is inferred from the EQLDIMS
+-- keyword.
+EQLDIMS
+/
+
+-- The number of PVTW tables is inferred from the TABDIMS keyword;
+-- when no data is included in the keyword the default values are used.
+TABDIMS
+/
+
+OIL
+GAS
+WATER
+DISGAS
+-- As seen from figure 4 in Odeh, GOR is increasing with time,
+-- which means that dissolved gas is present
+
+METRIC
+
+START
+   1 'SEP' 1974 /
+
+WELLDIMS
+-- Item 1: maximum number of wells in the model
+-- 	   - there are two wells in the problem; FU-85Dector and FU-55ucer
+-- Item 2: maximum number of grid blocks connected to any one well
+-- 	   - must be one as the wells are located at specific grid blocks
+-- Item 3: maximum number of groups in the model
+-- 	   - we are dealing with only one 'group'
+-- Item 4: maximum number of wells in any one group
+-- 	   - there must be two wells in a group as there are two wells in total
+   20 2 1 20 /
+
+UNIFIN
+UNIFOUT
+
+GRID
+
+-- The INIT keyword is used to request an .INIT file. The .INIT file
+-- is written before the simulation actually starts, and contains grid
+-- properties and saturation tables as inferred from the input
+-- deck. There are no other keywords which can be used to configure
+-- exactly what is written to the .INIT file.
+INIT
+
+
+-- -------------------------------------------------------------------------
+NOECHO
+
+DX 
+-- There are in total 600 cells with length 100m in x-direction	
+   	600*100 /
+DY
+-- There are in total 600 cells with length 100m in y-direction	
+	600*100 /
+DZ
+-- The layers are 10 and 20 m thick, in each layer there are 100 cells
+	300*10 300*20 /
+
+TOPS
+-- The depth of the top of each grid block
+	15*1910 15*1890 15*1870 15*1850 15*1830 15*1810 15*1790 15*1770 15*1750 15*1730 15*1710
+15*1690 15*1670 15*1650 15*1630 15*1610 15*1590 15*1570 15*1550 15*1530/
+
+-- Layer 1
+ACTNUM
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+3*0 10*1 2*0
+3*0 9*1  3*0
+3*0 9*1  3*0
+3*0 9*1  3*0
+3*0 9*1  3*0
+3*0 9*1  3*0
+4*0 7*1  4*0
+4*0 7*1  4*0
+4*0 6*1  5*0
+5*0 4*1  5*0
+5*0 4*1  5*0
+6*0 3*1  6*0
+6*0 2*1  7*0
+
+-- Layer 2
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+2*0 11*1 2*0
+3*0 10*1 2*0
+3*0 9*1  3*0
+3*0 9*1  3*0
+3*0 9*1  3*0
+3*0 9*1  3*0
+3*0 9*1  3*0
+4*0 7*1  4*0
+4*0 7*1  4*0
+4*0 6*1  5*0
+5*0 4*1  5*0
+5*0 4*1  5*0
+6*0 3*1  6*0
+6*0 2*1  7*0
+/
+
+PORO
+-- Constant porosity of 0.1 and 0.2 throughout all 300 grid cells
+   	300*0.1 300*0.2/
+
+PERMX
+-- The layers have perm. 10mD and 50mD, respectively.
+	300*10 300*50 /
+
+PERMY
+-- Equal to PERMX
+	300*10 300*50 /
+
+PERMZ
+-- Cannot find perm. in z-direction in Odeh's paper
+-- For the time being, we will assume PERMZ equal to PERMX and PERMY:
+	600*1 /
+ECHO
+
+PROPS
+-- -------------------------------------------------------------------------
+
+PVTW
+-- Item 1: pressure reference (psia)
+-- Item 2: water FVF (rb per bbl or rb per stb)
+-- Item 3: water compressibility (psi^{-1})
+-- Item 4: water viscosity (cp)
+-- Item 5: water 'viscosibility' (psi^{-1})
+
+-- Using values from Norne:
+-- In METRIC units:
+ 	277.0 1.038 4.67E-5 0.318 0.0 /
+-- In FIELD units:
+--    	4017.55 1.038 3.22E-6 0.318 0.0 /
+
+ROCK
+-- Item 1: reference pressure (psia)
+-- Item 2: rock compressibility (psi^{-1})
+
+-- Using values from table 1 in Odeh:
+	1 4.41E-5 /
+
+SWOF
+-- Column 1: water saturation
+--   	     - this has been set to (almost) equally spaced values from 0.12 to 1
+-- Column 2: water relative permeability
+--   	     - generated from the Corey-type approx. formula
+--	       the coeffisient is set to 10e-5, S_{orw}=0 and S_{wi}=0.12
+-- Column 3: oil relative permeability when only oil and water are present
+--	     - we will use the same values as in column 3 in SGOF.
+-- 	       This is not really correct, but since only the first 
+--	       two values are of importance, this does not really matter
+-- Column 4: water-oil capillary pressure (psi) 
+
+0.29	0     0.3     0.35
+0.30  0.01  0.28    0.30
+0.35  0.04  0.15    0.19
+0.40  0.06  0.08    0.15
+0.45  0.08  0.05    0.12
+0.50  0.095 0.02    0.10
+0.55  0.14  0.005   0.09
+0.60  0.16  0.001   0.06
+0.65  0.22  0.0     0.05
+/
+
+
+SGOF
+-- Column 1: gas saturation
+-- Column 2: gas relative permeability
+-- Column 3: oil relative permeability when oil, gas and connate water are present
+-- Column 4: oil-gas capillary pressure (psi)
+-- 	     - stated to be zero in Odeh's paper
+
+-- Values in column 1-3 are taken from table 3 in Odeh's paper:
+0.04      0.28        0       0
+0.10      0.16        0.01    0
+0.15      0.10        0.038   0
+0.20      0.06        0.06    0
+0.25      0.04        0.08    0
+0.30      0.019       0.14    0
+0.35      0.005       0.21    0
+0.40      0.00        0.33    0
+/
+--1.00	1.0	0.000	0 /
+-- Warning from Eclipse: first sat. value in SWOF + last sat. value in SGOF
+-- 	   		 must not be greater than 1, but Eclipse still runs
+-- Flow needs the sum to be excactly 1 so I added a row with gas sat. =  0.88
+-- The corresponding krg value was estimated by assuming linear rel. between
+-- gas sat. and krw. between gas sat. 0.85 and 1.00 (the last two values given)
+
+DENSITY
+-- Density (lb per ft ) at surface cond. of 
+-- oil, water and gas, respectively (in that order)
+
+-- Using values from Norne:
+-- In METRIC units:
+      859.5 1033.0 0.854 /
+-- In FIELD units:
+--    	53.66 64.49 0.0533 /
+
+PVDG
+-- Column 1: gas phase pressure (bar)
+-- Column 2: gas formation volume factor (sm3/sm3)
+-- Column 3: gas viscosity (cP)
+1.0000	1.243762	0.012185
+9.7083	0.125608	0.012308
+18.4167	0.064910	0.012484
+27.1250	0.043200	0.012699
+35.8333	0.032055	0.012950
+44.5417	0.025282	0.013238
+53.2500	0.020738	0.013563
+61.9583	0.017485	0.013927
+70.6667	0.015049	0.014331
+79.3750	0.013162	0.014778
+88.0833	0.011664	0.015267
+96.7917	0.010452	0.015800
+105.5000	0.009457	0.016376
+114.2083	0.008630	0.016995
+122.9167	0.007936	0.017653
+127.4000	0.007622	0.018006
+131.6250	0.007350	0.018347
+140.3333	0.006852	0.019072
+149.0417	0.006426	0.019823
+157.7500	0.006061	0.020594
+166.4583	0.005746	0.021379
+175.1667	0.005473	0.022172
+183.8750	0.005235	0.022969
+192.5833	0.005027	0.023765
+201.2917	0.004844	0.024555
+210.0000	0.004682	0.025338
+/
+
+PVTO
+-- Column 1: dissolved gas-oil ratio (sm3/sm3)
+-- Column 2: bubble point pressure (bar)
+-- Column 3: oil FVF for saturated oil (rb per stb)
+-- Column 4: oil viscosity for saturated oil (cP)
+0.8749	1.0000	1.0675	1.5904 /
+4.8717	9.7083	1.0782	1.4082 /
+9.6236	18.4167	1.0909	1.2496 /
+14.8285	27.1250	1.1048	1.1203 /
+20.3698	35.8333	1.1195	1.0153 /
+26.1825	44.5417	1.1350	0.9291 /
+32.2248	53.2500	1.1511	0.8574 /
+38.4670	61.9583	1.1678	0.7969 /
+44.8869	70.6667	1.1849	0.7452 /
+51.4672	79.3750	1.2024	0.7006 /
+58.1940	88.0833	1.2204	0.6616 /
+65.0559	96.7917	1.2387	0.6274 /
+72.0432	105.5000	1.2573	0.5970 /
+79.1478	114.2083	1.2763	0.5698 /
+86.3626	122.9167	1.2955	0.5454 /
+90.1180	127.4000	1.3055	0.5338
+	210.0000	1.2805	0.5763 /
+-- It is required to enter data for undersaturated oil for the highest GOR
+-- (i.e. the last row) in the PVTO table.
+-- In order to fulfill this requirement, values for oil FVF and viscosity
+-- at 9014.7psia and GOR=1.618 for undersaturated oil have been approximated:
+-- It has been assumed that there is a linear relation between the GOR
+-- and the FVF when keeping the pressure constant at 9014.7psia.
+-- From Odeh we know that (at 9014.7psia) the FVF is 2.357 at GOR=2.984
+-- for saturated oil and that the FVF is 1.579 at GOR=1.27 for undersaturated oil,
+-- so it is possible to use the assumption described above. 
+-- An equivalent approximation for the viscosity has been used.
+/
+
+SOLUTION
+-- -------------------------------------------------------------------------
+
+EQUIL
+-- Item 1: datum depth (ft)
+-- Item 2: pressure at datum depth (psia)
+-- 	   - Odeh's table 1 says that initial reservoir pressure is 
+-- 	     4800 psi at 8400ft, which explains choice of item 1 and 2
+-- Item 3: depth of water-oil contact (ft)
+-- 	   - chosen to be directly under the reservoir
+-- Item 4: oil-water capillary pressure at the water oil contact (psi)
+-- 	   - given to be 0 in Odeh's paper
+-- Item 5: depth of gas-oil contact (ft)
+-- 	   - chosen to be directly above the reservoir
+-- Item 6: gas-oil capillary pressure at gas-oil contact (psi)
+-- 	   - given to be 0 in Odeh's paper
+-- Item 7: RSVD-table
+-- Item 8: RVVD-table
+-- Item 9: Set to 0 as this is the only value supported by OPM
+
+-- Item #: 1 2    3    4 5    6 7 8 9
+	1735 127.4 1785 0 1735 0 1 0 0 /
+
+RSVD
+-- Dissolved GOR is initially constant with depth through the reservoir.
+-- The reason is that the initial reservoir pressure given is higher 
+---than the bubble point presssure of 4014.7psia, meaning that there is no 
+-- free gas initially present.
+1735 90.1180
+1785 90.1180 /
+
+SUMMARY
+-- -------------------------------------------------------------------------	 
+
+-- 1a) Oil rate vs time
+FOPR
+-- Field Oil FU-55uction Rate
+
+-- 1b) GOR vs time
+WGOR
+-- Well Gas-Oil Ratio
+   'FU-55'
+/
+-- Using FGOR instead of WGOR:FU-55 results in the same graph
+FGOR
+
+-- 2a) Pressures of the cell where the FU-85Dector and FU-55ucer are located
+BPR
+4  8  1 /
+7 20 1 /
+/
+
+-- 2b) Gas saturation at grid points given in Odeh's paper
+BGSAT
+4  8  1 /
+7 20 1 /
+/
+
+-- In order to compare Eclipse with Flow:
+WBHP
+  'FU-85D'
+  'FU-55'
+/
+WGIR
+  'FU-85D'
+  'FU-55'
+/
+WGIT
+  'FU-85D'
+  'FU-55'
+/
+WGPR
+  'FU-85D'
+  'FU-55'
+/
+WGPT
+  'FU-85D'
+  'FU-55'
+/
+WOIR
+  'FU-85D'
+  'FU-55'
+/
+WOIT
+  'FU-85D'
+  'FU-55'
+/
+WOPR
+  'FU-85D'
+  'FU-55'
+/
+WOPT
+  'FU-85D'
+  'FU-55'
+/
+WWIR
+  'FU-85D'
+  'FU-55'
+/
+WWIT
+  'FU-85D'
+  'FU-55'
+/
+WWPR
+  'FU-85D'
+  'FU-55'
+/
+WWPT
+  'FU-85D'
+  'FU-55'
+/
+SCHEDULE
+-- -------------------------------------------------------------------------
+RPTSCHED
+	'PRES' 'SGAS' 'RS' 'WELLS' /
+
+RPTRST
+	'BASIC=1' /
+
+
+-- If no resolution (i.e. case 1), the two following lines must be added:
+DRSDT
+ 0 /
+-- if DRSDT is set to 0, GOR cannot rise and free gas does not 
+-- dissolve in undersaturated oil -> constant bubble point pressure
+
+WELSPECS
+-- Item #: 1	 	2		3	4	5	 6
+	'FU-55'		'FURADO'	7	20	100	'GAS' /
+	'FU-85D'	'FURADO'	4	8	140	'WAT' /
+/
+-- Coordinates in item 3-4 are retrieved from Odeh's figure 1 and 2
+-- Note that the depth at the midpoint of the well grid blocks
+-- has been used as reference depth for bottom hole pressure in item 5
+
+COMPDAT
+-- Item #: 1	2	3	4	5	6	7	8	9
+	'FU-55'	7	20	1	2	'OPEN'	1*	1*	0.5 /
+	'FU-85D'	4	4	1	2	'OPEN'	1*	1*	0.5 /
+/
+-- Coordinates in item 2-5 are retreived from Odeh's figure 1 and 2 
+-- Item 9 is the well bore internal diameter, 
+-- the radius is given to be 0.25ft in Odeh's paper
+
+
+WCONPROD
+-- Item #:1	2      3     4	   5  9
+	'FU-55' 'OPEN' 'GRAT' 2* 20000 2* 50 /
+/
+-- It is stated in Odeh's paper that the maximum oil FU-55. rate
+-- is 20 000stb per day which explains the choice of value in item 4.
+-- The items > 4 are defaulted with the exception of item  9,
+-- the BHP lower limit, which is given to be 1000psia in Odeh's paper
+
+WCONINJE
+-- Item #:1	 2	 3	 4	5      6  7
+	'FU-85D'	'WAT'	'OPEN'	'RATE'	500 1* 210 /
+/
+-- Stated in Odeh that gas FU-85D. rate (item 5) is 100MMscf per day
+-- BHP upper limit (item 7) should not be exceeding the highest
+-- pressure in the PVT table=9014.7psia (default is 100 000psia)
+
+TSTEP
+--Advance the simulater once a month for TEN years:
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 
+31 28 31 30 31 30 31 31 30 31 30 31 /
+
+--Advance the simulator once a year for TEN years:
+--10*365 /
+
+END

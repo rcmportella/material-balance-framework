@@ -1,0 +1,8 @@
+{
+  "unit_system": "FIELD",
+  "reservoir_type": "oil",
+  "initial_pressure": 3330,
+  "reservoir_temperature": 180,
+  "m": 0.2,
+  "aquifer_influx": false
+}

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import subprocess
 import sys
+import tempfile
 import tkinter as tk
 from dataclasses import dataclass
 from pathlib import Path
@@ -53,6 +54,10 @@ def get_applications(project_root: Path = PROJECT_ROOT) -> tuple[Application, ..
             'well_production', 'Well Production Viewer', 'Well Production',
             (python, str(examples / 'plota_producao_pocos.py')),
         ),
+        Application(
+            'reschedule_operations', 'Operations Scheduler', 'Well Production',
+            (python, str(examples / 'reorganiza_operacoes.py')),
+        ),
     )
 
 
@@ -66,6 +71,7 @@ class ApplicationLauncher:
 
         self.applications = get_applications()
         self.processes: dict[str, subprocess.Popen[bytes]] = {}
+        self.log_paths: dict[str, Path] = {}
         self.status_vars: dict[str, tk.StringVar] = {}
         self.launch_buttons: dict[str, ttk.Button] = {}
         self.closing = False
@@ -147,10 +153,15 @@ class ApplicationLauncher:
             self.status_vars[application.key].set('Already running')
             return
 
+        log_path = Path(tempfile.gettempdir()) / f'petroleum_workbench_{application.key}.log'
         try:
+            log_file = open(log_path, 'wb')
             process = subprocess.Popen(
                 application.command,
                 cwd=PROJECT_ROOT,
+                stdin=subprocess.DEVNULL,
+                stdout=subprocess.DEVNULL,
+                stderr=log_file,
                 creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0),
             )
         except OSError as error:
@@ -160,8 +171,12 @@ class ApplicationLauncher:
                 parent=self.root,
             )
             return
+        finally:
+            if 'log_file' in locals():
+                log_file.close()
 
         self.processes[application.key] = process
+        self.log_paths[application.key] = log_path
         self.status_vars[application.key].set('Running')
         self.launch_buttons[application.key].configure(state=tk.DISABLED)
 
@@ -178,9 +193,22 @@ class ApplicationLauncher:
             self.status_vars[application.key].set(
                 'Closed' if exit_code == 0 else f'Exited ({exit_code})'
             )
+            if exit_code != 0:
+                self._show_failure(application, exit_code)
             self.launch_buttons[application.key].configure(state=tk.NORMAL)
             del self.processes[application.key]
         self.root.after(500, self._refresh_processes)
+
+    def _show_failure(self, application: Application, exit_code: int) -> None:
+        log_path = self.log_paths.get(application.key)
+        details = ''
+        if log_path is not None and log_path.exists():
+            details = log_path.read_text(errors='replace').strip()[-1500:]
+        messagebox.showerror(
+            'Application exited with an error',
+            f'{application.name} exited with code {exit_code}.\n\n{details}',
+            parent=self.root,
+        )
 
     def close(self) -> None:
         self.closing = True

@@ -1,0 +1,1999 @@
+DATES
+ 1 'JUL' 2001 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 378 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2001 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 414 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2001 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 273 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2001 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 245 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2001 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 304 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2001 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 306 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 331 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 279 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 292 1* 210 /
+/
+
+DATES
+ 1 'APR' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 281 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 283 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 356 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 399 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 362 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 355 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 371 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 459 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2002 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 441 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 311 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 404 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 381 1* 210 /
+/
+
+DATES
+ 1 'APR' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 259 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 331 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 341 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 229 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 212 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 200 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 210 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 203 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2003 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 251 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 257 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 293 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 228 1* 210 /
+/
+
+DATES
+ 1 'APR' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 292 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 321 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 365 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 322 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 350 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 298 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 346 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 292 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2004 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 323 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 371 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 315 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 317 1* 210 /
+/
+
+DATES
+ 1 'APR' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 316 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 302 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 340 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 322 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 309 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 289 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 250 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 200 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2005 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 267 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 287 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 307 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 305 1* 210 /
+/
+
+DATES
+ 1 'APR' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 351 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 342 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 387 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 370 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 340 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 359 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 327 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 422 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2006 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 459 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 519 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 439 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 413 1* 210 /
+/
+
+DATES
+ 1 'APR' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 410 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 478 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 408 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 486 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 517 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 494 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 438 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 546 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2007 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 472 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 452 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 526 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 526 1* 210 /
+/
+
+DATES
+ 1 'APR' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 528 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 532 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 566 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 478 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 497 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 382 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 11 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 297 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2008 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 309 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 281 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 369 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 387 1* 210 /
+/
+
+DATES
+ 1 'APR' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 434 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 462 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 470 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 490 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 511 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 512 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 522 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 513 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2009 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 494 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 549 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 624 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 436 1* 210 /
+/
+
+DATES
+ 1 'APR' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 507 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 504 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 549 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 517 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 452 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 449 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 425 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 526 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2010 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 535 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 552 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 464 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 546 1* 210 /
+/
+
+DATES
+ 1 'APR' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 558 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 555 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 530 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 498 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 505 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 512 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 448 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 438 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2011 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 452 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 471 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 479 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 437 1* 210 /
+/
+
+DATES
+ 1 'APR' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 467 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 474 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 469 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 462 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 456 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 467 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 362 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 400 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2012 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 473 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 454 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 488 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 515 1* 210 /
+/
+
+DATES
+ 1 'APR' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 482 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 515 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 474 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 472 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 450 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 378 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 476 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 479 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2013 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 479 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 465 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 521 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 607 1* 210 /
+/
+
+DATES
+ 1 'APR' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 524 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 521 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 547 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 600 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 319 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 189 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 144 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 98 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2014 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 201 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 174 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 118 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 127 1* 210 /
+/
+
+DATES
+ 1 'APR' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 58 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 28 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 181 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 103 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 87 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2015 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 28 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2015 /
+/
+
+DATES
+ 1 'NOV' 2015 /
+/
+
+DATES
+ 1 'DEC' 2015 /
+/
+
+DATES
+ 1 'JAN' 2016 /
+/
+
+DATES
+ 1 'FEB' 2016 /
+/
+
+DATES
+ 1 'MAR' 2016 /
+/
+
+DATES
+ 1 'APR' 2016 /
+/
+
+DATES
+ 1 'MAY' 2016 /
+/
+
+DATES
+ 1 'JUN' 2016 /
+/
+
+DATES
+ 1 'JUL' 2016 /
+/
+
+DATES
+ 1 'AUG' 2016 /
+/
+
+DATES
+ 1 'SEP' 2016 /
+/
+
+DATES
+ 1 'OCT' 2016 /
+/
+
+DATES
+ 1 'NOV' 2016 /
+/
+
+DATES
+ 1 'DEC' 2016 /
+/
+
+DATES
+ 1 'JAN' 2017 /
+/
+
+DATES
+ 1 'FEB' 2017 /
+/
+
+DATES
+ 1 'MAR' 2017 /
+/
+
+DATES
+ 1 'APR' 2017 /
+/
+
+DATES
+ 1 'MAY' 2017 /
+/
+
+DATES
+ 1 'JUN' 2017 /
+/
+
+DATES
+ 1 'JUL' 2017 /
+/
+
+DATES
+ 1 'AUG' 2017 /
+/
+
+DATES
+ 1 'SEP' 2017 /
+/
+
+DATES
+ 1 'OCT' 2017 /
+/
+
+DATES
+ 1 'NOV' 2017 /
+/
+
+DATES
+ 1 'DEC' 2017 /
+/
+
+DATES
+ 1 'JAN' 2018 /
+/
+
+DATES
+ 1 'FEB' 2018 /
+/
+
+DATES
+ 1 'MAR' 2018 /
+/
+
+DATES
+ 1 'APR' 2018 /
+/
+
+DATES
+ 1 'MAY' 2018 /
+/
+
+DATES
+ 1 'JUN' 2018 /
+/
+
+DATES
+ 1 'JUL' 2018 /
+/
+
+DATES
+ 1 'AUG' 2018 /
+/
+
+DATES
+ 1 'SEP' 2018 /
+/
+
+DATES
+ 1 'OCT' 2018 /
+/
+
+DATES
+ 1 'NOV' 2018 /
+/
+
+DATES
+ 1 'DEC' 2018 /
+/
+
+DATES
+ 1 'JAN' 2019 /
+/
+
+DATES
+ 1 'FEB' 2019 /
+/
+
+DATES
+ 1 'MAR' 2019 /
+/
+
+DATES
+ 1 'APR' 2019 /
+/
+
+DATES
+ 1 'MAY' 2019 /
+/
+
+DATES
+ 1 'JUN' 2019 /
+/
+
+DATES
+ 1 'JUL' 2019 /
+/
+
+DATES
+ 1 'AUG' 2019 /
+/
+
+DATES
+ 1 'SEP' 2019 /
+/
+
+DATES
+ 1 'OCT' 2019 /
+/
+
+DATES
+ 1 'NOV' 2019 /
+/
+
+DATES
+ 1 'DEC' 2019 /
+/
+
+DATES
+ 1 'JAN' 2020 /
+/
+
+DATES
+ 1 'FEB' 2020 /
+/
+
+DATES
+ 1 'MAR' 2020 /
+/
+
+DATES
+ 1 'APR' 2020 /
+/
+
+DATES
+ 1 'MAY' 2020 /
+/
+
+DATES
+ 1 'JUN' 2020 /
+/
+
+DATES
+ 1 'JUL' 2020 /
+/
+
+DATES
+ 1 'AUG' 2020 /
+/
+
+DATES
+ 1 'SEP' 2020 /
+/
+
+DATES
+ 1 'OCT' 2020 /
+/
+
+DATES
+ 1 'NOV' 2020 /
+/
+
+DATES
+ 1 'DEC' 2020 /
+/
+
+DATES
+ 1 'JAN' 2021 /
+/
+
+DATES
+ 1 'FEB' 2021 /
+/
+
+DATES
+ 1 'MAR' 2021 /
+/
+
+DATES
+ 1 'APR' 2021 /
+/
+
+DATES
+ 1 'MAY' 2021 /
+/
+
+DATES
+ 1 'JUN' 2021 /
+/
+
+DATES
+ 1 'JUL' 2021 /
+/
+
+DATES
+ 1 'AUG' 2021 /
+/
+
+DATES
+ 1 'SEP' 2021 /
+/
+
+DATES
+ 1 'OCT' 2021 /
+/
+
+DATES
+ 1 'NOV' 2021 /
+/
+
+DATES
+ 1 'DEC' 2021 /
+/
+
+DATES
+ 1 'JAN' 2022 /
+/
+
+DATES
+ 1 'FEB' 2022 /
+/
+
+DATES
+ 1 'MAR' 2022 /
+/
+
+DATES
+ 1 'APR' 2022 /
+/
+
+DATES
+ 1 'MAY' 2022 /
+/
+
+DATES
+ 1 'JUN' 2022 /
+/
+
+DATES
+ 1 'JUL' 2022 /
+/
+
+DATES
+ 1 'AUG' 2022 /
+/
+
+DATES
+ 1 'SEP' 2022 /
+/
+
+DATES
+ 1 'OCT' 2022 /
+/
+
+DATES
+ 1 'NOV' 2022 /
+/
+
+DATES
+ 1 'DEC' 2022 /
+/
+
+DATES
+ 1 'JAN' 2023 /
+/
+
+DATES
+ 1 'FEB' 2023 /
+/
+
+DATES
+ 1 'MAR' 2023 /
+/
+
+DATES
+ 1 'APR' 2023 /
+/
+
+DATES
+ 1 'MAY' 2023 /
+/
+
+DATES
+ 1 'JUN' 2023 /
+/
+
+DATES
+ 1 'JUL' 2023 /
+/
+
+DATES
+ 1 'AUG' 2023 /
+/
+
+DATES
+ 1 'SEP' 2023 /
+/
+
+DATES
+ 1 'OCT' 2023 /
+/
+
+DATES
+ 1 'NOV' 2023 /
+/
+
+DATES
+ 1 'DEC' 2023 /
+/
+
+DATES
+ 1 'JAN' 2024 /
+/
+
+DATES
+ 1 'FEB' 2024 /
+/
+
+DATES
+ 1 'MAR' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 336 1* 210 /
+/
+
+DATES
+ 1 'APR' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 294 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 324 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 158 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2024 /
+/
+
+DATES
+ 1 'AUG' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 161 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 326 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 435 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 450 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2024 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 612 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 66 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 389 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 376 1* 210 /
+/
+
+DATES
+ 1 'APR' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 144 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 363 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 418 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 421 1* 210 /
+/
+
+DATES
+ 1 'AUG' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 421 1* 210 /
+/
+
+DATES
+ 1 'SEP' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 454 1* 210 /
+/
+
+DATES
+ 1 'OCT' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 445 1* 210 /
+/
+
+DATES
+ 1 'NOV' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 495 1* 210 /
+/
+
+DATES
+ 1 'DEC' 2025 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 392 1* 210 /
+/
+
+DATES
+ 1 'JAN' 2026 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 280 1* 210 /
+/
+
+DATES
+ 1 'FEB' 2026 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 344 1* 210 /
+/
+
+DATES
+ 1 'MAR' 2026 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 579 1* 210 /
+/
+
+DATES
+ 1 'APR' 2026 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 559 1* 210 /
+/
+
+DATES
+ 1 'MAY' 2026 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 532 1* 210 /
+/
+
+DATES
+ 1 'JUN' 2026 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 555 1* 210 /
+/
+
+DATES
+ 1 'JUL' 2026 /
+/
+
+WCONINJE
+ 'FU-85D-I' 'WAT' 'OPEN' 'RATE' 531 1* 210 /
+/

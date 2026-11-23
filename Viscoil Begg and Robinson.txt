@@ -1,0 +1,203 @@
+================================================================================
+           CORRELAÇÃO DE BEGGS & ROBINSON PARA VISCOSIDADE DE ÓLEO
+================================================================================
+
+A correlação de Beggs & Robinson (1975) é um método empírico para estimar a
+viscosidade de petróleo. É composta por duas etapas principais:
+
+1. Cálculo da viscosidade do óleo morto (sem gás dissolvido)
+2. Correção para viscosidade do óleo saturado (com gás dissolvido)
+
+================================================================================
+ETAPA 1: VISCOSIDADE DO ÓLEO MORTO (µod)
+================================================================================
+
+Fórmula Principal:
+µod = 10^x - 1
+
+Onde:
+x = Y × (T - 460)^(-1.163)
+
+e:
+Y = 10^Z
+
+Z = 3.0324 - 0.02023 × API
+
+Variáveis:
+- µod = viscosidade do óleo morto (cP)
+- T   = temperatura (°R)
+- API = densidade API do óleo (graus API)
+
+Conversão de Temperatura:
+°R = °F + 459.67
+
+Faixa de Validação:
+- API: 16 a 58 °API
+- Temperatura: 70 a 295 °F
+
+================================================================================
+ETAPA 2: VISCOSIDADE DO ÓLEO SATURADO (µob)
+================================================================================
+
+Fórmula Principal:
+µob = a × (µod)^b
+
+Onde:
+a = 10.715 × (Rs + 100)^(-0.515)
+
+b = 5.44 × (Rs + 150)^(-0.338)
+
+Variáveis:
+- µob = viscosidade do óleo saturado na pressão de bolha (cP)
+- µod = viscosidade do óleo morto (cP) - calculado na Etapa 1
+- Rs  = razão gás-óleo de solução (scf/STB)
+
+Faixa de Validação:
+- Rs: 20 a 2070 scf/STB
+- Pressão: 132 a 5265 psia
+- Temperatura: 70 a 295 °F
+
+================================================================================
+EXEMPLO PRÁTICO DE CÁLCULO
+================================================================================
+
+Dados de Entrada:
+- API = 35 °API
+- Temperatura = 200 °F
+- Rs = 500 scf/STB
+
+Passo 1: Converter Temperatura para °R
+T = 200 + 459.67 = 659.67 °R
+
+Passo 2: Calcular Z
+Z = 3.0324 - 0.02023 × 35
+Z = 3.0324 - 0.70805
+Z = 2.32435
+
+Passo 3: Calcular Y
+Y = 10^Z = 10^2.32435 = 210.68
+
+Passo 4: Calcular x
+x = Y × (T - 460)^(-1.163)
+x = 210.68 × (659.67 - 460)^(-1.163)
+x = 210.68 × (199.67)^(-1.163)
+
+Calculando 199.67^(-1.163):
+ln(199.67) = 5.2967
+-1.163 × 5.2967 = -6.1590
+exp(-6.1590) = 0.002124
+
+x = 210.68 × 0.002124
+x = 0.4475
+
+Passo 5: Calcular µod
+µod = 10^x - 1
+µod = 10^0.4475 - 1
+µod = 2.802 - 1
+µod = 1.802 cP
+
+Passo 6: Calcular coeficiente a
+a = 10.715 × (Rs + 100)^(-0.515)
+a = 10.715 × (500 + 100)^(-0.515)
+a = 10.715 × 600^(-0.515)
+
+ln(600) = 6.3969
+-0.515 × 6.3969 = -3.2944
+exp(-3.2944) = 0.03706
+
+a = 10.715 × 0.03706
+a = 0.3971
+
+Passo 7: Calcular coeficiente b
+b = 5.44 × (Rs + 150)^(-0.338)
+b = 5.44 × (500 + 150)^(-0.338)
+b = 5.44 × 650^(-0.338)
+
+ln(650) = 6.4770
+-0.338 × 6.4770 = -2.1892
+exp(-2.1892) = 0.1119
+
+b = 5.44 × 0.1119
+b = 0.6087
+
+Passo 8: Calcular µob
+µob = a × (µod)^b
+µob = 0.3971 × (1.802)^0.6087
+
+ln(1.802) = 0.5887
+0.5887 × 0.6087 = 0.3583
+exp(0.3583) = 1.4307
+
+µob = 0.3971 × 1.4307
+µob = 0.568 cP
+
+RESULTADO: µob ≈ 0.568 cP
+
+================================================================================
+IMPLEMENTAÇÃO EM PYTHON
+================================================================================
+
+import math
+
+def viscosidade_oleo(API, T_F, Rs):
+    """
+    Calcula a viscosidade do óleo usando a correlação de Beggs & Robinson.
+    
+    Parâmetros:
+    - API: densidade API (graus API)
+    - T_F: temperatura (graus Fahrenheit)
+    - Rs: razão gás-óleo de solução (scf/STB)
+    
+    Retorno:
+    - µob: viscosidade do óleo saturado (cP)
+    """
+    
+    # Etapa 1: Viscosidade do óleo morto
+    T_R = T_F + 459.67  # Converter para Rankine
+    Z = 3.0324 - 0.02023 * API
+    Y = 10 ** Z
+    x = Y * (T_R - 460) ** (-1.163)
+    mu_od = 10 ** x - 1
+    
+    # Etapa 2: Viscosidade do óleo saturado
+    a = 10.715 * (Rs + 100) ** (-0.515)
+    b = 5.44 * (Rs + 150) ** (-0.338)
+    mu_ob = a * (mu_od ** b)
+    
+    return mu_ob
+
+# Exemplo de uso:
+API = 35
+T_F = 200
+Rs = 500
+
+mu = viscosidade_oleo(API, T_F, Rs)
+print(f"Viscosidade do óleo: {mu:.3f} cP")
+
+================================================================================
+REFERÊNCIAS
+================================================================================
+
+Beggs, H.D. e Robinson, J.R. (1975). "Estimating the Viscosity of Crude Oil
+Systems". Journal of Petroleum Technology, 27(09), 1140-1141.
+
+McCain, W.D. (1990). "The Properties of Petroleum Fluids". 2nd Edition,
+PennWell Books.
+
+================================================================================
+OBSERVAÇÕES IMPORTANTES
+================================================================================
+
+1. A correlação foi desenvolvida para óleos com:
+   - API entre 16 e 58 °API
+   - Temperatura entre 70 e 295 °F
+   - Rs entre 20 e 2070 scf/STB
+
+2. Para pressões acima da pressão de bolha, é necessário aplicar correções
+   adicionais (ex: correção de Vasquez-Beggs) para considerar o
+   sobreadensamento.
+
+3. O OPM (Open Porous Media) utiliza o sistema METRIC com viscosidade em Pa·s.
+   Para converter: 1 cP = 0.001 Pa·s
+
+================================================================================

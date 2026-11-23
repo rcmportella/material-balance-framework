@@ -1,0 +1,136 @@
+================================================================================
+           CÁLCULO DE VISCOSIDADE DE GASES NATURAIS PARA OPM
+================================================================================
+
+1. CORRELAÇÕES DISPONÍVEIS
+--------------------------
+- Lee-Gonzalez-Eakin: Estimativas iniciais, gases simples (baixa complexidade)
+- Lohrenz-Bray-Clark (LBC): Simulação composicional, alta precisão (alta complexidade)
+
+
+2. CORRELAÇÃO DE LEE-GONZALEZ-EAKIN
+------------------------------------
+
+Fórmula Principal:
+μg = 1e-4 × Kv × exp(Xv × (ρg / 62.4)^Yv)
+
+Parâmetros:
+Kv = (9.379 + 0.01607 × MWg) × T^1.5 / (209.2 + 19.26 × MWg + T)
+Xv = 3.448 + (986.4 / T) + 0.01009 × MWg
+Yv = 2.447 - 0.2224 × Xv
+
+Dados de Entrada:
+- MWg = peso molecular do gás (lb/lbmol)
+- T   = temperatura (°Rankine)
+- ρg  = densidade do gás (lb/ft³)
+
+
+3. CORRELAÇÃO DE LOHRENZ-BRAY-CLARK (LBC)
+------------------------------------------
+
+Fórmula Principal:
+μg = μ* × ξm
+
+ξm (fator de redução) = Tpc^(1/6) / (MWg^(1/2) × Ppc^(2/3))
+
+Regra de Kay:
+Tpc = Σ(yi × Tci)
+Ppc = Σ(yi × Pci)
+
+Dados de Entrada:
+- yi  = fração molar do componente i
+- Tci = temperatura crítica componente i (°R)
+- Pci = pressão crítica componente i (psia)
+- Vci = volume crítico componente i (ft³/lbmol)
+- MWi = peso molecular componente i (lb/lbmol)
+
+
+4. CONVERSÃO DE DENSIDADE RELATIVA PARA PESO MOLECULAR
+------------------------------------------------------
+MWg = γg × 28.97
+
+Onde:
+- γg  = densidade relativa do gás (ar = 1.0)
+- 28.97 = peso molecular do ar
+
+Exemplo: γg = 0.636 → MWg = 0.636 × 28.97 = 18.42 lb/lbmol
+
+
+5. CÁLCULO DA DENSIDADE EM lb/ft³
+----------------------------------
+ρg = (P × MWg) / (Z × R × T)
+
+Onde:
+- P  = pressão absoluta (psia)
+- Z  = fator de compressibilidade (adimensional)
+- R  = 10.73 (ft³ × psia / lbmol × °R)
+- T  = temperatura (°Rankine)
+
+Conversões de Temperatura:
+- °F → °R: °R = °F + 459.67
+- °C → °R: °R = (°C + 273.15) × 9/5
+- K  → °R: °R = K × 9/5
+
+
+6. EXEMPLO PRÁTICO COMPLETO
+----------------------------
+
+Dados:
+- γg = 0.636
+- P = 2000 psia
+- T = 600 °R (140 °F)
+- Z = 0.78
+
+Passo 1 - Peso Molecular:
+MWg = 0.636 × 28.97 = 18.42 lb/lbmol
+
+Passo 2 - Densidade:
+ρg = (2000 × 18.42) / (0.78 × 10.73 × 600)
+ρg = 36840 / 5021.64 = 7.33 lb/ft³
+
+Passo 3 - Fatores Lee-Gonzalez-Eakin:
+Kv = (9.379 + 0.01607×18.42) × 600^1.5 / (209.2 + 19.26×18.42 + 600)
+Kv = 9.675 × 14696.9 / 1164.0 = 122.15
+
+Xv = 3.448 + (986.4/600) + 0.01009×18.42 = 5.278
+
+Yv = 2.447 - 0.2224 × 5.278 = 1.273
+
+Passo 4 - Viscosidade:
+μg = 1e-4 × 122.15 × exp(5.278 × (7.33/62.4)^1.273)
+μg = 0.012215 × exp(5.278 × 0.0765)
+μg = 0.012215 × exp(0.4038)
+μg = 0.012215 × 1.4975
+μg = 0.01829 cP
+
+RESULTADO: μg ≈ 0.0183 cP
+
+
+7. TABELA DE CONVERSÃO DE UNIDADES
+-----------------------------------
+Constantes:
+- Peso molecular do ar = 28.97 lb/lbmol
+- R = 10.73 ft³ × psia / (lbmol × °R)
+- Densidade da água = 62.4 lb/ft³
+
+Fatores de Conversão:
+- 1 cP = 1 mPa·s = 0.001 Pa·s
+- 1 Darcy = 1000 mD
+- 1 bar = 14.5038 psia
+- 1 atm = 14.6959 psia
+- 1 kgf/cm² = 0.980665 bar
+
+
+8. OBSERVAÇÕES IMPORTANTES
+---------------------------
+- O OPM usa sistema METRIC com pressão em bars e viscosidade em Pa·s
+- As correlações acima usam unidades de campo (psia, °R, lb/ft³)
+- Para maior precisão do fator Z: use CNGA, Dranchuk-Abou-Kassem ou EOS
+- Para gases ricos (C7+): prefira a correlação LBC com composição completa
+
+================================================================================
+REFERÊNCIAS:
+- Lee, A.L., Gonzalez, M.H., Eakin, B.E. (1966). JPT, 18(08), 997-1000.
+- Lohrenz, J., Bray, B.G., Clark, C.R. (1964). JPT, 16(10), 1171-1176.
+- McCain, W.D. (1990). The Properties of Petroleum Fluids. PennWell Books.
+================================================================================

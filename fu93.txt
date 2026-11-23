@@ -1,0 +1,3187 @@
+DATES
+ 1 'FEB' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.25172 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 13.1871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 54.9484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 44.21 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 37.8419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 31.3871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 26.85 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 20.5419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 18.0033 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1984 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 19.0935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 14.5355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 14.6893 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 16.4871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 8.49667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 16.9484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 16.9733 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 15.7194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 15.7839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 13.74 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 12.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 11.3533 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1985 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 20.0871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 11.2129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 10.6536 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 12.2645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 10.8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 8.07742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.61667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.4871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.37419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.99 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.91613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.57 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1986 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.19355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 8.05484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.41429 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 5.88065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 9.09 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 9.32258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.48 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.38387 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.0871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.06667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.00645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.71333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1987 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.41935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 8.75484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.43793 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.42258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.06667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.19 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.28387 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.967742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.89333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.79032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.43 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1988 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.30323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.18065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.675 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.85161 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 8.70333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.21613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.36667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.59355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.53548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.93 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.68065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.41 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1989 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.41935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1990 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.98065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1990 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.56786 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1990 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.43548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1990 /
+/
+
+DATES
+ 1 'MAY' 1990 /
+/
+
+DATES
+ 1 'JUN' 1990 /
+/
+
+DATES
+ 1 'JUL' 1990 /
+/
+
+DATES
+ 1 'AUG' 1990 /
+/
+
+DATES
+ 1 'SEP' 1990 /
+/
+
+DATES
+ 1 'OCT' 1990 /
+/
+
+DATES
+ 1 'NOV' 1990 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 33.6333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1990 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 22.3645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 17.5516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 16.3643 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 14.0839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 14.4367 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 14.8806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 13.1567 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 12.9968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 11.7355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.3 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 10.7387 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 9.59667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1991 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 9.16452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 8.23226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.05517 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 5.2871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.01333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.57419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.62333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 10.1903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.52903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.84667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 7.20645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.58333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1992 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.48387 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 5.27742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.42143 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 5.8871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.86333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.17097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.24667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.22258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.77097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.75667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.62903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.84 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1993 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.51935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.29355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.98214 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.12903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.46667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.27097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.76 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.34839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.46129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.11 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.34516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.38667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1994 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.36129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.04516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.46429 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.76452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.09667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.35806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.44333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.95806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.19677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 4.36333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.94516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.41667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1995 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.34516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.26452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.59655 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.64839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.23333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.42258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.43333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.10968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.67742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.79 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.83548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.22667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1996 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.98065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.86129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.71429 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.47742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.66333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.28065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.24 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.19032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.03226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.17333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.05806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.02333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1997 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.85484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.87097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.12143 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.22258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.12667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.21935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.16 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.84194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.91613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 5.3 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 5.18065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.95 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1998 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.86452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.88387 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.86667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.77742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.16333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.3871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.92258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.37 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.34516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.09 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1999 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.3 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.86897 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.55484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.63 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.44516 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.38 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.39677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.55484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 3.98667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 6.81613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.96333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2000 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.96129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 2.69355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.54286 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.82258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.74333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.15484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.89 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.92 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.974194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.973333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2001 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.15161 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.4129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.55 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.55806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 1.03333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.596774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.622581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.683871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.673333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.303226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.36 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2002 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.596774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.367742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.46 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.467742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.66129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.576667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.474194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2003 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'ORAT' 0.123333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2003 /
+/
+
+DATES
+ 1 'JAN' 2004 /
+/
+
+DATES
+ 1 'FEB' 2004 /
+/
+
+DATES
+ 1 'MAR' 2004 /
+/
+
+DATES
+ 1 'APR' 2004 /
+/
+
+DATES
+ 1 'MAY' 2004 /
+/
+
+DATES
+ 1 'JUN' 2004 /
+/
+
+DATES
+ 1 'JUL' 2004 /
+/
+
+DATES
+ 1 'AUG' 2004 /
+/
+
+DATES
+ 1 'SEP' 2004 /
+/
+
+DATES
+ 1 'OCT' 2004 /
+/
+
+DATES
+ 1 'NOV' 2004 /
+/
+
+DATES
+ 1 'DEC' 2004 /
+/
+
+DATES
+ 1 'JAN' 2005 /
+/
+
+DATES
+ 1 'FEB' 2005 /
+/
+
+DATES
+ 1 'MAR' 2005 /
+/
+
+DATES
+ 1 'APR' 2005 /
+/
+
+DATES
+ 1 'MAY' 2005 /
+/
+
+DATES
+ 1 'JUN' 2005 /
+/
+
+DATES
+ 1 'JUL' 2005 /
+/
+
+DATES
+ 1 'AUG' 2005 /
+/
+
+DATES
+ 1 'SEP' 2005 /
+/
+
+DATES
+ 1 'OCT' 2005 /
+/
+
+DATES
+ 1 'NOV' 2005 /
+/
+
+DATES
+ 1 'DEC' 2005 /
+/
+
+DATES
+ 1 'JAN' 2006 /
+/
+
+DATES
+ 1 'FEB' 2006 /
+/
+
+DATES
+ 1 'MAR' 2006 /
+/
+
+DATES
+ 1 'APR' 2006 /
+/
+
+DATES
+ 1 'MAY' 2006 /
+/
+
+DATES
+ 1 'JUN' 2006 /
+/
+
+DATES
+ 1 'JUL' 2006 /
+/
+
+DATES
+ 1 'AUG' 2006 /
+/
+
+DATES
+ 1 'SEP' 2006 /
+/
+
+DATES
+ 1 'OCT' 2006 /
+/
+
+DATES
+ 1 'NOV' 2006 /
+/
+
+DATES
+ 1 'DEC' 2006 /
+/
+
+DATES
+ 1 'JAN' 2007 /
+/
+
+DATES
+ 1 'FEB' 2007 /
+/
+
+DATES
+ 1 'MAR' 2007 /
+/
+
+DATES
+ 1 'APR' 2007 /
+/
+
+DATES
+ 1 'MAY' 2007 /
+/
+
+DATES
+ 1 'JUN' 2007 /
+/
+
+DATES
+ 1 'JUL' 2007 /
+/
+
+DATES
+ 1 'AUG' 2007 /
+/
+
+DATES
+ 1 'SEP' 2007 /
+/
+
+DATES
+ 1 'OCT' 2007 /
+/
+
+DATES
+ 1 'NOV' 2007 /
+/
+
+DATES
+ 1 'DEC' 2007 /
+/
+
+DATES
+ 1 'JAN' 2008 /
+/
+
+DATES
+ 1 'FEB' 2008 /
+/
+
+DATES
+ 1 'MAR' 2008 /
+/
+
+DATES
+ 1 'APR' 2008 /
+/
+
+DATES
+ 1 'MAY' 2008 /
+/
+
+DATES
+ 1 'JUN' 2008 /
+/
+
+DATES
+ 1 'JUL' 2008 /
+/
+
+DATES
+ 1 'AUG' 2008 /
+/
+
+DATES
+ 1 'SEP' 2008 /
+/
+
+DATES
+ 1 'OCT' 2008 /
+/
+
+DATES
+ 1 'NOV' 2008 /
+/
+
+DATES
+ 1 'DEC' 2008 /
+/
+
+DATES
+ 1 'JAN' 2009 /
+/
+
+DATES
+ 1 'FEB' 2009 /
+/
+
+DATES
+ 1 'MAR' 2009 /
+/
+
+DATES
+ 1 'APR' 2009 /
+/
+
+DATES
+ 1 'MAY' 2009 /
+/
+
+DATES
+ 1 'JUN' 2009 /
+/
+
+DATES
+ 1 'JUL' 2009 /
+/
+
+DATES
+ 1 'AUG' 2009 /
+/
+
+DATES
+ 1 'SEP' 2009 /
+/
+
+DATES
+ 1 'OCT' 2009 /
+/
+
+DATES
+ 1 'NOV' 2009 /
+/
+
+DATES
+ 1 'DEC' 2009 /
+/
+
+DATES
+ 1 'JAN' 2010 /
+/
+
+DATES
+ 1 'FEB' 2010 /
+/
+
+DATES
+ 1 'MAR' 2010 /
+/
+
+DATES
+ 1 'APR' 2010 /
+/
+
+DATES
+ 1 'MAY' 2010 /
+/
+
+DATES
+ 1 'JUN' 2010 /
+/
+
+DATES
+ 1 'JUL' 2010 /
+/
+
+DATES
+ 1 'AUG' 2010 /
+/
+
+DATES
+ 1 'SEP' 2010 /
+/
+
+DATES
+ 1 'OCT' 2010 /
+/
+
+DATES
+ 1 'NOV' 2010 /
+/
+
+DATES
+ 1 'DEC' 2010 /
+/
+
+DATES
+ 1 'JAN' 2011 /
+/
+
+DATES
+ 1 'FEB' 2011 /
+/
+
+DATES
+ 1 'MAR' 2011 /
+/
+
+DATES
+ 1 'APR' 2011 /
+/
+
+DATES
+ 1 'MAY' 2011 /
+/
+
+DATES
+ 1 'JUN' 2011 /
+/
+
+DATES
+ 1 'JUL' 2011 /
+/
+
+DATES
+ 1 'AUG' 2011 /
+/
+
+DATES
+ 1 'SEP' 2011 /
+/
+
+DATES
+ 1 'OCT' 2011 /
+/
+
+DATES
+ 1 'NOV' 2011 /
+/
+
+DATES
+ 1 'DEC' 2011 /
+/
+
+DATES
+ 1 'JAN' 2012 /
+/
+
+DATES
+ 1 'FEB' 2012 /
+/
+
+DATES
+ 1 'MAR' 2012 /
+/
+
+DATES
+ 1 'APR' 2012 /
+/
+
+DATES
+ 1 'MAY' 2012 /
+/
+
+DATES
+ 1 'JUN' 2012 /
+/
+
+DATES
+ 1 'JUL' 2012 /
+/
+
+DATES
+ 1 'AUG' 2012 /
+/
+
+DATES
+ 1 'SEP' 2012 /
+/
+
+DATES
+ 1 'OCT' 2012 /
+/
+
+DATES
+ 1 'NOV' 2012 /
+/
+
+DATES
+ 1 'DEC' 2012 /
+/
+
+DATES
+ 1 'JAN' 2013 /
+/
+
+DATES
+ 1 'FEB' 2013 /
+/
+
+DATES
+ 1 'MAR' 2013 /
+/
+
+DATES
+ 1 'APR' 2013 /
+/
+
+DATES
+ 1 'MAY' 2013 /
+/
+
+DATES
+ 1 'JUN' 2013 /
+/
+
+DATES
+ 1 'JUL' 2013 /
+/
+
+DATES
+ 1 'AUG' 2013 /
+/
+
+DATES
+ 1 'SEP' 2013 /
+/
+
+DATES
+ 1 'OCT' 2013 /
+/
+
+DATES
+ 1 'NOV' 2013 /
+/
+
+DATES
+ 1 'DEC' 2013 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 15.4893 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 35.5275 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 30.1717 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 31.8429 2* 50 /
+/
+
+DATES
+ 1 'APR' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 18.6091 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 17.0163 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 20.8594 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 15.0557 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 21.3881 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 15.4223 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 20.3118 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 16.085 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2014 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 12.7095 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 11.8314 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 5.38366 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 6.07003 2* 50 /
+/
+
+DATES
+ 1 'APR' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 7.38974 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 9.02503 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 9.01074 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 6.15267 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 6.73166 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 7.79324 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 9.21736 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 4.45016 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2015 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 6.43643 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2016 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 5.74818 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2016 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 5.83541 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2016 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 0.000119935 2* 50 /
+/
+
+DATES
+ 1 'APR' 2016 /
+/
+
+DATES
+ 1 'MAY' 2016 /
+/
+
+DATES
+ 1 'JUN' 2016 /
+/
+
+DATES
+ 1 'JUL' 2016 /
+/
+
+DATES
+ 1 'AUG' 2016 /
+/
+
+DATES
+ 1 'SEP' 2016 /
+/
+
+DATES
+ 1 'OCT' 2016 /
+/
+
+DATES
+ 1 'NOV' 2016 /
+/
+
+DATES
+ 1 'DEC' 2016 /
+/
+
+DATES
+ 1 'JAN' 2017 /
+/
+
+DATES
+ 1 'FEB' 2017 /
+/
+
+DATES
+ 1 'MAR' 2017 /
+/
+
+DATES
+ 1 'APR' 2017 /
+/
+
+DATES
+ 1 'MAY' 2017 /
+/
+
+DATES
+ 1 'JUN' 2017 /
+/
+
+DATES
+ 1 'JUL' 2017 /
+/
+
+DATES
+ 1 'AUG' 2017 /
+/
+
+DATES
+ 1 'SEP' 2017 /
+/
+
+DATES
+ 1 'OCT' 2017 /
+/
+
+DATES
+ 1 'NOV' 2017 /
+/
+
+DATES
+ 1 'DEC' 2017 /
+/
+
+DATES
+ 1 'JAN' 2018 /
+/
+
+DATES
+ 1 'FEB' 2018 /
+/
+
+DATES
+ 1 'MAR' 2018 /
+/
+
+DATES
+ 1 'APR' 2018 /
+/
+
+DATES
+ 1 'MAY' 2018 /
+/
+
+DATES
+ 1 'JUN' 2018 /
+/
+
+DATES
+ 1 'JUL' 2018 /
+/
+
+DATES
+ 1 'AUG' 2018 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 5.57851 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2018 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 8.40174 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2018 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 7.34263 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2018 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.89544 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2018 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 2.88119 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 4.45273 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 4.76536 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 4.54556 2* 50 /
+/
+
+DATES
+ 1 'APR' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 4.8425 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 4.08015 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.58942 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.19618 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 2.74544 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.41812 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.24764 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2019 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 0.63878 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2019 /
+/
+
+DATES
+ 1 'JAN' 2020 /
+/
+
+DATES
+ 1 'FEB' 2020 /
+/
+
+DATES
+ 1 'MAR' 2020 /
+/
+
+DATES
+ 1 'APR' 2020 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 2.74155 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2020 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.58349 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2020 /
+/
+
+DATES
+ 1 'JUL' 2020 /
+/
+
+DATES
+ 1 'AUG' 2020 /
+/
+
+DATES
+ 1 'SEP' 2020 /
+/
+
+DATES
+ 1 'OCT' 2020 /
+/
+
+DATES
+ 1 'NOV' 2020 /
+/
+
+DATES
+ 1 'DEC' 2020 /
+/
+
+DATES
+ 1 'JAN' 2021 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 0.199233 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2021 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 1.87535 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2021 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 1.94757 2* 50 /
+/
+
+DATES
+ 1 'APR' 2021 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 0.571858 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2021 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 1.03024 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2021 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 0.984953 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2021 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 0.415003 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2021 /
+/
+
+DATES
+ 1 'SEP' 2021 /
+/
+
+DATES
+ 1 'OCT' 2021 /
+/
+
+DATES
+ 1 'NOV' 2021 /
+/
+
+DATES
+ 1 'DEC' 2021 /
+/
+
+DATES
+ 1 'JAN' 2022 /
+/
+
+DATES
+ 1 'FEB' 2022 /
+/
+
+DATES
+ 1 'MAR' 2022 /
+/
+
+DATES
+ 1 'APR' 2022 /
+/
+
+DATES
+ 1 'MAY' 2022 /
+/
+
+DATES
+ 1 'JUN' 2022 /
+/
+
+DATES
+ 1 'JUL' 2022 /
+/
+
+DATES
+ 1 'AUG' 2022 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 5.30856 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2022 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 17.038 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2022 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 16.8774 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2022 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 17.3105 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2022 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 10.0433 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 9.78571 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 8.99 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.74223 2* 50 /
+/
+
+DATES
+ 1 'APR' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 6.10283 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 5.65645 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 4.90517 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 4.86113 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.87135 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 1.52007 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2023 /
+/
+
+WCONPROD
+ 'FU-93-AL' 'OPEN' 'GRAT' 1* 1* 3.60855 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2023 /
+/
+
+DATES
+ 1 'DEC' 2023 /
+/
+
+DATES
+ 1 'JAN' 2024 /
+/
+
+DATES
+ 1 'FEB' 2024 /
+/
+
+DATES
+ 1 'MAR' 2024 /
+/
+
+DATES
+ 1 'APR' 2024 /
+/
+
+DATES
+ 1 'MAY' 2024 /
+/
+
+DATES
+ 1 'JUN' 2024 /
+/
+
+DATES
+ 1 'JUL' 2024 /
+/
+
+DATES
+ 1 'AUG' 2024 /
+/
+
+DATES
+ 1 'SEP' 2024 /
+/
+
+DATES
+ 1 'OCT' 2024 /
+/
+
+DATES
+ 1 'NOV' 2024 /
+/
+
+DATES
+ 1 'DEC' 2024 /
+/
+
+DATES
+ 1 'JAN' 2025 /
+/
+
+DATES
+ 1 'FEB' 2025 /
+/
+
+DATES
+ 1 'MAR' 2025 /
+/
+
+DATES
+ 1 'APR' 2025 /
+/
+
+DATES
+ 1 'MAY' 2025 /
+/
+
+DATES
+ 1 'JUN' 2025 /
+/
+
+DATES
+ 1 'JUL' 2025 /
+/

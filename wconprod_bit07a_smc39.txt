@@ -1,0 +1,2855 @@
+DATES
+ 1 'SEP' 1986 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 5.13333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1986 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 20.2129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1986 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.43 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1986 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 14.9355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 16.9839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 17.3857 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 16.1903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 16.5 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.0419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 17.4367 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.5839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 20.1806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.4167 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.0581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1987 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 17.9355 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 17.5 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 17.4621 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.2645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 17.8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6.31613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.06667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.29032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.9677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.6065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 16.91 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1988 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 16.5806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 16.8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.371 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.3 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.1323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.96 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.5032 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.7467 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.2484 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.0767 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1989 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.329 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.1452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.0613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.4677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.0645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.04 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1990 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 19.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.8643 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 15.0645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 18.8667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 14.5935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12.1452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12.4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1991 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.10345 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 14.3419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 14.95 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 15.2 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 15.2 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 15.2 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 15.8452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 16 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 14.6581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.5733 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1992 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.80645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.7548 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 11.7 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.30323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 11.64 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 11.8742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 12.0871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.97667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.1467 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1993 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.6452 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.671 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.4893 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.96129 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.15667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.99677 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.65 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.31613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.60645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.06333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.96774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.64333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1994 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.02581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.12903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.23929 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.10323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.86667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.77419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 11 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.61 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.70323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.74 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1995 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.8097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.7419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.6276 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.1774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.04 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.51935 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.48065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.1 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1996 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.22581 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.85806 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.6071 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.0968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.73871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.16667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.57742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.43 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1997 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.83871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.48065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.58571 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.2 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.42903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 9.93333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 11 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 10.0968 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.97667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.82258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8.9 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1998 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.74194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.83871 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.90323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 8 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.58065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 5.6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 1999 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 5.58065 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7.74194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6.96552 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6.54839 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 5.06667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 5.90323 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 5.4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 5.80645 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6.67742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6.13333 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6.77419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2000 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6.77419 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 7 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6.03226 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2001 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 6 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 5.74194 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4.36667 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2002 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2003 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2003 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2003 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 4 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2003 /
+/
+
+DATES
+ 1 'MAY' 2003 /
+/
+
+DATES
+ 1 'JUN' 2003 /
+/
+
+DATES
+ 1 'JUL' 2003 /
+/
+
+DATES
+ 1 'AUG' 2003 /
+/
+
+DATES
+ 1 'SEP' 2003 /
+/
+
+DATES
+ 1 'OCT' 2003 /
+/
+
+DATES
+ 1 'NOV' 2003 /
+/
+
+DATES
+ 1 'DEC' 2003 /
+/
+
+DATES
+ 1 'JAN' 2004 /
+/
+
+DATES
+ 1 'FEB' 2004 /
+/
+
+DATES
+ 1 'MAR' 2004 /
+/
+
+DATES
+ 1 'APR' 2004 /
+/
+
+DATES
+ 1 'MAY' 2004 /
+/
+
+DATES
+ 1 'JUL' 2004 /
+/
+
+DATES
+ 1 'AUG' 2004 /
+/
+
+DATES
+ 1 'SEP' 2004 /
+/
+
+DATES
+ 1 'OCT' 2004 /
+/
+
+DATES
+ 1 'NOV' 2004 /
+/
+
+DATES
+ 1 'DEC' 2004 /
+/
+
+DATES
+ 1 'JAN' 2005 /
+/
+
+DATES
+ 1 'FEB' 2005 /
+/
+
+DATES
+ 1 'MAR' 2005 /
+/
+
+DATES
+ 1 'APR' 2005 /
+/
+
+DATES
+ 1 'MAY' 2005 /
+/
+
+DATES
+ 1 'JUN' 2005 /
+/
+
+DATES
+ 1 'JUL' 2005 /
+/
+
+DATES
+ 1 'AUG' 2005 /
+/
+
+DATES
+ 1 'SEP' 2005 /
+/
+
+DATES
+ 1 'OCT' 2005 /
+/
+
+DATES
+ 1 'NOV' 2005 /
+/
+
+DATES
+ 1 'DEC' 2005 /
+/
+
+DATES
+ 1 'JAN' 2006 /
+/
+
+DATES
+ 1 'FEB' 2006 /
+/
+
+DATES
+ 1 'MAR' 2006 /
+/
+
+DATES
+ 1 'APR' 2006 /
+/
+
+DATES
+ 1 'MAY' 2006 /
+/
+
+DATES
+ 1 'JUN' 2006 /
+/
+
+DATES
+ 1 'JUL' 2006 /
+/
+
+DATES
+ 1 'AUG' 2006 /
+/
+
+DATES
+ 1 'SEP' 2006 /
+/
+
+DATES
+ 1 'OCT' 2006 /
+/
+
+DATES
+ 1 'NOV' 2006 /
+/
+
+DATES
+ 1 'DEC' 2006 /
+/
+
+DATES
+ 1 'JAN' 2007 /
+/
+
+DATES
+ 1 'FEB' 2007 /
+/
+
+DATES
+ 1 'MAR' 2007 /
+/
+
+DATES
+ 1 'APR' 2007 /
+/
+
+DATES
+ 1 'MAY' 2007 /
+/
+
+DATES
+ 1 'JUN' 2007 /
+/
+
+DATES
+ 1 'JUL' 2007 /
+/
+
+DATES
+ 1 'AUG' 2007 /
+/
+
+DATES
+ 1 'SEP' 2007 /
+/
+
+DATES
+ 1 'OCT' 2007 /
+/
+
+DATES
+ 1 'NOV' 2007 /
+/
+
+DATES
+ 1 'DEC' 2007 /
+/
+
+DATES
+ 1 'JAN' 2008 /
+/
+
+DATES
+ 1 'FEB' 2008 /
+/
+
+DATES
+ 1 'MAR' 2008 /
+/
+
+DATES
+ 1 'APR' 2008 /
+/
+
+DATES
+ 1 'MAY' 2008 /
+/
+
+DATES
+ 1 'JUN' 2008 /
+/
+
+DATES
+ 1 'JUL' 2008 /
+/
+
+DATES
+ 1 'AUG' 2008 /
+/
+
+DATES
+ 1 'SEP' 2008 /
+/
+
+DATES
+ 1 'OCT' 2008 /
+/
+
+DATES
+ 1 'NOV' 2008 /
+/
+
+DATES
+ 1 'DEC' 2008 /
+/
+
+DATES
+ 1 'JAN' 2009 /
+/
+
+DATES
+ 1 'FEB' 2009 /
+/
+
+DATES
+ 1 'MAR' 2009 /
+/
+
+DATES
+ 1 'APR' 2009 /
+/
+
+DATES
+ 1 'MAY' 2009 /
+/
+
+DATES
+ 1 'JUN' 2009 /
+/
+
+DATES
+ 1 'JUL' 2009 /
+/
+
+DATES
+ 1 'AUG' 2009 /
+/
+
+DATES
+ 1 'SEP' 2009 /
+/
+
+DATES
+ 1 'OCT' 2009 /
+/
+
+DATES
+ 1 'NOV' 2009 /
+/
+
+DATES
+ 1 'DEC' 2009 /
+/
+
+DATES
+ 1 'JAN' 2010 /
+/
+
+DATES
+ 1 'FEB' 2010 /
+/
+
+DATES
+ 1 'MAR' 2010 /
+/
+
+DATES
+ 1 'APR' 2010 /
+/
+
+DATES
+ 1 'MAY' 2010 /
+/
+
+DATES
+ 1 'JUN' 2010 /
+/
+
+DATES
+ 1 'JUL' 2010 /
+/
+
+DATES
+ 1 'AUG' 2010 /
+/
+
+DATES
+ 1 'SEP' 2010 /
+/
+
+DATES
+ 1 'OCT' 2010 /
+/
+
+DATES
+ 1 'NOV' 2010 /
+/
+
+DATES
+ 1 'DEC' 2010 /
+/
+
+DATES
+ 1 'JAN' 2011 /
+/
+
+DATES
+ 1 'FEB' 2011 /
+/
+
+DATES
+ 1 'MAR' 2011 /
+/
+
+DATES
+ 1 'APR' 2011 /
+/
+
+DATES
+ 1 'MAY' 2011 /
+/
+
+DATES
+ 1 'JUN' 2011 /
+/
+
+DATES
+ 1 'JUL' 2011 /
+/
+
+DATES
+ 1 'AUG' 2011 /
+/
+
+DATES
+ 1 'SEP' 2011 /
+/
+
+DATES
+ 1 'OCT' 2011 /
+/
+
+DATES
+ 1 'NOV' 2011 /
+/
+
+DATES
+ 1 'DEC' 2011 /
+/
+
+DATES
+ 1 'JAN' 2012 /
+/
+
+DATES
+ 1 'FEB' 2012 /
+/
+
+DATES
+ 1 'MAR' 2012 /
+/
+
+DATES
+ 1 'APR' 2012 /
+/
+
+DATES
+ 1 'MAY' 2012 /
+/
+
+DATES
+ 1 'JUN' 2012 /
+/
+
+DATES
+ 1 'JUL' 2012 /
+/
+
+DATES
+ 1 'AUG' 2012 /
+/
+
+DATES
+ 1 'SEP' 2012 /
+/
+
+DATES
+ 1 'OCT' 2012 /
+/
+
+DATES
+ 1 'NOV' 2012 /
+/
+
+DATES
+ 1 'DEC' 2012 /
+/
+
+DATES
+ 1 'JAN' 2013 /
+/
+
+DATES
+ 1 'FEB' 2013 /
+/
+
+DATES
+ 1 'MAR' 2013 /
+/
+
+DATES
+ 1 'APR' 2013 /
+/
+
+DATES
+ 1 'MAY' 2013 /
+/
+
+DATES
+ 1 'JUN' 2013 /
+/
+
+DATES
+ 1 'JUL' 2013 /
+/
+
+DATES
+ 1 'AUG' 2013 /
+/
+
+DATES
+ 1 'SEP' 2013 /
+/
+
+DATES
+ 1 'OCT' 2013 /
+/
+
+DATES
+ 1 'NOV' 2013 /
+/
+
+DATES
+ 1 'DEC' 2013 /
+/
+
+DATES
+ 1 'JAN' 2014 /
+/
+
+DATES
+ 1 'FEB' 2014 /
+/
+
+DATES
+ 1 'MAR' 2014 /
+/
+
+DATES
+ 1 'APR' 2014 /
+/
+
+DATES
+ 1 'MAY' 2014 /
+/
+
+DATES
+ 1 'JUN' 2014 /
+/
+
+DATES
+ 1 'JUL' 2014 /
+/
+
+DATES
+ 1 'AUG' 2014 /
+/
+
+DATES
+ 1 'SEP' 2014 /
+/
+
+DATES
+ 1 'OCT' 2014 /
+/
+
+DATES
+ 1 'NOV' 2014 /
+/
+
+DATES
+ 1 'DEC' 2014 /
+/
+
+DATES
+ 1 'JAN' 2015 /
+/
+
+DATES
+ 1 'FEB' 2015 /
+/
+
+DATES
+ 1 'MAR' 2015 /
+/
+
+DATES
+ 1 'APR' 2015 /
+/
+
+DATES
+ 1 'MAY' 2015 /
+/
+
+DATES
+ 1 'JUN' 2015 /
+/
+
+DATES
+ 1 'JUL' 2015 /
+/
+
+DATES
+ 1 'AUG' 2015 /
+/
+
+DATES
+ 1 'SEP' 2015 /
+/
+
+DATES
+ 1 'OCT' 2015 /
+/
+
+DATES
+ 1 'NOV' 2015 /
+/
+
+DATES
+ 1 'DEC' 2015 /
+/
+
+DATES
+ 1 'JAN' 2016 /
+/
+
+DATES
+ 1 'FEB' 2016 /
+/
+
+DATES
+ 1 'MAR' 2016 /
+/
+
+DATES
+ 1 'APR' 2016 /
+/
+
+DATES
+ 1 'MAY' 2016 /
+/
+
+DATES
+ 1 'JUN' 2016 /
+/
+
+DATES
+ 1 'JUL' 2016 /
+/
+
+DATES
+ 1 'AUG' 2016 /
+/
+
+DATES
+ 1 'SEP' 2016 /
+/
+
+DATES
+ 1 'OCT' 2016 /
+/
+
+DATES
+ 1 'NOV' 2016 /
+/
+
+DATES
+ 1 'DEC' 2016 /
+/
+
+DATES
+ 1 'JAN' 2017 /
+/
+
+DATES
+ 1 'FEB' 2017 /
+/
+
+DATES
+ 1 'MAR' 2017 /
+/
+
+DATES
+ 1 'APR' 2017 /
+/
+
+DATES
+ 1 'MAY' 2017 /
+/
+
+DATES
+ 1 'JUN' 2017 /
+/
+
+DATES
+ 1 'JUL' 2017 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.76342 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2017 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.27829 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2017 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.665567 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2017 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.303903 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2017 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 3.4537 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2017 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 3.49494 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2018 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 2.08716 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2018 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.03121 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2018 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.15906 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2018 /
+/
+
+DATES
+ 1 'MAY' 2018 /
+/
+
+DATES
+ 1 'JUN' 2018 /
+/
+
+DATES
+ 1 'JUL' 2018 /
+/
+
+DATES
+ 1 'AUG' 2018 /
+/
+
+DATES
+ 1 'SEP' 2018 /
+/
+
+DATES
+ 1 'OCT' 2018 /
+/
+
+DATES
+ 1 'NOV' 2018 /
+/
+
+DATES
+ 1 'DEC' 2018 /
+/
+
+DATES
+ 1 'JAN' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.668613 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 3.3185 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.52945 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2019 /
+/
+
+DATES
+ 1 'MAY' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.20045 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.7336 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.49103 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.775742 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'SEP' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.7487 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'OCT' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.42629 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.8421 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2019 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.19165 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2020 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.09758 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2020 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 2.13097 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2020 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.578774 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2020 /
+/
+
+DATES
+ 1 'MAY' 2020 /
+/
+
+DATES
+ 1 'JUN' 2020 /
+/
+
+DATES
+ 1 'JUL' 2020 /
+/
+
+DATES
+ 1 'AUG' 2020 /
+/
+
+DATES
+ 1 'SEP' 2020 /
+/
+
+DATES
+ 1 'OCT' 2020 /
+/
+
+DATES
+ 1 'NOV' 2020 /
+/
+
+DATES
+ 1 'DEC' 2020 /
+/
+
+DATES
+ 1 'JAN' 2021 /
+/
+
+DATES
+ 1 'FEB' 2021 /
+/
+
+DATES
+ 1 'MAR' 2021 /
+/
+
+DATES
+ 1 'APR' 2021 /
+/
+
+DATES
+ 1 'MAY' 2021 /
+/
+
+DATES
+ 1 'JUN' 2021 /
+/
+
+DATES
+ 1 'JUL' 2021 /
+/
+
+DATES
+ 1 'AUG' 2021 /
+/
+
+DATES
+ 1 'SEP' 2021 /
+/
+
+DATES
+ 1 'OCT' 2021 /
+/
+
+DATES
+ 1 'NOV' 2021 /
+/
+
+DATES
+ 1 'DEC' 2021 /
+/
+
+DATES
+ 1 'JAN' 2022 /
+/
+
+DATES
+ 1 'FEB' 2022 /
+/
+
+DATES
+ 1 'MAR' 2022 /
+/
+
+DATES
+ 1 'APR' 2022 /
+/
+
+DATES
+ 1 'MAY' 2022 /
+/
+
+DATES
+ 1 'JUN' 2022 /
+/
+
+DATES
+ 1 'JUL' 2022 /
+/
+
+DATES
+ 1 'AUG' 2022 /
+/
+
+DATES
+ 1 'SEP' 2022 /
+/
+
+DATES
+ 1 'OCT' 2022 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.519655 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'NOV' 2022 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.493975 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'DEC' 2022 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.780991 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JAN' 2023 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.31258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'FEB' 2023 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 1.01532 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2023 /
+/
+
+WCONPROD
+ 'SMC-39-A' 'OPEN' 'ORAT' 0.320258 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2023 /
+/
+
+DATES
+ 1 'MAY' 2023 /
+/
+
+DATES
+ 1 'JUN' 2023 /
+/
+
+DATES
+ 1 'JUL' 2023 /
+/
+
+DATES
+ 1 'AUG' 2023 /
+/
+
+DATES
+ 1 'SEP' 2023 /
+/
+
+DATES
+ 1 'OCT' 2023 /
+/
+
+DATES
+ 1 'NOV' 2023 /
+/
+
+DATES
+ 1 'DEC' 2023 /
+/
+
+DATES
+ 1 'JAN' 2024 /
+/
+
+DATES
+ 1 'FEB' 2024 /
+/
+
+DATES
+ 1 'MAR' 2024 /
+/
+
+DATES
+ 1 'APR' 2024 /
+/
+
+DATES
+ 1 'MAY' 2024 /
+/
+
+DATES
+ 1 'JUN' 2024 /
+/
+
+DATES
+ 1 'JUL' 2024 /
+/
+
+DATES
+ 1 'AUG' 2024 /
+/
+
+DATES
+ 1 'SEP' 2024 /
+/
+
+DATES
+ 1 'OCT' 2024 /
+/
+
+DATES
+ 1 'NOV' 2024 /
+/
+
+DATES
+ 1 'DEC' 2024 /
+/
+
+DATES
+ 1 'JAN' 2025 /
+/
+
+DATES
+ 1 'FEB' 2025 /
+/
+
+DATES
+ 1 'MAR' 2025 /
+/
+
+DATES
+ 1 'APR' 2025 /
+/
+
+DATES
+ 1 'MAY' 2025 /
+/
+
+DATES
+ 1 'JUN' 2025 /
+/
+
+DATES
+ 1 'JUL' 2025 /
+/
+
+DATES
+ 1 'AUG' 2025 /
+/
+
+DATES
+ 1 'SEP' 2025 /
+/
+
+DATES
+ 1 'OCT' 2025 /
+/
+
+DATES
+ 1 'NOV' 2025 /
+/
+
+DATES
+ 1 'DEC' 2025 /
+/
+
+DATES
+ 1 'JAN' 2026 /
+/
+
+DATES
+ 1 'FEB' 2026 /
+/
+
+WCONPROD
+ 'SMC-43-A' 'OPEN' 'ORAT' 5.11104 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAR' 2026 /
+/
+
+WCONPROD
+ 'SMC-43-A' 'OPEN' 'ORAT' 26.8906 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'APR' 2026 /
+/
+
+WCONPROD
+ 'SMC-43-A' 'OPEN' 'ORAT' 32.5085 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'MAY' 2026 /
+/
+
+WCONPROD
+ 'SMC-43-A' 'OPEN' 'ORAT' 29.6641 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUN' 2026 /
+/
+
+WCONPROD
+ 'SMC-43-A' 'OPEN' 'ORAT' 30 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'JUL' 2026 /
+/
+
+WCONPROD
+ 'SMC-43-A' 'OPEN' 'ORAT' 32 1* 1* 2* 50 /
+/
+
+DATES
+ 1 'AUG' 2026 /
+/
+
+WCONPROD
+ 'SMC-43-A' 'OPEN' 'ORAT' 32 1* 1* 2* 50 /
+/
